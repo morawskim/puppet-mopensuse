@@ -58,7 +58,7 @@ class mopensuse::packages::apache2 {
   exec {'define_apache_ssl_flag':
     command => 'a2enflag SSL',
     path    => ['/usr/sbin/', '/usr/bin', '/bin'],
-	unless  => "grep -e '^APACHE_SERVER_FLAGS' /etc/sysconfig/apache2 | grep SSL",
+    unless  => "grep -e '^APACHE_SERVER_FLAGS' /etc/sysconfig/apache2 | grep SSL",
     require => [ Package['apache2'], Exec['enable_apache_mod_ssl'] ],
     notify  => Service['apache2'] 
   }
@@ -99,10 +99,10 @@ class mopensuse::packages::apache2 {
   
   #vhost dir
   file {'/srv/www/vhosts':
-    ensure => directory,
-    mode   => '0755',
-    owner  => 'root',
-    group  => 'root',
+    ensure  => directory,
+    mode    => '0755',
+    owner   => 'root',
+    group   => 'root',
     require => Package['apache2']
   }
   

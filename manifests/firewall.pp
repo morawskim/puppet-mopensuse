@@ -1,6 +1,6 @@
 class mopensuse::firewall {
-  package{'SuSEfirewall2':
-	ensure => present
+  package {'SuSEfirewall2':
+    ensure => present
   }
   
   service {'SuSEfirewall2':
