@@ -11,5 +11,8 @@
 # Sample Usage:
 #
 class mopensuse {
- 
+  
+  include mopensuse::firewall
+  include mopensuse::packages::apache2
+  
 }

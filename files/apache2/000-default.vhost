@@ -1,0 +1,95 @@
+#
+# VirtualHost template
+# Note: to use the template, rename it to /etc/apache2/vhost.d/yourvhost.conf. 
+# Files must have the .conf suffix to be loaded.
+#
+# See /usr/share/doc/packages/apache2/README.QUICKSTART for further hints 
+# about virtual hosts.
+#
+# NameVirtualHost statements can be added to /etc/apache2/listen.conf.
+#
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for requests without a known
+# server name.
+#
+<VirtualHost *:80>
+    ServerAdmin marcin@morawskim.pl
+    ServerName localhost
+    ServerAlias www.localhost
+
+    # DocumentRoot: The directory out of which you will serve your
+    # documents. By default, all requests are taken from this directory, but
+    # symbolic links and aliases may be used to point to other locations.
+    DocumentRoot /srv/www/htdocs
+
+    # if not specified, the global error log is used
+    ErrorLog /var/log/apache2/localhost-error_log
+    CustomLog /var/log/apache2/localhost-access_log combined
+
+    # don't loose time with IP address lookups
+    HostnameLookups Off
+
+    # needed for named virtual hosts
+    UseCanonicalName Off
+
+    # configures the footer on server-generated documents
+    ServerSignature On
+	
+	# set env EO_DEV
+	SetEnv EO_DEV 1
+
+
+    # Optionally, include *.conf files from /etc/apache2/conf.d/
+    #
+    # For example, to allow execution of PHP scripts:
+    #
+    # Include /etc/apache2/conf.d/php5.conf
+    #
+    # or, to include all configuration snippets added by packages:
+    # Include /etc/apache2/conf.d/*.conf
+
+
+    #
+    # This should be changed to whatever you set DocumentRoot to.
+    #
+    <Directory "/srv/www/htdocs">
+    
+	#
+	# Possible values for the Options directive are "None", "All",
+	# or any combination of:
+	#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+	#
+	# Note that "MultiViews" must be named *explicitly* --- "Options All"
+	# doesn't give it to you.
+	#
+	# The Options directive is both complicated and important.  Please see
+	# http:///httpd.apache.org/docs/2.4/mod/core.html#options
+	# for more information.
+	#
+	Options Indexes FollowSymLinks
+    
+	#
+	# AllowOverride controls what directives may be placed in .htaccess files.
+	# It can be "All", "None", or any combination of the keywords:
+	#   Options FileInfo AuthConfig Limit
+	#
+	AllowOverride All
+    
+	#
+	# Controls who can get stuff from this server.
+	#
+	Require all granted
+    
+    </Directory>
+    
+	# For Apache 2.4.9 or higher
+    # Using SetHandler avoids issues with using ProxyPassMatch in combination
+    # with mod_rewrite or mod_autoindex
+    <FilesMatch \.php$>
+        SetHandler proxy:fcgi://127.0.0.1:9999
+    </FilesMatch>
+	
+    #<IfModule mod_proxy_fcgi.c>
+	#	ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9999/srv/www/htdocs/$1
+	#</IfModule>
+</VirtualHost>
