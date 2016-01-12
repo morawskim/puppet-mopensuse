@@ -50,6 +50,15 @@
 	
     # set env EO_DEV
     SetEnv EO_DEV 1
+    
+    #   A request for / will need to be mapped to a resource on the fcgi
+    #   backend. Failure to address this may cause a blank response, commonly
+    #   known as a WSOD (White Screen of Death), especially if only a request URI
+    #   containing the php extension is proxied, such as this example. The
+    #   processing chain will first map a request for / to /index.php or any other
+    #   index.php file relative to the current request uri, then proxy to the PHP-
+    #   FPM backend correctly.
+    DirectoryIndex /index.php index.php
 
     #   Per-Server Logging:
     #   The home of a custom SSL log file. Use this when you want a
