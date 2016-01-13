@@ -15,5 +15,5 @@ class mopensuse {
   include mopensuse::firewall
   include mopensuse::packages::apache2
   include mopensuse::packages::php
-  
+  include mopensuse::packages::php53v
 }

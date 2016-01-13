@@ -1,5 +1,7 @@
 class mopensuse::zypper::repositories::server_php_extensions {
   
+  include mopensuse::zypper::refresh
+  
   $gpg_key = "http://download.opensuse.org/repositories/server:/php:/extensions/openSUSE_${::operatingsystemrelease}/repodata/repomd.xml.key"
   
   zypprepo {'server_php_extensions':
@@ -10,6 +12,7 @@ class mopensuse::zypper::repositories::server_php_extensions {
     gpgcheck     => 1,
     gpgkey       => $gpg_key,
     type         => 'rpm-md',
+    notify       => Class['mopensuse::zypper::refresh']
   }
   
   rpmkey {'DDCD7F1A':
