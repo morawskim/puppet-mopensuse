@@ -16,4 +16,6 @@ class mopensuse {
   include mopensuse::packages::apache2
   include mopensuse::packages::php
   include mopensuse::packages::php53v
+  include mopensuse::packages::php54v
+  
 }
