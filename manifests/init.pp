@@ -12,6 +12,7 @@
 #
 class mopensuse {
   
+  include mopensuse::account
   include mopensuse::firewall
   include mopensuse::packages::apache2
   include mopensuse::packages::augeas
@@ -20,5 +21,6 @@ class mopensuse {
   include mopensuse::packages::php54v
   include mopensuse::packages::php56v
   include mopensuse::packages::php7v
+  include mopensuse::packages::php-dev-scripts
   
 }
