@@ -65,8 +65,8 @@ class mopensuse::packages::apache2 {
   
   #firewall http i https
   exec {'firewall_open_http_server_port':
-    command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT apache2',
-    unless  => 'grep "apache2" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
+    command => 'sysconf_addwor d/etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT apache2',
+    unless  => 'cat /etc/sysconfig/SuSEfirewall2 | grep -E "^\s*FW_CONFIGURATIONS_EXT" | cut -f2 -d= | sed -n \'s/^"\(.*\)"$/\1/p\' | tr -s " " | tr " " "\n" | grep -E "^apache2$"',
     path    => ['/usr/sbin', '/usr/bin'],
     require => [ Package['apache2'], Class['mopensuse::firewall'] ]
   }
