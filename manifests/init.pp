@@ -16,6 +16,7 @@ class mopensuse {
   include mopensuse::firewall
   include mopensuse::packages::apache2
   include mopensuse::packages::augeas
+  include mopensuse::packages::ftp
   include mopensuse::packages::mphp
   include mopensuse::packages::php
   include mopensuse::packages::php53v
