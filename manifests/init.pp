@@ -26,6 +26,7 @@ class mopensuse {
   include mopensuse::packages::php7v
   include mopensuse::packages::php-dev-scripts
   include mopensuse::packages::phpmyadmin
+  include mopensuse::packages::rpmbuild
   include mopensuse::packages::vcs
   
 }
