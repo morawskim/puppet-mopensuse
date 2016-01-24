@@ -19,6 +19,7 @@ class mopensuse {
   include mopensuse::packages::bash
   include mopensuse::packages::colordiff
   include mopensuse::packages::ftp
+  include mopensuse::packages::lynx
   include mopensuse::packages::mphp
   include mopensuse::packages::network
   include mopensuse::packages::nodejs
