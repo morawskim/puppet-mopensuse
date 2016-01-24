@@ -17,6 +17,7 @@ class mopensuse {
   include mopensuse::packages::apache2
   include mopensuse::packages::augeas
   include mopensuse::packages::bash
+  include mopensuse::packages::colordiff
   include mopensuse::packages::ftp
   include mopensuse::packages::mphp
   include mopensuse::packages::network
