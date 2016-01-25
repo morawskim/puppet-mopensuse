@@ -36,4 +36,6 @@ class mopensuse {
   include mopensuse::packages::vcs
   include mopensuse::packages::virtualbox
   
+  include mopensuse::packages::gui::skrooge
+  
 }
