@@ -1,6 +1,6 @@
 class mopensuse::packages::apache2 {
   
-  include mopensuse::firewall 
+  include mopensuse::packages::firewall
  
   package {['apache2']:
     ensure => present
@@ -68,14 +68,14 @@ class mopensuse::packages::apache2 {
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT apache2',
     unless  => 'cat /etc/sysconfig/SuSEfirewall2 | grep -E "^\s*FW_CONFIGURATIONS_EXT" | cut -f2 -d= | sed -n \'s/^"\(.*\)"$/\1/p\' | tr -s " " | tr " " "\n" | grep -E "^apache2$"',
     path    => ['/usr/sbin', '/usr/bin'],
-    require => [ Package['apache2'], Class['mopensuse::firewall'] ]
+    require => [ Package['apache2'], Class['mopensuse::packages::firewall'] ]
   }
   
   exec {'firewall_open_https_server_port':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT apache2-ssl',
     unless  => 'grep "apache2-ssl" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
     path    => ['/usr/sbin', '/usr/bin'],
-    require => [ Package['apache2'], Class['mopensuse::firewall'] ]
+    require => [ Package['apache2'], Class['mopensuse::packages::firewall'] ]
   }
   
   #vhost templates for php-fpm & ssl-php-fpm

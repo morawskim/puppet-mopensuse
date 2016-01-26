@@ -13,11 +13,12 @@
 class mopensuse {
   
   include mopensuse::account
-  include mopensuse::firewall
+  
   include mopensuse::packages::apache2
   include mopensuse::packages::augeas
   include mopensuse::packages::bash
   include mopensuse::packages::colordiff
+  include mopensuse::packages::firewall
   include mopensuse::packages::ftp
   include mopensuse::packages::lynx
   include mopensuse::packages::monitoring
@@ -32,6 +33,7 @@ class mopensuse {
   include mopensuse::packages::php-dev-scripts
   include mopensuse::packages::phpmyadmin
   include mopensuse::packages::rpmbuild
+  include mopensuse::packages::samba-client
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
   include mopensuse::packages::virtualbox
