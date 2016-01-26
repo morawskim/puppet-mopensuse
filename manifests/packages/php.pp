@@ -7,7 +7,8 @@ class mopensuse::packages::php {
   include mopensuse::zypper::repositories::morawskim
   
   package {['php5', 'php5-fpm', 'php5-mysql', 'php5-ldap', 'php5-soap', 'php5-pgsql',
-    'php5-phar', 'php5-devel', 'php5-readline', 'php5-curl', 'php5-intl', 'php5-gettext']:
+    'php5-phar', 'php5-devel', 'php5-readline', 'php5-curl', 'php5-intl', 'php5-gettext',
+    'php5-xsl']:
     ensure => present,
     notify  => Service['php-fpm']
   }
