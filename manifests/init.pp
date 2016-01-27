@@ -20,6 +20,7 @@ class mopensuse {
   include mopensuse::packages::colordiff
   include mopensuse::packages::firewall
   include mopensuse::packages::ftp
+  include mopensuse::packages::gettext
   include mopensuse::packages::lynx
   include mopensuse::packages::monitoring
   include mopensuse::packages::mphp
