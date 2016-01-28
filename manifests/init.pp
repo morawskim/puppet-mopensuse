@@ -25,6 +25,7 @@ class mopensuse {
   include mopensuse::packages::monitoring
   include mopensuse::packages::mphp
   include mopensuse::packages::network
+  include mopensuse::packages::nfs
   include mopensuse::packages::nodejs
   include mopensuse::packages::php
   include mopensuse::packages::php53v
