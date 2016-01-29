@@ -28,6 +28,7 @@ class mopensuse {
   include mopensuse::packages::nfs
   include mopensuse::packages::nodejs
   include mopensuse::packages::notify-send
+  include mopensuse::packages::openssl
   include mopensuse::packages::php
   include mopensuse::packages::php53v
   include mopensuse::packages::php54v
