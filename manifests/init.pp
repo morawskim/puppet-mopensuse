@@ -12,8 +12,6 @@
 #
 class mopensuse {
   
-  include mopensuse::account
-  
   include mopensuse::packages::apache2
   include mopensuse::packages::augeas
   include mopensuse::packages::bash
@@ -48,4 +46,5 @@ class mopensuse {
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::skrooge
   
+  include mopensuse::user::marcin
 }

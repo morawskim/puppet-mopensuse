@@ -42,9 +42,10 @@ define mopensuse::user::account (
   
   if size($sshkeys) > 0 {
     $sshkey_defaults = {
-      ensure => present,
-      user   => $username,
-      type   => 'ssh-rsa'      
+      ensure  => present,
+      user    => $username,
+      type    => 'ssh-rsa',
+      require => [ User[$username], File["${user_home_dir}/.ssh"] ]
     }
 
     create_resources(ssh_authorized_key, $sshkeys, $sshkey_defaults)    

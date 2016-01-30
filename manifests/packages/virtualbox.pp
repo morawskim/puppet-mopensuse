@@ -4,5 +4,4 @@ class mopensuse::packages::virtualbox {
     ensure => present
   }
   
-  #todo mmo add user to group vboxusers
 }
