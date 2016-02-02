@@ -48,6 +48,7 @@ class mopensuse {
   
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::skrooge
+  include mopensuse::packages::gui::xclip
   
   include mopensuse::user::marcin
 }
