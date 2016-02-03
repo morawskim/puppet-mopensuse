@@ -42,6 +42,7 @@ class mopensuse {
   include mopensuse::packages::samba-client
   include mopensuse::packages::sensors
   include mopensuse::packages::strace
+  include mopensuse::packages::tmux
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
   include mopensuse::packages::virtualbox
