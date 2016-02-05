@@ -44,6 +44,7 @@ class mopensuse {
   include mopensuse::packages::soapui
   include mopensuse::packages::strace
   include mopensuse::packages::tmux
+  include mopensuse::packages::tree
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
   include mopensuse::packages::virtualbox
