@@ -1,0 +1,11 @@
+[Unit]
+Description=Start x11vnc at startup.
+After=graphical.target
+
+[Service]
+Type=simple
+#If screensaver starts every 1-2 second, start x11vnc with -nodpms key.
+ExecStart=/usr/local/bin/x11vnc-wrapper -forever -noxdamage -rfbauth /etc/x11vnc.pass -rfbport 5900 -display :0
+
+[Install]
+WantedBy=graphical.target

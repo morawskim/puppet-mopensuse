@@ -49,6 +49,7 @@ class mopensuse {
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
   include mopensuse::packages::virtualbox
+  include mopensuse::packages::x11vnc
   
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::skrooge
