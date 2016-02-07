@@ -16,6 +16,7 @@ class mopensuse {
   include mopensuse::packages::augeas
   include mopensuse::packages::bash
   include mopensuse::packages::colordiff
+  include mopensuse::packages::cups
   include mopensuse::packages::firewall
   include mopensuse::packages::ftp
   include mopensuse::packages::gettext
@@ -56,4 +57,5 @@ class mopensuse {
   include mopensuse::packages::gui::xclip
   
   include mopensuse::user::marcin
+  include mopensuse::printers::samsung
 }
