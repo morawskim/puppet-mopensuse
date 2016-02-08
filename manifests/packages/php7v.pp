@@ -4,7 +4,7 @@ class mopensuse::packages::php7v {
   
   package {['php7', 'php7-fpm', 'php7-mysql', 'php7-ldap', 'php7-soap', 
     'php7-pgsql', 'php7-phar', 'php7-devel', 'php7-readline', 'php7-curl', 
-    'php7-mbstring', 'php7-json', 'php7-intl', 'php7-gettext', 'php7-xsl']:
+    'php7-mbstring', 'php7-json', 'php7-intl', 'php7-gettext', 'php7-xsl', 'php7-zlib']:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']

@@ -8,7 +8,7 @@ class mopensuse::packages::php {
   
   package {['php5', 'php5-fpm', 'php5-mysql', 'php5-ldap', 'php5-soap', 'php5-pgsql',
     'php5-phar', 'php5-devel', 'php5-readline', 'php5-curl', 'php5-intl', 'php5-gettext',
-    'php5-xsl']:
+    'php5-xsl', 'php5-zlib']:
     ensure => present,
     notify  => Service['php-fpm']
   }
