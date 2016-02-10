@@ -53,6 +53,8 @@ class mopensuse {
   include mopensuse::packages::wget
   include mopensuse::packages::x11vnc
   
+  include mopensuse::packages::gui::chrome
+  include mopensuse::packages::gui::filezilla
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::xclip
