@@ -59,6 +59,7 @@ class mopensuse {
   include mopensuse::packages::gui::kdiff3
   include mopensuse::packages::gui::krdc
   include mopensuse::packages::gui::krusader
+  include mopensuse::packages::gui::mysql-workbench
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::xclip
   
