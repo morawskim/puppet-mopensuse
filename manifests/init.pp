@@ -21,6 +21,7 @@ class mopensuse {
   include mopensuse::packages::ftp
   include mopensuse::packages::gettext
   include mopensuse::packages::graphviz
+  include mopensuse::packages::httrack
   include mopensuse::packages::lynx
   include mopensuse::packages::monitoring
   include mopensuse::packages::mphp
