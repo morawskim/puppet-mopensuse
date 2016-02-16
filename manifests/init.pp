@@ -16,6 +16,7 @@ class mopensuse {
   include mopensuse::packages::augeas
   include mopensuse::packages::bash
   include mopensuse::packages::colordiff
+  include mopensuse::packages::ctags
   include mopensuse::packages::cups
   include mopensuse::packages::firewall
   include mopensuse::packages::ftp
@@ -26,6 +27,7 @@ class mopensuse {
   include mopensuse::packages::monitoring
   include mopensuse::packages::mphp
   include mopensuse::packages::mysql
+  include mopensuse::packages::mytop
   include mopensuse::packages::network
   include mopensuse::packages::nfs
   include mopensuse::packages::nodejs
