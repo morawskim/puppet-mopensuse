@@ -1,6 +1,6 @@
 class mopensuse::packages::nfs {
   
-  package {['nfs-client', 'nfs-kernel-server']:
+  package {['nfs-client']:
     ensure => present
   }
   
