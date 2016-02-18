@@ -51,6 +51,8 @@ class mopensuse {
   include mopensuse::packages::sensors
   include mopensuse::packages::skype
   include mopensuse::packages::soapui
+  include mopensuse::packages::sshd
+  include mopensuse::packages::sshfs
   include mopensuse::packages::strace
   include mopensuse::packages::tmux
   include mopensuse::packages::tree
