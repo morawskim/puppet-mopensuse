@@ -47,6 +47,7 @@ class mopensuse {
   include mopensuse::packages::pwgen
   include mopensuse::packages::redis
   include mopensuse::packages::rpmbuild
+  include mopensuse::packages::samba
   include mopensuse::packages::samba-client
   include mopensuse::packages::sensors
   include mopensuse::packages::skype
@@ -74,4 +75,8 @@ class mopensuse {
   
   include mopensuse::user::marcin
   include mopensuse::printers::samsung
+  
+  include mopensuse::samba::shares::public
+  include mopensuse::samba::users::guest
+  include mopensuse::samba::users::marcin
 }
