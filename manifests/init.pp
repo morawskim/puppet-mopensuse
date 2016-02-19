@@ -55,6 +55,7 @@ class mopensuse {
   include mopensuse::packages::sshd
   include mopensuse::packages::sshfs
   include mopensuse::packages::strace
+  include mopensuse::packages::susepaste
   include mopensuse::packages::tmux
   include mopensuse::packages::tree
   include mopensuse::packages::vagrant
@@ -71,6 +72,7 @@ class mopensuse {
   include mopensuse::packages::gui::krusader
   include mopensuse::packages::gui::mysql-workbench
   include mopensuse::packages::gui::skrooge
+  include mopensuse::packages::gui::susepaste-screenshot
   include mopensuse::packages::gui::xclip
   
   include mopensuse::user::marcin
