@@ -74,6 +74,7 @@ class mopensuse {
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::susepaste-screenshot
   include mopensuse::packages::gui::xclip
+  include mopensuse::packages::gui::yakuake
   
   include mopensuse::user::marcin
   include mopensuse::printers::samsung
