@@ -1,13 +1,31 @@
 class mopensuse::packages::nodejs {
   
-  exec{'install_grunt_cli':
-    command => 'npm install -g grunt-cli',
-    unless  => 'npm list -g grunt-cli',
-    path    => ['/usr/bin/'],
-    require => Package['nodejs']
-  }
-  
   package {'nodejs':
     ensure => present
   }
+  
+  package { 'jshint':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
+  
+  package { 'grunt-cli':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
+  
+  package { 'less':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
+  
+  package { 'jslint':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
+  
 }
