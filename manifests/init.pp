@@ -27,6 +27,7 @@ class mopensuse {
   include mopensuse::packages::lynx
   include mopensuse::packages::monitoring
   include mopensuse::packages::mphp
+  include mopensuse::packages::mutt
   include mopensuse::packages::mysql
   include mopensuse::packages::mytop
   include mopensuse::packages::network
