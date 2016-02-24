@@ -3,7 +3,12 @@ class mopensuse::user::marcin (
   $user_home_path,
   $password,
   $realname,
-  $ssh_keys = {}
+  
+  $git_user_name,
+  $git_user_email,
+  $git_diff_tool,
+  
+  $ssh_keys = {},
 ) {
   
   mopensuse::user::account {$username:
@@ -33,6 +38,15 @@ class mopensuse::user::marcin (
   mopensuse::user::config::project-dir{$username:
     user           => $username,
     user_home_path => $user_home_path,
+    require        => Mopensuse::User::Account[$username]
+  }
+  
+  mopensuse::user::config::git{$username:
+    user           => $username,
+    user_home_path => $user_home_path,
+    git_user_name  => $git_user_name,
+    git_user_email => $git_user_email,
+    git_diff_tool  => $git_diff_tool,
     require        => Mopensuse::User::Account[$username]
   }
 }
