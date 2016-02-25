@@ -49,4 +49,10 @@ class mopensuse::user::marcin (
     git_diff_tool  => $git_diff_tool,
     require        => Mopensuse::User::Account[$username]
   }
+  
+  mopensuse::user::config::vagrant-group{$username:
+    user    => $username,
+    require => Mopensuse::User::Account[$username]
+  }
+  
 }
