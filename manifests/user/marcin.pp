@@ -55,4 +55,9 @@ class mopensuse::user::marcin (
     require => Mopensuse::User::Account[$username]
   }
   
+  mopensuse::user::config::redshift{$username:
+    kde_autostar_dir    => "${user_home_path}/.kde4/Autostart",
+    require             => Mopensuse::User::Account[$username]
+  }
+  
 }
