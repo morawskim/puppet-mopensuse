@@ -66,6 +66,8 @@ class mopensuse {
   include mopensuse::packages::virtualbox
   include mopensuse::packages::wget
   include mopensuse::packages::x11vnc
+  include mopensuse::packages::zabbix
+  include mopensuse::packages::zabbix-agent
   
   include mopensuse::packages::gui::chrome
   include mopensuse::packages::gui::filezilla
