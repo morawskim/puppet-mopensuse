@@ -62,6 +62,7 @@ class mopensuse {
   include mopensuse::packages::sshfs
   include mopensuse::packages::strace
   include mopensuse::packages::susepaste
+  include mopensuse::packages::tcpdump
   include mopensuse::packages::tmux
   include mopensuse::packages::tree
   include mopensuse::packages::vagrant
