@@ -60,4 +60,9 @@ class mopensuse::user::marcin (
     require             => Mopensuse::User::Account[$username]
   }
   
+  mopensuse::user::config::users-group{$username:
+    user    => $username,
+    require => Mopensuse::User::Account[$username]
+  }
+  
 }
