@@ -4,13 +4,17 @@ class mopensuse::packages::sshfs {
     ensure => present
   }
   
+  group {'sshfs':
+    ensure => present
+  }
+  
   #place to mount remote fs
   file {'/srv/sshfs':
     ensure  => directory,
     mode    => '1770',
     owner   => 'root',
-    group   => 'users',
-    before  => Package['sshfs']
+    group   => 'sshfs',
+    before  => Package['sshfs'],
+    require => Group['sshfs']
   }
-  
 }
