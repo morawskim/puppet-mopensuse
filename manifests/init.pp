@@ -30,6 +30,7 @@ class mopensuse {
   include mopensuse::packages::logwatch
   include mopensuse::packages::lshw
   include mopensuse::packages::lynx
+  include mopensuse::packages::mailhog
   include mopensuse::packages::monitoring
   include mopensuse::packages::mphp
   include mopensuse::packages::mutt
