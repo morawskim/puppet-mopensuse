@@ -17,6 +17,7 @@ class mopensuse {
   include mopensuse::packages::aspell
   include mopensuse::packages::augeas
   include mopensuse::packages::bash
+  include mopensuse::packages::biabam
   include mopensuse::packages::ca-certificates
   include mopensuse::packages::colordiff
   include mopensuse::packages::ctags
