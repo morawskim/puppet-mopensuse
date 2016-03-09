@@ -97,6 +97,7 @@ class mopensuse {
   include mopensuse::packages::gui::wireshark-qt
   include mopensuse::packages::gui::xclip
   include mopensuse::packages::gui::yakuake
+  include mopensuse::packages::gui::zenity
   
   include mopensuse::user::marcin
   include mopensuse::printers::samsung
