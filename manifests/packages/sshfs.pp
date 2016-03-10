@@ -5,7 +5,8 @@ class mopensuse::packages::sshfs {
   }
   
   group {'sshfs':
-    ensure => present
+    ensure => present,
+    system     => true
   }
   
   #place to mount remote fs
