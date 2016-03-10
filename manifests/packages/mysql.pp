@@ -11,7 +11,7 @@ class mopensuse::packages::mysql(
   #  require    => Package['mariadb']
   #}
   
-  package {['mariadb', 'mariadb-tools']:
+  package {['mariadb']:
     ensure => present
   }
   
@@ -22,5 +22,10 @@ class mopensuse::packages::mysql(
     root_password           => $mysql_root_password,
     remove_default_accounts => true,
     require                 => Package['mariadb']
+  }
+  
+  class { '::mysql::client':
+    package_ensure => present,
+    package_name   => 'mariadb-tools',
   }
 }
