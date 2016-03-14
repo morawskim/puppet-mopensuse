@@ -18,6 +18,7 @@ class mopensuse::packages::zabbix(
 
   group { 'zabbix':
     ensure  => 'present',
+    system     => true,
     before  => [ Class['::zabbix'], User['zabbix'] ]
   }
 
