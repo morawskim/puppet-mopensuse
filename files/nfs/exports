@@ -4,5 +4,5 @@
 # This file used by rpc.nfsd and rpc.mountd. See their manpages for details
 # on how make changes in this file effective.
 
-/srv/nfs    *(rw,sync,root_squash,all_squash)
+/srv/nfs    *(rw,sync,root_squash,all_squash,no_subtree_check)
 
