@@ -20,6 +20,7 @@ class mopensuse {
   include mopensuse::packages::biabam
   include mopensuse::packages::ca-certificates
   include mopensuse::packages::colordiff
+  include mopensuse::packages::composer
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
   include mopensuse::packages::firewall
