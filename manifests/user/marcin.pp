@@ -8,6 +8,8 @@ class mopensuse::user::marcin (
   $git_user_email,
   $git_diff_tool,
   
+  $github_oauth_token,
+  
   $ssh_keys = {},
 ) {
   
@@ -70,4 +72,10 @@ class mopensuse::user::marcin (
     require => Mopensuse::User::Account[$username]
   }
   
+  mopensuse::user::config::composer{$username:
+    user               => $username,
+    require            => Mopensuse::User::Account[$username],
+    composer_home      => "${user_home_path}/.composer",
+    github_oauth_token => $github_oauth_token
+  }
 }
