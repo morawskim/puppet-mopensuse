@@ -11,7 +11,7 @@ class mopensuse::packages::mysql(
   #  require    => Package['mariadb']
   #}
   
-  package {['mariadb']:
+  package {['mariadb', 'mariadb-errormessages', 'mariadb-client']:
     ensure => present
   }
   
