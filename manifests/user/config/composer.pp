@@ -7,7 +7,7 @@ define mopensuse::user::config::composer (
   include mopensuse::packages::composer
   
   exec {"composer_github_token for ${user}":
-    command     => "composer config github-oauth.github.com '$github_oauth_token'",
+    command     => "composer config -g github-oauth.github.com '$github_oauth_token'",
     user        => $user,
     environment => ["COMPOSER_HOME=${composer_home}"],
     unless      => "composer config -g github-oauth.github.com | grep ${github_oauth_token}",
