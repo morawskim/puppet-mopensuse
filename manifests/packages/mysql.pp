@@ -23,6 +23,7 @@ class mopensuse::packages::mysql(
     remove_default_accounts => true,
     includedir              => '/etc/my.cnf.d',
     purge_conf_dir          => false,
+    manage_config_file      => false,
     require                 => Package['mariadb']
   }
   
