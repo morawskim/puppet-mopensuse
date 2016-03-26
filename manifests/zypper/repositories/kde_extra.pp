@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::kde_extra {
   rpmkey {'6F88BB2F':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['kde_extra']
+    before  => Zypprepo['kde_extra']
   }
   
 }

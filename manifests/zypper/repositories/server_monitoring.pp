@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::server_monitoring {
   rpmkey {'EE454F98':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['server_monitoring']
+    before  => Zypprepo['server_monitoring']
   }
   
 }

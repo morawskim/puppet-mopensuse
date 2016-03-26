@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::games_tools {
   rpmkey {'58DDEB32':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['games_tools']
+    before  => Zypprepo['games_tools']
   }
   
 }

@@ -18,6 +18,6 @@ class mopensuse::zypper::repositories::ruby_extensions {
   rpmkey {'0E9AF123':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['devel_languages_ruby_extensions']
+    before  => Zypprepo['devel_languages_ruby_extensions']
   }
 }

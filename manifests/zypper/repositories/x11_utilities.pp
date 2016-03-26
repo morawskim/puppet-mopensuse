@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::x11_utilities {
   rpmkey {'0F2672C8':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['X11_Utilities']
+    before  => Zypprepo['X11_Utilities']
   }
   
 }

@@ -18,6 +18,6 @@ class mopensuse::zypper::repositories::server_php_extensions {
   rpmkey {'DDCD7F1A':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['server_php_extensions']
+    before  => Zypprepo['server_php_extensions']
   }
 }

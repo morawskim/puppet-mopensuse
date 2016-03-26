@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::hardware {
   rpmkey {'D6D11CE4':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['hardware']
+    before  => Zypprepo['hardware']
   }
   
 }

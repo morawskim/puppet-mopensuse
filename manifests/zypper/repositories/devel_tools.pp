@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::devel_tools {
   rpmkey {'498D5A23':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['devel_tools']
+    before  => Zypprepo['devel_tools']
   }
   
 }

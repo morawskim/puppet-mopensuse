@@ -18,6 +18,6 @@ class mopensuse::zypper::repositories::kde_kup {
   rpmkey {'82CEBF3D':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['kde_kup']
+    before  => Zypprepo['kde_kup']
   }
 }

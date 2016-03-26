@@ -18,7 +18,7 @@ class mopensuse::zypper::repositories::google-chrome {
   rpmkey {'7FAC5991':
     ensure  => present,
     source  => $gpg_key,
-    require => Zypprepo['google-chrome']
+    before  => Zypprepo['google-chrome']
   }
   
 }
