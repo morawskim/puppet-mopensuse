@@ -6,7 +6,7 @@ class mopensuse::packages::php53v {
     'php53m-pgsql', 'php53m-phar', 'php53m-devel', 'php53m-readline', 'php53m-xdebug', 
     'php53m-curl', 'php53m-mbstring', 'php53m-json', 'php53m-intl', 'php53m-gettext',
     'php53m-xsl', 'php53m-zlib', 'php53m-xmlwriter', 'php53m-bcmath', 'php53m-sockets',
-    'php53m-pcntl', 'php53m-ctype', 'php53m-gd']:
+    'php53m-pcntl', 'php53m-ctype', 'php53m-gd', 'php53m-xmlreader']:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']
