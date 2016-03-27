@@ -33,7 +33,8 @@ class mopensuse::packages::zabbix(
     zabbix_version    => '2.2',
     database_name     => $zabbix_server_db_name,
     database_user     => $zabbix_server_db_user,
-    database_password => $zabbix_server_db_pass
+    database_password => $zabbix_server_db_pass,
+    require           => Class['mopensuse::packages::mysql']
   }
 
   host {'zabbix.dev':
