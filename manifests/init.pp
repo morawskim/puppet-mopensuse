@@ -23,6 +23,7 @@ class mopensuse {
   include mopensuse::packages::composer
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
+  include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
   include mopensuse::packages::ftp
   include mopensuse::packages::gettext
