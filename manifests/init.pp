@@ -75,6 +75,7 @@ class mopensuse {
   include mopensuse::packages::tree
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
+  include mopensuse::packages::vim
   include mopensuse::packages::virtualbox
   include mopensuse::packages::wget
   include mopensuse::packages::wireshark
