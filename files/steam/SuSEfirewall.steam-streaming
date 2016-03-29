@@ -14,4 +14,4 @@ RPC=""
 IP=""
 
 # space separated list of allowed UDP broadcast ports
-BROADCAST=""
+BROADCAST="27031 27036"
