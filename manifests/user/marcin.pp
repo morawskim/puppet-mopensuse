@@ -10,6 +10,11 @@ class mopensuse::user::marcin (
   
   $github_oauth_token,
   
+  $owncloud_desktop_localpath,
+  $owncloud_desktop_http_user,
+  $owncloud_desktop_url,
+  $owncloud_desktop_user,
+  
   $ssh_keys = {},
 ) {
   
@@ -90,4 +95,15 @@ class mopensuse::user::marcin (
     user_home_path => $user_home_path,
     require => Mopensuse::User::Account[$username]
   }
+  
+  mopensuse::user::config::owncloud{$username:
+    user                       => $username,
+    user_home_path             => $user_home_path,
+    owncloud_desktop_localpath => $owncloud_desktop_localpath,
+    owncloud_desktop_http_user => $owncloud_desktop_http_user,
+    owncloud_desktop_url       => $owncloud_desktop_url,
+    owncloud_desktop_user      => $owncloud_desktop_user,
+    require                    => Mopensuse::User::Account[$username]
+  }
+
 }
