@@ -24,6 +24,7 @@ class mopensuse {
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
   include mopensuse::packages::daps
+  include mopensuse::packages::dhcpd
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
   include mopensuse::packages::ftp
