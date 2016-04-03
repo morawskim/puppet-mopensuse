@@ -99,6 +99,7 @@ class mopensuse {
   include mopensuse::packages::gui::lshw-gui
   include mopensuse::packages::gui::mysql-workbench
   include mopensuse::packages::gui::owncloud-client
+  include mopensuse::packages::gui::pgadmin
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::redshift
   include mopensuse::packages::gui::scrot
