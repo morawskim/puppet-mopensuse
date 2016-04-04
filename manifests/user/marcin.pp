@@ -112,4 +112,9 @@ class mopensuse::user::marcin (
     require        => Mopensuse::User::Account[$username]
   }
 
+  mopensuse::user::config::dialout-group{$username:
+    user    => $username,
+    require => Mopensuse::User::Account[$username]
+  }
+
 }
