@@ -106,4 +106,10 @@ class mopensuse::user::marcin (
     require                    => Mopensuse::User::Account[$username]
   }
 
+  mopensuse::user::config::rpmbuild{$username:
+    user           => $username,
+    user_home_path => $user_home_path,
+    require        => Mopensuse::User::Account[$username]
+  }
+
 }
