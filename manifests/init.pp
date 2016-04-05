@@ -89,8 +89,10 @@ class mopensuse {
   
   include mopensuse::packages::gui::calibre
   include mopensuse::packages::gui::chrome
+  include mopensuse::packages::gui::clion
   include mopensuse::packages::gui::filezilla
   include mopensuse::packages::gui::hardinfo
+  include mopensuse::packages::gui::jetbrains-download-scripts
   include mopensuse::packages::gui::kdeconnect
   include mopensuse::packages::gui::kdiff3
   include mopensuse::packages::gui::krdc
@@ -100,8 +102,10 @@ class mopensuse {
   include mopensuse::packages::gui::mysql-workbench
   include mopensuse::packages::gui::owncloud-client
   include mopensuse::packages::gui::pgadmin
+  include mopensuse::packages::gui::phpstorm
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::redshift
+  include mopensuse::packages::gui::rubymine
   include mopensuse::packages::gui::scrot
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::steam
