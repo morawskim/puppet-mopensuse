@@ -15,12 +15,5 @@ class mopensuse::packages::php-dev-scripts (
     path    => ['/usr/sbin', '/usr/bin', '/bin'],
     require => [ Package['php-development-scripts'], Package['php5-phar'] ]
   }
-  
-  exec {'install_phpstorm':
-    command => 'phpstorm.sh',
-    onlyif  => 'test ! -d /opt/PhpStorm/',
-    path    => ['/usr/sbin', '/usr/bin', '/bin'],
-    timeout => 1200,
-    require => [ Package['php-development-scripts'] ]
-  }
+
 }
