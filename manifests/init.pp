@@ -25,6 +25,7 @@ class mopensuse {
   include mopensuse::packages::cups
   include mopensuse::packages::daps
   include mopensuse::packages::devel-c-cpp
+  include mopensuse::packages::devel-qt5
   include mopensuse::packages::dhcpd
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
