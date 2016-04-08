@@ -115,6 +115,7 @@ class mopensuse {
   include mopensuse::packages::gui::susepaste-screenshot
   include mopensuse::packages::gui::vcs
   include mopensuse::packages::gui::virtualbox-qt
+  include mopensuse::packages::gui::vivaldi
   include mopensuse::packages::gui::wireshark-qt
   include mopensuse::packages::gui::xclip
   include mopensuse::packages::gui::yakuake
