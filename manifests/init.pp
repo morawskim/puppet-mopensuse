@@ -106,6 +106,7 @@ class mopensuse {
   include mopensuse::packages::gui::owncloud-client
   include mopensuse::packages::gui::pgadmin
   include mopensuse::packages::gui::phpstorm
+  include mopensuse::packages::gui::pidgin
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::redshift
   include mopensuse::packages::gui::rubymine
