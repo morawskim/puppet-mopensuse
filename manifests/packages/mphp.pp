@@ -1,4 +1,6 @@
-class mopensuse::packages::mphp {
+class mopensuse::packages::mphp(
+    $mphp_sudoers_users
+) {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
@@ -34,6 +36,15 @@ class mopensuse::packages::mphp {
       ensure  => link,
       target  => "/usr/bin/php-config",
       require => Package['mphp-switcher']
+  }
+
+  file { '/etc/sudoers.d/mphp-switcher':
+    ensure  => present,
+    mode    => '0740',
+    owner   => 'root',
+    group   => 'root',
+    content => template("${module_name}/mphp/sudoers.erb"),
+    require => Package['mphp-switcher']
   }
 
 }
