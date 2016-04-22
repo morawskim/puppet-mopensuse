@@ -51,6 +51,7 @@ class mopensuse {
   include mopensuse::packages::nfs
   include mopensuse::packages::nfs-server
   include mopensuse::packages::ngrep
+  include mopensuse::packages::ngrok
   include mopensuse::packages::nodejs
   include mopensuse::packages::notify-send
   include mopensuse::packages::offlineimap
