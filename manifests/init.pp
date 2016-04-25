@@ -35,6 +35,7 @@ class mopensuse {
   include mopensuse::packages::gettext
   include mopensuse::packages::graphviz
   include mopensuse::packages::httrack
+  include mopensuse::packages::inotify-tools
   include mopensuse::packages::jenkins
   include mopensuse::packages::libguestfs
   include mopensuse::packages::logwatch
