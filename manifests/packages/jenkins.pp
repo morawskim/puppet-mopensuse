@@ -15,4 +15,11 @@ class mopensuse::packages::jenkins {
     require    => Package['jenkins']
   }
   
+  augeas { "/files/etc/sysconfig/jenkins/JENKINS_PORT":
+    changes => [
+    'set /files/etc/sysconfig/jenkins/JENKINS_PORT \'"8880"\'',
+    ],
+    require => [ Package["augeas"], Package['jenkins'] ],
+    notify  => Service['jenkins']
+  }
 }
