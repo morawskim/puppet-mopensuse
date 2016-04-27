@@ -83,6 +83,7 @@ class mopensuse {
   include mopensuse::packages::tcpdump
   include mopensuse::packages::testdisk
   include mopensuse::packages::tmux
+  include mopensuse::packages::tomcat
   include mopensuse::packages::tree
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
