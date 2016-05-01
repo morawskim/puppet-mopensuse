@@ -1,0 +1,90 @@
+#
+# VirtualHost template
+# Note: to use the template, rename it to /etc/apache2/vhost.d/yourvhost.conf. 
+# Files must have the .conf suffix to be loaded.
+#
+# See /usr/share/doc/packages/apache2/README.QUICKSTART for further hints 
+# about virtual hosts.
+#
+# NameVirtualHost statements can be added to /etc/apache2/listen.conf.
+#
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for requests without a known
+# server name.
+#
+<VirtualHost *:80>
+    ServerAdmin marcin@morawskim.pl
+    ServerName cgit.dev
+    ServerAlias www.cgit.dev
+
+    # DocumentRoot: The directory out of which you will serve your
+    # documents. By default, all requests are taken from this directory, but
+    # symbolic links and aliases may be used to point to other locations.
+    DocumentRoot /srv/www/cgi-bin/cgit
+    
+    DirectoryIndex cgit.cgi
+    Alias /cgit /srv/www/htdocs/cgit/
+
+    
+    # if not specified, the global error log is used
+    ErrorLog /var/log/apache2/cgit.dev-error_log
+    CustomLog /var/log/apache2/cgit.dev-access_log combined
+
+    # don't loose time with IP address lookups
+    HostnameLookups Off
+
+    # needed for named virtual hosts
+    UseCanonicalName Off
+
+    # configures the footer on server-generated documents
+    ServerSignature On
+
+
+    # Optionally, include *.conf files from /etc/apache2/conf.d/
+    #
+    # For example, to allow execution of PHP scripts:
+    #
+    # Include /etc/apache2/conf.d/php5.conf
+    #
+    # or, to include all configuration snippets added by packages:
+    # Include /etc/apache2/conf.d/*.conf
+
+    #
+    # This should be changed to whatever you set DocumentRoot to.
+    #
+    <Directory "/srv/www/cgi-bin/cgit">
+    
+    #
+    # Possible values for the Options directive are "None", "All",
+    # or any combination of:
+    #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+    #
+    # Note that "MultiViews" must be named *explicitly* --- "Options All"
+    # doesn't give it to you.
+    #
+    # The Options directive is both complicated and important.  Please see
+    # http:///httpd.apache.org/docs/2.4/mod/core.html#options
+    # for more information.
+    #
+    Options FollowSymLinks ExecCGI
+    
+    #
+    # AllowOverride controls what directives may be placed in .htaccess files.
+    # It can be "All", "None", or any combination of the keywords:
+    #   Options FileInfo AuthConfig Limit
+    #
+    AllowOverride None
+    
+    <Files cgit.cgi>
+        SetHandler cgi-script
+    </Files>
+    
+    #
+    # Controls who can get stuff from this server.
+    #
+    Require all granted
+    
+    </Directory>
+
+</VirtualHost>
+
