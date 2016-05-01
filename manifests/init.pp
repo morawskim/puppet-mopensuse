@@ -34,6 +34,7 @@ class mopensuse {
   include mopensuse::packages::firewall
   include mopensuse::packages::ftp
   include mopensuse::packages::gettext
+  include mopensuse::packages::git-server
   include mopensuse::packages::graphviz
   include mopensuse::packages::httrack
   include mopensuse::packages::inotify-tools
