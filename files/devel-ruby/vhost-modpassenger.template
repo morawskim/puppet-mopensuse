@@ -1,0 +1,93 @@
+#
+# VirtualHost template
+# Note: to use the template, rename it to /etc/apache2/vhost.d/yourvhost.conf. 
+# Files must have the .conf suffix to be loaded.
+#
+# See /usr/share/doc/packages/apache2/README.QUICKSTART for further hints 
+# about virtual hosts.
+#
+# NameVirtualHost statements can be added to /etc/apache2/listen.conf.
+#
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for requests without a known
+# server name.
+#
+<VirtualHost *:80>
+    ServerAdmin marcin@morawskim.pl
+    Servername dummy-host.example.com
+    ServerAlias www.dummy-host.example.com
+    
+    # DocumentRoot: The directory out of which you will serve your
+    # documents. By default, all requests are taken from this directory, but
+    # symbolic links and aliases may be used to point to other locations.
+    DocumentRoot /srv/www/vhosts/dummy-host.example.com
+    
+    # if not specified, the global error log is used
+    ErrorLog /var/log/apache2/dummy-host.example.com-error_log
+    CustomLog /var/log/apache2/dummy-host.example.com-access_log combined
+    
+    # don't loose time with IP address lookups
+    HostnameLookups Off
+
+    # needed for named virtual hosts
+    UseCanonicalName Off
+
+    # configures the footer on server-generated documents
+    ServerSignature On
+    
+    # This option sets, for the current application, the value of the following environment variables:
+    # RAILS_ENV, RACK_ENV, WSGI_ENV, NODE_ENV, PASSENGER_APP_ENV
+    # Some web frameworks, for example Rails and Connect.js, adjust their behavior according to the value in one of these environment variables.
+    # 
+    # More info https://www.phusionpassenger.com/library/config/apache/reference/#passengerappenv
+    PassengerAppEnv development
+    
+    # Deprecated in 3.0.0 in favor of PassengerBaseURI.
+    #RackBaseURI /
+    
+    # Used to specify that the given URI is an distinct application that should be served by Passenger.
+    PassengerBaseURI / 
+    
+    # Optionally, include *.conf files from /etc/apache2/conf.d/
+    #
+    # For example, to allow execution of PHP scripts:
+    #
+    # Include /etc/apache2/conf.d/php5.conf
+    #
+    # or, to include all configuration snippets added by packages:
+    # Include /etc/apache2/conf.d/*.conf
+    
+    #
+    # This should be changed to whatever you set DocumentRoot to.
+    #
+    <Directory "/srv/www/vhosts/dummy-host.example.com">
+    
+        #
+        # Possible values for the Options directive are "None", "All",
+        # or any combination of:
+        #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+        #
+        # Note that "MultiViews" must be named *explicitly* --- "Options All"
+        # doesn't give it to you.
+        #
+        # The Options directive is both complicated and important.  Please see
+        # http:///httpd.apache.org/docs/2.4/mod/core.html#options
+        # for more information.
+        #
+        Options -MultiViews
+    
+        #
+        # AllowOverride controls what directives may be placed in .htaccess files.
+        # It can be "All", "None", or any combination of the keywords:
+        #   Options FileInfo AuthConfig Limit
+        #
+        AllowOverride All
+    
+        #
+        # Controls who can get stuff from this server.
+        #
+        Require all granted
+    
+    </Directory>
+
+</VirtualHost> 
