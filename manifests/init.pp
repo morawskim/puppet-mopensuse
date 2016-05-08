@@ -26,6 +26,7 @@ class mopensuse {
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
   include mopensuse::packages::daps
+  include mopensuse::packages::dbus
   include mopensuse::packages::devel-c-cpp
   include mopensuse::packages::devel-java
   include mopensuse::packages::devel-qt5
@@ -112,6 +113,7 @@ class mopensuse {
   include mopensuse::packages::gui::krdc
   include mopensuse::packages::gui::krusader
   include mopensuse::packages::gui::kup
+  include mopensuse::packages::gui::libqt4-x11
   include mopensuse::packages::gui::lshw-gui
   include mopensuse::packages::gui::mysql-workbench
   include mopensuse::packages::gui::owncloud-client
