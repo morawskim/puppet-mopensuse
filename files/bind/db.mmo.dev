@@ -1,0 +1,27 @@
+$TTL    604800
+@       IN      SOA     ns1.mmo.dev. admin.mmo.dev. (
+         2016050801     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800 )   ; Negative Cache TTL
+;
+; name servers - NS records
+     IN      NS      ns1.mmo.dev.
+
+; name servers - A records
+ns1.mmo.dev.         IN      A       172.22.0.1
+
+; 172.22.0.0/16 - A records
+ruter.mmo.dev.       IN      A      172.22.0.1
+ldap.mmo.dev.        IN      A      172.22.0.10
+samba.mmo.dev.       IN      A      172.22.0.11
+postfix.mmo.dev.     IN      A      172.22.0.12
+repo.mmo.dev.        IN      A      172.22.0.13
+git.mmo.dev.         IN      A      172.22.0.14
+nfs.mmo.dev.         IN      A      172.22.0.15
+postfix.mmo.dev.     IN      A      172.22.0.16
+apache.mmo.dev.      IN      A      172.22.0.17
+mysql.mmo.dev.       IN      A      172.22.0.18
+malina.mmo.dev.      IN      A      172.22.0.19
+
