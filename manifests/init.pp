@@ -134,6 +134,7 @@ class mopensuse {
   include mopensuse::packages::gui::vivaldi
   include mopensuse::packages::gui::wireshark-qt
   include mopensuse::packages::gui::xclip
+  include mopensuse::packages::gui::xorg-intel
   include mopensuse::packages::gui::yakuake
   include mopensuse::packages::gui::zenity
   
