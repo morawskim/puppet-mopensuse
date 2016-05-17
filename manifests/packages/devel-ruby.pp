@@ -28,6 +28,13 @@ class mopensuse::packages::devel-ruby {
     #/usr/include/ruby-2.1.0
   }
   
+  package{'fpm':
+      provider => 'gem',
+      ensure   => 'installed',
+      require  => Package['ruby']
+  }
+  
+  
   package {'debugger-ruby_core_source':
       provider => 'gem',
       ensure   => 'installed',
