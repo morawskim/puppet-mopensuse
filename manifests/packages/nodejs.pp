@@ -28,4 +28,10 @@ class mopensuse::packages::nodejs {
     require  => Package['nodejs']
   }
   
+  package { 'phantomjs':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
+  
 }
