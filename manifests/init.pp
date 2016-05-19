@@ -43,6 +43,7 @@ class mopensuse {
   include mopensuse::packages::inotify-tools
   include mopensuse::packages::jenkins
   include mopensuse::packages::libguestfs
+  include mopensuse::packages::libxml2-tools
   include mopensuse::packages::logwatch
   include mopensuse::packages::lshw
   include mopensuse::packages::lynx
