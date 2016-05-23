@@ -28,7 +28,7 @@ class mopensuse::packages::devel-ruby {
     #/usr/include/ruby-2.1.0
   }
   
-  package{'fpm':
+  package{['fpm', 'faker', 'faker-cli', 'pry', 'pry-byebug']:
       provider => 'gem',
       ensure   => 'installed',
       require  => Package['ruby']
