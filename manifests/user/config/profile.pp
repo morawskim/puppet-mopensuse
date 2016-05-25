@@ -3,8 +3,6 @@ define mopensuse::user::config::profile (
   $user_home_path
 ) {
   
-  notify {"create profile dir for ${user}": }
-  
   $profile_dir   = "${user_home_path}/.profile.d"
   $profile_file  = "${user_home_path}/.bashrc"
   
