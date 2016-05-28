@@ -20,12 +20,14 @@ class mopensuse::packages::x11vnc (
     require => Package['xorg-x11-Xvnc']
   }
 
-  exec{'setup_vnc_pass':
-    command => "x11vnc -storepasswd ${vnc_password} /etc/x11vnc.pass",
-    #unless  => 'test -e /etc/x11vnc.pass',
-    path    => ['/usr/bin'],
-    require => [ File['/usr/local/bin/x11vnc-wrapper'] ],
-    notify  => Service['x11vnc']
+  file { '/etc/x11vnc.pass':
+      ensure  => present,
+      content => vncpassword("${vnc_password}"),
+      mode    => '0600',
+      owner   => 'root',
+      group   => 'root',
+      require => [ File['/usr/local/bin/x11vnc-wrapper'] ],
+      notify  => Service['x11vnc']
   }
   
   file {'/etc/systemd/system/x11vnc.service':
