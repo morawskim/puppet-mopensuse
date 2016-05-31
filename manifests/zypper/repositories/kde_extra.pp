@@ -15,10 +15,12 @@ class mopensuse::zypper::repositories::kde_extra {
     notify       => Class['mopensuse::zypper::refresh']
   }
   
-  rpmkey {'6F88BB2F':
-    ensure  => present,
-    source  => $gpg_key,
-    before  => Zypprepo['kde_extra']
+  # The same key is use in kde_qt repository
+  if ! defined(Rpmkey['6F88BB2F']) {
+      rpmkey {'6F88BB2F':
+          ensure  => present,
+          source  => $gpg_key,
+          before  => Zypprepo['kde_extra']
+      }
   }
-  
 }
