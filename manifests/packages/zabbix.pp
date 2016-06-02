@@ -60,7 +60,6 @@ class mopensuse::packages::zabbix(
     owner   => 'root',
     group   => 'www',
     content => template("${module_name}/zabbix/zabbix.conf.php.erb"),
-    require => Class['::zabbix'],
-    notify  => Service['zabbix-server']
+    require => Class['::zabbix::web'],
   }
 }
