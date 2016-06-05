@@ -1,8 +1,8 @@
 class mopensuse::packages::apache2 {
-  
+
   include mopensuse::packages::firewall
   include mopensuse::services::apache2
- 
+
   package {['apache2']:
     ensure => present
   }
@@ -12,50 +12,49 @@ class mopensuse::packages::apache2 {
     onlyif  => 'a2enmod -q php5',
     path    => ['/usr/sbin/'],
     require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2'] 
+    notify  => Class['mopensuse::services::apache2']
   }
-  
-  
+
   exec {'enable_apache_mod_proxy':
     command => 'a2enmod proxy',
     unless  => 'a2enmod -q proxy',
     path    => ['/usr/sbin/'],
     require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2'] 
+    notify  => Class['mopensuse::services::apache2']
   }
-  
+
   exec {'enable_apache_mod_ssl':
     command => 'a2enmod ssl',
     unless  => 'a2enmod -q ssl',
     path    => ['/usr/sbin/'],
     require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2'] 
+    notify  => Class['mopensuse::services::apache2']
   }
-  
+
   exec {'enable_apache_mod_rewrite':
     command => 'a2enmod rewrite',
     unless  => 'a2enmod -q rewrite',
     path    => ['/usr/sbin/'],
     require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2'] 
+    notify  => Class['mopensuse::services::apache2']
   }
-  
+
   exec {'enable_apache_mod_proxy_fcgi':
     command => 'a2enmod proxy_fcgi',
     unless  => 'a2enmod -q proxy_fcgi',
     path    => ['/usr/sbin/'],
     require => [ Package['apache2'], Exec['enable_apache_mod_proxy'] ],
-    notify  => Class['mopensuse::services::apache2'] 
+    notify  => Class['mopensuse::services::apache2']
   }
-  
+
   exec {'define_apache_ssl_flag':
     command => 'a2enflag SSL',
     path    => ['/usr/sbin/', '/usr/bin', '/bin'],
     unless  => "grep -e '^APACHE_SERVER_FLAGS' /etc/sysconfig/apache2 | grep SSL",
     require => [ Package['apache2'], Exec['enable_apache_mod_ssl'] ],
-    notify  => Class['mopensuse::services::apache2'] 
+    notify  => Class['mopensuse::services::apache2']
   }
-  
+
   #firewall http i https
   exec {'firewall_open_http_server_port':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT apache2',
@@ -63,14 +62,14 @@ class mopensuse::packages::apache2 {
     path    => ['/usr/sbin', '/usr/bin'],
     require => [ Package['apache2'], Class['mopensuse::packages::firewall'] ]
   }
-  
+
   exec {'firewall_open_https_server_port':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT apache2-ssl',
     unless  => 'grep "apache2-ssl" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
     path    => ['/usr/sbin', '/usr/bin'],
     require => [ Package['apache2'], Class['mopensuse::packages::firewall'] ]
   }
-  
+
   #vhost templates for php-fpm & ssl-php-fpm
   file {'/etc/apache2/vhosts.d/vhost-fpm.template':
     ensure => present,
@@ -80,7 +79,7 @@ class mopensuse::packages::apache2 {
     source  => "puppet:///modules/${module_name}/apache2/vhost-fpm.template",
     require => Package['apache2']
   }
-  
+
   file {'/etc/apache2/vhosts.d/vhost-fpm-ssl.template':
     ensure => present,
     mode    => '0644',
@@ -89,7 +88,7 @@ class mopensuse::packages::apache2 {
     source  => "puppet:///modules/${module_name}/apache2/vhost-fpm-ssl.template",
     require => Package['apache2']
   }
-  
+
   #vhost dir
   file {'/srv/www/vhosts':
     ensure  => directory,
@@ -98,7 +97,7 @@ class mopensuse::packages::apache2 {
     group   => 'root',
     require => Package['apache2']
   }
-  
+
   #default vhost
   file {'/etc/apache2/vhosts.d/000-default.conf':
     ensure  => present,
