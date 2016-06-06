@@ -42,9 +42,10 @@ class mopensuse::packages::nfs-server {
   
   file {'/srv/nfs/public':
     ensure  => directory,
-    mode    => '1755',
-    owner   => 'nobody',
-    group   => 'nobody',
+    mode    => '1777',
+    owner   => 'root',
+    group   => 'root',
+    require => File['/srv/nfs'],
     before  => Package['nfs-kernel-server']
   }
 }
