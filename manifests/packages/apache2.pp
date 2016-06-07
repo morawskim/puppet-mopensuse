@@ -47,6 +47,14 @@ class mopensuse::packages::apache2 {
     notify  => Class['mopensuse::services::apache2']
   }
 
+  exec {'enable_apache_mod_userdir':
+      command => 'a2enmod userdir',
+      unless  => 'a2enmod -q userdir',
+      path    => ['/usr/sbin/'],
+      require => [ Package['apache2'], Exec['enable_apache_mod_proxy'] ],
+      notify  => Class['mopensuse::services::apache2']
+  }
+
   exec {'define_apache_ssl_flag':
     command => 'a2enflag SSL',
     path    => ['/usr/sbin/', '/usr/bin', '/bin'],
