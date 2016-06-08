@@ -100,6 +100,7 @@ class mopensuse {
   include mopensuse::packages::vim
   include mopensuse::packages::virtualbox
   include mopensuse::packages::wget
+  include mopensuse::packages::whois
   include mopensuse::packages::wireshark
   include mopensuse::packages::wpcli
   include mopensuse::packages::x11vnc
