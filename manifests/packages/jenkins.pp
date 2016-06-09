@@ -41,6 +41,14 @@ class mopensuse::packages::jenkins {
       require => Package['jenkins'],
   }
   
+  jenkins::plugin { 'timestamper':
+      require => Package['jenkins'],
+  }
+  
+  jenkins::plugin { 'workflow-step-api':
+      require => Package['jenkins'],
+  }
+  
   # Dependencies for git plugin
   jenkins::plugin { ['credentials', 'mailer', 'scm-api', 'promoted-builds',
       'token-macro', 'parameterized-trigger', 'git-client', 'matrix-project',
