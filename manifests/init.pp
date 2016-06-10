@@ -24,6 +24,7 @@ class mopensuse {
   include mopensuse::packages::ca-certificates
   include mopensuse::packages::cgit
   include mopensuse::packages::colordiff
+  include mopensuse::packages::colout
   include mopensuse::packages::composer
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
