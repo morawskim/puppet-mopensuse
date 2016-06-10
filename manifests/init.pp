@@ -29,6 +29,7 @@ class mopensuse {
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
   include mopensuse::packages::daps
+  include mopensuse::packages::dateutils
   include mopensuse::packages::dbus
   include mopensuse::packages::devel-c-cpp
   include mopensuse::packages::devel-java
