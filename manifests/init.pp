@@ -97,6 +97,7 @@ class mopensuse {
   include mopensuse::packages::tmux
   include mopensuse::packages::tomcat
   include mopensuse::packages::tree
+  include mopensuse::packages::ttyrec
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
   include mopensuse::packages::vim
