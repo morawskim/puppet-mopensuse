@@ -87,6 +87,7 @@ class mopensuse {
   include mopensuse::packages::skype
   include mopensuse::packages::soapui
   include mopensuse::packages::sqlite3-devel
+  include mopensuse::packages::srm
   include mopensuse::packages::sshd
   include mopensuse::packages::sshfs
   include mopensuse::packages::strace
