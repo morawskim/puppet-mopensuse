@@ -43,6 +43,7 @@ class mopensuse {
   include mopensuse::packages::git-server
   include mopensuse::packages::graphviz
   include mopensuse::packages::httrack
+  include mopensuse::packages::imagemagick
   include mopensuse::packages::inotify-tools
   include mopensuse::packages::jenkins
   include mopensuse::packages::kiwi
