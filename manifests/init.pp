@@ -125,7 +125,7 @@ class mopensuse {
   include mopensuse::packages::gui::kdiff3
   include mopensuse::packages::gui::krdc
   include mopensuse::packages::gui::krusader
-  include mopensuse::packages::gui::kup
+  #include mopensuse::packages::gui::kup
   include mopensuse::packages::gui::libqt4-x11
   include mopensuse::packages::gui::lshw-gui
   include mopensuse::packages::gui::mysql-workbench
