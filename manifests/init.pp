@@ -156,4 +156,6 @@ class mopensuse {
   include mopensuse::samba::shares::public
   include mopensuse::samba::users::guest
   include mopensuse::samba::users::marcin
+  
+  include mopensuse::pki::hosting-ftp
 }
