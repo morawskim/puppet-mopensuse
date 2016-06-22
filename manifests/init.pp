@@ -135,6 +135,7 @@ class mopensuse {
   include mopensuse::packages::gui::pidgin
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::redshift
+  include mopensuse::packages::gui::rsibreak
   include mopensuse::packages::gui::rubymine
   include mopensuse::packages::gui::scrot
   include mopensuse::packages::gui::skrooge
