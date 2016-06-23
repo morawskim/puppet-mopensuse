@@ -79,7 +79,7 @@
     # Controls who can get stuff from this server.
     #
     #Require all granted
-    Require ip 127.0.0.0/8
+    Require local
     Require ip 192.168.0.0/27
     Require ip 192.168.15.0/24
     
