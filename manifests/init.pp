@@ -38,6 +38,7 @@ class mopensuse {
   include mopensuse::packages::dhcpd
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
+  include mopensuse::packages::fontawesome
   include mopensuse::packages::ftp
   include mopensuse::packages::gettext
   include mopensuse::packages::git-server
