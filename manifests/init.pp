@@ -56,6 +56,7 @@ class mopensuse {
   include mopensuse::packages::mailhog
   include mopensuse::packages::maven
   include mopensuse::packages::monitoring
+  include mopensuse::packages::monoid
   include mopensuse::packages::mphp
   include mopensuse::packages::mutt
   include mopensuse::packages::mysql
