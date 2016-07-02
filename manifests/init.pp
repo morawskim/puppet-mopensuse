@@ -82,6 +82,7 @@ class mopensuse {
   include mopensuse::packages::postfix
   include mopensuse::packages::procps
   include mopensuse::packages::pwgen
+  include mopensuse::packages::rar
   include mopensuse::packages::redis
   include mopensuse::packages::rpmbuild
   include mopensuse::packages::samba
