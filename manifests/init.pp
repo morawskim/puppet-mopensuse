@@ -69,6 +69,7 @@ class mopensuse {
   include mopensuse::packages::ngrok
   include mopensuse::packages::nodejs
   include mopensuse::packages::notify-send
+  include mopensuse::packages::ntfs3g
   include mopensuse::packages::offlineimap
   include mopensuse::packages::openssl
   include mopensuse::packages::openvpn
