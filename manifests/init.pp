@@ -80,6 +80,7 @@ class mopensuse {
   include mopensuse::packages::php56v
   include mopensuse::packages::php7v
   include mopensuse::packages::php-dev-scripts
+  include mopensuse::packages::phpldapadmin
   include mopensuse::packages::phpmyadmin
   include mopensuse::packages::postfix
   include mopensuse::packages::procps
