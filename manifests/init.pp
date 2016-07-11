@@ -117,6 +117,7 @@ class mopensuse {
   include mopensuse::packages::wpcli
   include mopensuse::packages::x11vnc
   include mopensuse::packages::xvfb
+  include mopensuse::packages::youtube-dl
   include mopensuse::packages::zabbix
   include mopensuse::packages::zabbix-agent
   
