@@ -33,8 +33,13 @@ class mopensuse::packages::devel-ruby {
       ensure   => 'installed',
       require  => Package['ruby']
   }
-  
-  
+
+  package{['rubocop', 'rubycritic', 'bundler-audit', 'dawnscanner', 'simplecov']:
+      provider => 'gem',
+      ensure   => 'installed',
+      require  => Package['ruby']
+  }
+
   package {'debugger-ruby_core_source':
       provider => 'gem',
       ensure   => 'installed',
