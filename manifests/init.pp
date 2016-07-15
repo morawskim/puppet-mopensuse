@@ -151,6 +151,7 @@ class mopensuse {
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::sqlitebrowser
   include mopensuse::packages::gui::steam
+  include mopensuse::packages::gui::step
   include mopensuse::packages::gui::susepaste-screenshot
   include mopensuse::packages::gui::vcs
   include mopensuse::packages::gui::virtualbox-qt
