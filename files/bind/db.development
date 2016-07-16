@@ -1,0 +1,12 @@
+$TTL 604800
+@                       SOA LOCALHOST. named-mgr.example.com (
+             2016071604 ; Serial
+                 604800 ; Refresh
+                  86400 ; Retry
+                2419200 ; Expire
+                604800) ; Negative Cache TTL
+                        NS  LOCALHOST.
+
+mmo.sensi.local         A   192.168.15.71
+a.example.com	    CNAME   google.com.
+b.example.com           A   192.168.25.25

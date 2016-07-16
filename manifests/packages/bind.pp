@@ -49,6 +49,16 @@ class mopensuse::packages::bind(
         notify  => Service['named'],
         require => Package['bind']
     }
+    
+    file { "/etc/named.d/db.development":
+        ensure  => present,
+        owner   => 'root',
+        group   => 'named',
+        mode    => '740',
+        source  => "puppet:///modules/${module_name}/bind/db.development",
+        notify  => Service['named'],
+        require => Package['bind']
+    }
 
     service { 'named':
         ensure     => 'running',
