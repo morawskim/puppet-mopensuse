@@ -53,6 +53,7 @@ class mopensuse {
   include mopensuse::packages::logwatch
   include mopensuse::packages::lshw
   include mopensuse::packages::lynx
+  include mopensuse::packages::machinery
   include mopensuse::packages::mailhog
   include mopensuse::packages::maven
   include mopensuse::packages::monitoring
