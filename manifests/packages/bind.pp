@@ -55,6 +55,7 @@ class mopensuse::packages::bind(
         owner   => 'root',
         group   => 'named',
         mode    => '740',
+        replace => false,
         source  => "puppet:///modules/${module_name}/bind/db.development",
         notify  => Service['named'],
         require => Package['bind']
