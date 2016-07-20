@@ -164,6 +164,7 @@ class mopensuse {
   include mopensuse::packages::gui::zenity
   
   include mopensuse::user::marcin
+  include mopensuse::printers::hp
   include mopensuse::printers::samsung
   
   include mopensuse::samba::shares::public
