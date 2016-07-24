@@ -1,0 +1,6 @@
+<VirtualHost *:80>   
+    ServerAdmin marcin@morawskim.pl
+    ServerName jenkins.dev
+    ServerAlias www.jenkins.dev
+    ProxyPass / <%= @jenkins_url %>
+</VirtualHost>
