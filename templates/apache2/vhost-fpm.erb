@@ -15,7 +15,9 @@
 <VirtualHost *:80>
     ServerAdmin <%= @server_admin %>
     ServerName <%= @server_name %>
-    ServerAlias <%= @server_alias %>
+    <%- if @serveraliases and !scope.function_empty(@serveraliases) -%>
+        <%= scope.function_template(["apache/vhost/_serveralias.erb"]) %>
+    <%- end -%>
 
     # DocumentRoot: The directory out of which you will serve your
     # documents. By default, all requests are taken from this directory, but
