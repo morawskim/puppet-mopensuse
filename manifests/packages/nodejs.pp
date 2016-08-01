@@ -4,6 +4,11 @@ class mopensuse::packages::nodejs {
     ensure => present
   }
 
+  package {'nodejs-devel':
+    ensure  => present,
+    require => Package['nodejs']
+  }
+
   package { 'jshint':
     ensure   => 'present',
     provider => 'npm',
