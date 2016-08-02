@@ -44,4 +44,10 @@ class mopensuse::packages::nodejs {
     provider => 'npm',
     require  => Package['nodejs']
   }
+
+  package { 'gulp':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
 }
