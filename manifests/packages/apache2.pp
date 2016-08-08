@@ -132,4 +132,12 @@ class mopensuse::packages::apache2 {
     require => Package['apache2'],
     notify  => Class['mopensuse::services::apache2']
   }
+
+  file {'/var/log/apache2':
+    ensure  => directory,
+    mode    => '0750',
+    owner   => 'root',
+    group   => 'www',
+    require => Package['apache2']
+  }
 }
