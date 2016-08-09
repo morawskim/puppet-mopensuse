@@ -43,6 +43,7 @@ class mopensuse {
   include mopensuse::packages::gettext
   include mopensuse::packages::git-server
   include mopensuse::packages::graphviz
+  include mopensuse::packages::html2text
   include mopensuse::packages::httrack
   include mopensuse::packages::imagemagick
   include mopensuse::packages::inotify-tools
