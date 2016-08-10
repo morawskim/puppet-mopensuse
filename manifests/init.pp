@@ -11,7 +11,8 @@
 # Sample Usage:
 #
 class mopensuse {
-  
+
+  include mopensuse::packages::alien
   include mopensuse::packages::apache2
   include mopensuse::packages::apachetop
   include mopensuse::packages::aspell
