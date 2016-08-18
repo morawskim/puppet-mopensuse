@@ -22,6 +22,7 @@ class mopensuse {
   include mopensuse::packages::biabam
   include mopensuse::packages::bind
   include mopensuse::packages::bup
+  include mopensuse::packages::byobu
   include mopensuse::packages::ca-certificates
   include mopensuse::packages::cgit
   include mopensuse::packages::colordiff
