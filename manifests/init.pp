@@ -131,6 +131,7 @@ class mopensuse {
   include mopensuse::packages::gui::chrome
   include mopensuse::packages::gui::clion
   include mopensuse::packages::gui::filezilla
+  include mopensuse::packages::gui::gitg
   include mopensuse::packages::gui::glxgears
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::jetbrains-download-scripts
