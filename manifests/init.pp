@@ -45,6 +45,7 @@ class mopensuse {
   include mopensuse::packages::gettext
   include mopensuse::packages::git-server
   include mopensuse::packages::graphviz
+  include mopensuse::packages::hstr
   include mopensuse::packages::html2text
   include mopensuse::packages::httpie
   include mopensuse::packages::httrack
