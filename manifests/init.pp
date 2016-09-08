@@ -55,6 +55,7 @@ class mopensuse {
   include mopensuse::packages::kiwi
   include mopensuse::packages::libguestfs
   include mopensuse::packages::libxml2-tools
+  include mopensuse::packages::live_fat_stick
   include mopensuse::packages::logwatch
   include mopensuse::packages::lshw
   include mopensuse::packages::lynx
