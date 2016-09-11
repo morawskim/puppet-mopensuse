@@ -84,6 +84,7 @@ class mopensuse {
   include mopensuse::packages::offlineimap
   include mopensuse::packages::openssl
   include mopensuse::packages::openvpn
+  include mopensuse::packages::p7zip
   include mopensuse::packages::php
   include mopensuse::packages::php53v
   include mopensuse::packages::php54v
