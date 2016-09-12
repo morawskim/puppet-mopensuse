@@ -38,6 +38,7 @@ class mopensuse {
   include mopensuse::packages::devel-qt5
   include mopensuse::packages::devel-ruby
   include mopensuse::packages::dhcpd
+  include mopensuse::packages::docker
   include mopensuse::packages::fakeprovide
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall

@@ -121,4 +121,10 @@ class mopensuse::user::marcin (
       user    => $username,
       require => Mopensuse::User::Account[$username]
   }
+
+  mopensuse::user::config::docker-group{$username:
+      user    => $username,
+      require => Mopensuse::User::Account[$username]
+  }
+
 }
