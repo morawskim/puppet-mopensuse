@@ -1,0 +1,22 @@
+
+  # For Apache 2.4.9 or higher
+  # Using SetHandler avoids issues with using ProxyPassMatch in combination
+  # with mod_rewrite or mod_autoindex
+  <IfVersion >= 2.4.9>
+      <FilesMatch \.php$>
+          <%- if @php_fpm_socket -%>
+              #SetHandler proxy:fcgi://127.0.0.1:9999
+              # Part |fcgi://localhost:9999 is required
+              # Port number is any?
+              SetHandler proxy:unix:<%= @php_fpm_socket %>|fcgi://localhost:9999
+          <%- else -%>
+              SetHandler proxy:fcgi://127.0.0.1:9999
+          <%- end -%>
+      </FilesMatch>
+  </IfVersion>
+
+  <IfVersion < 2.4.9>
+      <IfModule mod_proxy_fcgi.c>
+          ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9999<%= @document_root.chomp('/') %>/$1
+      </IfModule>
+  </IfVersion>
