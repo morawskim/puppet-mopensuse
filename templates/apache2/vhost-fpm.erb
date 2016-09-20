@@ -24,6 +24,8 @@
     # symbolic links and aliases may be used to point to other locations.
     DocumentRoot <%= @document_root %>
 
+    <%= scope.function_template(["apache/vhost/_aliases.erb"]) %>
+
     # if not specified, the global error log is used
     ErrorLog /var/log/apache2/<%= @server_name %>-error_log
     CustomLog /var/log/apache2/<%= @server_name %>-access_log combined
