@@ -1,7 +1,16 @@
 class mopensuse::packages::php56v {
-  
+
   include mopensuse::zypper::repositories::morawskim
-  
+
+  $phpname = 'php56'
+  $service_name = "${phpname}-fpm"
+  $phpfpm_prefix = "/opt/php/${phpname}"
+  $pool_name = "${phpname}"
+  $pool_dir = "${phpfpm_prefix}/etc/php5/fpm/pool.d"
+  $pool_listen_owner = 'wwwrun'
+  $pool_listen_group = 'www'
+  $pool_listen_mode  = '0660'
+
   package {['php56', 'php56-fpm', 'php56-mysql', 'php56-ldap', 'php56-soap', 
     'php56-pgsql', 'php56-phar', 'php56-devel', 'php56-readline', 'php56-xdebug', 
     'php56-redis', 'php56-curl', 'php56-mbstring', 'php56-json', 'php56-intl', 
@@ -11,7 +20,7 @@ class mopensuse::packages::php56v {
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']
   }
-  
+
   file {'/opt/php/php56/etc/php5/conf.d/custom.ini':
     ensure  => present,
     mode    => '0644',
@@ -21,5 +30,33 @@ class mopensuse::packages::php56v {
     notify  => [ Service['php-fpm'] ],
     require => Package['php56']
   }
-  
+
+  mopensuse::define::php_fpm {$phpname:
+    config_dir                     => "${phpfpm_prefix}/etc/php5/fpm",
+    config_name                    => 'php-fpm.conf',
+    config_template_file           => 'phpfpm/php-fpm.conf.erb',
+    service_name                   => "${phpname}-fpm",
+    pool_dir                       => $pool_dir,
+    pid_file                       => "/run/${phpname}-fpm.pid",
+    error_log                      => "/var/log/${phpname}-fpm.log",
+    syslog_ident                   => "${phpname}-fpm",
+  }
+
+  mopensuse::define::php_fpm_pool {$pool_name:
+    pool_dir          => $pool_dir,
+    pool_listen       => "/run/${pool_name}-fpm.sock",
+    pool_listen_owner => $pool_listen_owner,
+    pool_listen_group => $pool_listen_group,
+    pool_listen_mode  => $pool_listen_mode,
+    require           => Mopensuse::Define::Php_fpm[$phpname],
+    notify            => Service[$service_name]
+  }
+
+  service {$service_name:
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+    require    => [ Mopensuse::Define::Php_fpm_pool[$pool_name] ]
+  }
 }
