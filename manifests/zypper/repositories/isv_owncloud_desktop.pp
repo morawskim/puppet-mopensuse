@@ -15,7 +15,7 @@ class mopensuse::zypper::repositories::isv_owncloud_desktop {
     notify       => Class['mopensuse::zypper::refresh']
   }
   
-  rpmkey {'BA684223':
+  rpmkey {'557BEFF9':
     ensure  => present,
     source  => $gpg_key,
     before  => Zypprepo['isv_owncloud_desktop']
