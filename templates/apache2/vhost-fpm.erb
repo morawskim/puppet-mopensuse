@@ -15,7 +15,7 @@
 <VirtualHost *:80>
     ServerAdmin <%= @server_admin %>
     ServerName <%= @server_name %>
-    <%- if @serveraliases and !scope.function_empty(@serveraliases) -%>
+    <%- if @serveraliases and !scope.function_empty([@serveraliases]) -%>
         <%= scope.function_template(["apache/vhost/_serveralias.erb"]) %>
     <%- end -%>
 
