@@ -5,7 +5,7 @@ define mopensuse::user::config::project-dir(
   
   file {"${user_home_path}/projekty":
     ensure  => directory,
-    mode    => '0750',
+    mode    => '0755',
     owner   => $user,
     group   => $user,
     require => Mopensuse::User::Account[$user]
