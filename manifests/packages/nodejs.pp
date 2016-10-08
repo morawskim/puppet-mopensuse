@@ -50,4 +50,16 @@ class mopensuse::packages::nodejs {
     provider => 'npm',
     require  => Package['nodejs']
   }
+
+  package { 'nativefier':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
+
+  package { 'http-server':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
 }
