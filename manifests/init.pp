@@ -177,6 +177,7 @@ class mopensuse {
   include mopensuse::packages::gui::scrot
   include mopensuse::packages::gui::shutter
   include mopensuse::packages::gui::skrooge
+  include mopensuse::packages::gui::slack
   include mopensuse::packages::gui::sqlitebrowser
   include mopensuse::packages::gui::steam
   include mopensuse::packages::gui::step
