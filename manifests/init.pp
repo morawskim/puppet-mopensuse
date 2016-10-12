@@ -172,6 +172,7 @@ class mopensuse {
   include mopensuse::packages::gui::plantuml
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::redshift
+  include mopensuse::packages::gui::retext
   include mopensuse::packages::gui::rsibreak
   include mopensuse::packages::gui::rubymine
   include mopensuse::packages::gui::scrot
