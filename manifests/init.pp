@@ -120,6 +120,7 @@ class mopensuse {
   include mopensuse::packages::sshfs
   include mopensuse::packages::sslscan
   include mopensuse::packages::strace
+  include mopensuse::packages::stunnel
   include mopensuse::packages::susepaste
   include mopensuse::packages::swaks
   include mopensuse::packages::tcpdump
