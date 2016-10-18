@@ -1,6 +1,7 @@
 class mopensuse::packages::php53v {
 
   include mopensuse::zypper::repositories::morawskim
+  include mopensuse::packages::php
 
   $phpname = 'php53'
   $service_name = "${phpname}m-fpm"
@@ -15,7 +16,8 @@ class mopensuse::packages::php53v {
     'php53m-pgsql', 'php53m-phar', 'php53m-devel', 'php53m-readline', 'php53m-xdebug', 
     'php53m-curl', 'php53m-mbstring', 'php53m-json', 'php53m-intl', 'php53m-gettext',
     'php53m-xsl', 'php53m-zlib', 'php53m-xmlwriter', 'php53m-bcmath', 'php53m-sockets',
-    'php53m-pcntl', 'php53m-ctype', 'php53m-gd', 'php53m-xmlreader', 'php53m-zip']:
+    'php53m-pcntl', 'php53m-ctype', 'php53m-gd', 'php53m-xmlreader', 'php53m-zip',
+    'php53m-iconv']:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']
@@ -35,7 +37,7 @@ class mopensuse::packages::php53v {
     config_dir                     => "${phpfpm_prefix}/etc/php5/fpm",
     config_name                    => 'php-fpm.conf',
     config_template_file           => 'phpfpm/php-fpm.conf.erb',
-    service_name                   => "${phpname}m-fpm",
+    service_name                   => $service_name,
     pool_dir                       => $pool_dir,
     pid_file                       => "/run/${phpname}-fpm.pid",
     error_log                      => "/var/log/${phpname}-fpm.log",

@@ -1,6 +1,7 @@
 class mopensuse::packages::php56v {
 
   include mopensuse::zypper::repositories::morawskim
+  include mopensuse::packages::php
 
   $phpname = 'php56'
   $service_name = "${phpname}-fpm"
@@ -15,7 +16,8 @@ class mopensuse::packages::php56v {
     'php56-pgsql', 'php56-phar', 'php56-devel', 'php56-readline', 'php56-xdebug', 
     'php56-redis', 'php56-curl', 'php56-mbstring', 'php56-json', 'php56-intl', 
     'php56-gettext', 'php56-xsl', 'php56-zlib', 'php56-xmlwriter', 'php56-bcmath', 'php56-sockets',
-    'php56-pcntl', php56-ctype, 'php56-gd', 'php56-xmlreader', 'php56-zip']:
+    'php56-pcntl', php56-ctype, 'php56-gd', 'php56-xmlreader', 'php56-zip',
+    'php56-iconv']:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']
@@ -35,7 +37,7 @@ class mopensuse::packages::php56v {
     config_dir                     => "${phpfpm_prefix}/etc/php5/fpm",
     config_name                    => 'php-fpm.conf',
     config_template_file           => 'phpfpm/php-fpm.conf.erb',
-    service_name                   => "${phpname}-fpm",
+    service_name                   => $service_name,
     pool_dir                       => $pool_dir,
     pid_file                       => "/run/${phpname}-fpm.pid",
     error_log                      => "/var/log/${phpname}-fpm.log",

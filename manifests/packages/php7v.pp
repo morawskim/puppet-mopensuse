@@ -1,6 +1,7 @@
 class mopensuse::packages::php7v {
 
   include mopensuse::zypper::repositories::morawskim
+  include mopensuse::packages::php
 
   $phpname = 'php7'
   $service_name = "${phpname}-fpm"
@@ -11,7 +12,7 @@ class mopensuse::packages::php7v {
   $pool_listen_group = 'www'
   $pool_listen_mode  = '0660'
 
-  package {['php7', 'php7-fpm', 'php7-mysql', 'php7-ldap', 'php7-soap',
+  package {['php7', 'php7-fpm', 'php7-mysql', 'php7-ldap', 'php7-soap', 'php7-iconv',
     'php7-pgsql', 'php7-phar', 'php7-devel', 'php7-readline', 'php7-curl',
     'php7-mbstring', 'php7-json', 'php7-intl', 'php7-gettext', 'php7-xsl', 'php7-zlib',
     'php7-xmlwriter', 'php7-bcmath', 'php7-sockets', 'php7-pcntl', 'php7-ctype', 'php7-gd',
@@ -35,7 +36,7 @@ class mopensuse::packages::php7v {
     config_dir                     => "${phpfpm_prefix}/etc/php7/fpm",
     config_name                    => 'php-fpm.conf',
     config_template_file           => 'phpfpm/php-fpm.conf.erb',
-    service_name                   => "${phpname}-fpm",
+    service_name                   => $service_name,
     pool_dir                       => $pool_dir,
     pid_file                       => "/run/${phpname}-fpm.pid",
     error_log                      => "/var/log/${phpname}-fpm.log",
