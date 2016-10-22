@@ -62,4 +62,10 @@ class mopensuse::packages::nodejs {
     provider => 'npm',
     require  => Package['nodejs']
   }
+
+  package { 'bower':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
 }
