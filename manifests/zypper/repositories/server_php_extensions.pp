@@ -15,7 +15,7 @@ class mopensuse::zypper::repositories::server_php_extensions {
     notify       => Class['mopensuse::zypper::refresh']
   }
 
-  rpmkey {'6B9D6523':
+  rpmkey {'1AF1B065':
     ensure  => present,
     source  => $gpg_key,
     before  => Zypprepo['server_php_extensions']
