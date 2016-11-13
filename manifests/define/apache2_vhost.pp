@@ -7,7 +7,8 @@ define mopensuse::define::apache2_vhost(
     $custom_config  = [],
     $php_fpm_socket = undef,
     $vhost_aliases  = [],
-    $enable_phpinfo_alias = true
+    $enable_phpinfo_alias = true,
+    $vhost_setenv = ['MMO_DEV 1']
 ) {
     include mopensuse::services::apache2
 
@@ -18,6 +19,7 @@ define mopensuse::define::apache2_vhost(
     validate_string($server_admin)
     validate_array($custom_config)
     validate_array($vhost_aliases)
+    validate_array($vhost_setenv)
     validate_bool($enable_phpinfo_alias)
     if $php_fpm_socket {
       validate_absolute_path($php_fpm_socket)
@@ -31,6 +33,9 @@ define mopensuse::define::apache2_vhost(
     } else {
       $aliases = $vhost_aliases
     }
+    
+    
+    $setenv = $vhost_setenv
 
     file { $vhost_path:
         ensure  => present,

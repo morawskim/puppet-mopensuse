@@ -39,8 +39,7 @@
     # configures the footer on server-generated documents
     ServerSignature On
 
-    # set env EO_DEV
-    SetEnv EO_DEV 1
+    <%= scope.function_template(["apache/vhost/_setenv.erb"]) %>
 
     #   A request for / will need to be mapped to a resource on the fcgi
     #   backend. Failure to address this may cause a blank response, commonly
