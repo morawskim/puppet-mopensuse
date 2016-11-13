@@ -41,6 +41,8 @@
 
     <%= scope.function_template(["apache/vhost/_setenv.erb"]) %>
 
+    <%= scope.function_template(["apache/vhost/_proxy.erb"]) %>
+
     #   A request for / will need to be mapped to a resource on the fcgi
     #   backend. Failure to address this may cause a blank response, commonly
     #   known as a WSOD (White Screen of Death), especially if only a request URI
