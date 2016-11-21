@@ -127,4 +127,8 @@ class mopensuse::user::marcin (
       require => Mopensuse::User::Account[$username]
   }
 
+  mopensuse::user::config::krunner_kopete{$username:
+    user           => $username,
+    user_home_path => $user_home_path,
+  }
 }
