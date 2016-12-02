@@ -71,6 +71,7 @@ class mopensuse {
   include mopensuse::packages::mailhog
   include mopensuse::packages::maven
   include mopensuse::packages::mc
+  include mopensuse::packages::mitmproxy_bundled
   include mopensuse::packages::monitoring
   include mopensuse::packages::monoid
   include mopensuse::packages::mphp
