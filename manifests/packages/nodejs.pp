@@ -74,4 +74,10 @@ class mopensuse::packages::nodejs {
     provider => 'npm',
     require  => Package['nodejs']
   }
+
+  package { 'json-server':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
 }
