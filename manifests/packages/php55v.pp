@@ -16,7 +16,7 @@ class mopensuse::packages::php55v {
     'php55v-pgsql', 'php55v-phar', 'php55v-devel', 'php55v-readline', 'php55v-xdebug',
     'php55v-redis', 'php55v-curl', 'php55v-mbstring', 'php55v-json', 'php55v-intl',
     'php55v-gettext', 'php55v-xsl', 'php55v-zlib', 'php55v-xmlwriter', 'php55v-bcmath',
-    'php55v-sockets', 'php55v-iconv', 'php55v-fileinfo',
+    'php55v-sockets', 'php55v-iconv', 'php55v-fileinfo', 'php55v-tokenizer',
     'php55v-pcntl', php55v-ctype, 'php55v-gd', 'php55v-xmlreader', 'php55v-zip']:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
