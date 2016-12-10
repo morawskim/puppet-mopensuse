@@ -80,4 +80,10 @@ class mopensuse::packages::nodejs {
     provider => 'npm',
     require  => Package['nodejs']
   }
+
+  package { 'node-inspector':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
 }
