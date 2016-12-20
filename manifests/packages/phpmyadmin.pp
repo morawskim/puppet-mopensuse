@@ -42,10 +42,27 @@ class mopensuse::packages::phpmyadmin {
     require => Class['::phpmyadmin']
   }
 
-  phpmyadmin::servernode { "localhost":
-    myserver_name => 'localhost',
-    verbose_name  => 'lcoalhost',
+  phpmyadmin::servernode { "localhost:3306":
+    myserver_name => '127.0.0.1',
+    verbose_name  => 'localhost 3306',
     server_group  => 'default',
-    user          => 'root',
+    user          => '',
+    myserver_port => 3306
+  }
+
+  phpmyadmin::servernode { "localhost:3307":
+    myserver_name => '127.0.0.1',
+    verbose_name  => 'localhost 3307',
+    server_group  => 'default',
+    user          => '',
+    myserver_port => 3307
+  }
+
+  phpmyadmin::servernode { "localhost:3308":
+    myserver_name => '127.0.0.1',
+    verbose_name  => 'localhost 3308',
+    server_group  => 'default',
+    user          => '',
+    myserver_port => 3308
   }
 }
