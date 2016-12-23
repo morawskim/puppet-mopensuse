@@ -119,7 +119,6 @@ class mopensuse {
   include mopensuse::packages::sensors
   include mopensuse::packages::skype
   include mopensuse::packages::smtpcli
-  include mopensuse::packages::soapui
   include mopensuse::packages::sqlite3-devel
   include mopensuse::packages::srm
   include mopensuse::packages::sshd
@@ -189,6 +188,7 @@ class mopensuse {
   include mopensuse::packages::gui::shutter
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::slack
+  include mopensuse::packages::gui::soapui
   include mopensuse::packages::gui::sqlitebrowser
   include mopensuse::packages::gui::steam
   include mopensuse::packages::gui::step
