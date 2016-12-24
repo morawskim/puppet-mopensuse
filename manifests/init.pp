@@ -49,6 +49,7 @@ class mopensuse {
   include mopensuse::packages::firewall
   include mopensuse::packages::fontawesome
   include mopensuse::packages::ftp
+  include mopensuse::packages::fzf
   include mopensuse::packages::gearmand
   include mopensuse::packages::gettext
   include mopensuse::packages::git-server
