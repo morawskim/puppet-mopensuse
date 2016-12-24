@@ -26,6 +26,7 @@ class mopensuse {
   include mopensuse::packages::byobu
   include mopensuse::packages::ca-certificates
   include mopensuse::packages::cgit
+  include mopensuse::packages::cheat
   include mopensuse::packages::colordiff
   include mopensuse::packages::colout
   include mopensuse::packages::composer
