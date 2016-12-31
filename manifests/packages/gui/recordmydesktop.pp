@@ -1,6 +1,7 @@
 class mopensuse::packages::gui::recordmydesktop {
 
   include mopensuse::zypper::repositories::multimedia_apps
+  include mopensuse::packages::gui::xwininfo
 
   package {'recordmydesktop':
     ensure  => present,
