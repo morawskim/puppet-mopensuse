@@ -30,6 +30,12 @@
   ErrorLog /var/log/apache2/<%= @server_name %>-error_log
   CustomLog /var/log/apache2/<%= @server_name %>-access_log combined
 
+  # Amount of time the server will wait for certain events before failing
+  # a request
+  # Default 60s
+  # http://httpd.apache.org/docs/2.4/mod/core.html#timeout
+  TimeOut <%= @server_timeout %>
+
   # don't loose time with IP address lookups
   HostnameLookups Off
 
