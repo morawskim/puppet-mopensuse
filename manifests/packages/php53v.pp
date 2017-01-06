@@ -17,7 +17,9 @@ class mopensuse::packages::php53v {
     'php53m-curl', 'php53m-mbstring', 'php53m-json', 'php53m-intl', 'php53m-gettext',
     'php53m-xsl', 'php53m-zlib', 'php53m-xmlwriter', 'php53m-bcmath', 'php53m-sockets',
     'php53m-pcntl', 'php53m-ctype', 'php53m-gd', 'php53m-xmlreader', 'php53m-zip',
-    'php53m-iconv', 'php53m-fileinfo', 'php53m-tokenizer', 'php53m-exif']:
+    'php53m-iconv', 'php53m-fileinfo', 'php53m-tokenizer', 'php53m-exif',
+    'php53m-mcrypt'
+]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']

@@ -17,7 +17,9 @@ class mopensuse::packages::php54v {
     'php54-curl', 'php54-mbstring', 'php54-json', 'php54-intl', 'php54-gettext',
     'php54-xsl', 'php54-zlib', 'php54-xmlwriter', 'php54-bcmath', 'php54-sockets',
     'php54-pcntl', php54-ctype, 'php54-gd', 'php54-xmlreader', 'php54-zip',
-    'php54-iconv', 'php54-fileinfo', 'php54-tokenizer', 'php54-exif']:
+    'php54-iconv', 'php54-fileinfo', 'php54-tokenizer', 'php54-exif',
+    'php54-mcrypt'
+]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service['php-fpm']
