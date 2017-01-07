@@ -120,6 +120,7 @@ class mopensuse {
   include mopensuse::packages::selenium
   include mopensuse::packages::sensors
   include mopensuse::packages::skype
+  include mopensuse::packages::smbnetfs
   include mopensuse::packages::smtpcli
   include mopensuse::packages::sqlite3-devel
   include mopensuse::packages::srm
