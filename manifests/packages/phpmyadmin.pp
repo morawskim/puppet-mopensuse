@@ -1,5 +1,6 @@
 class mopensuse::packages::phpmyadmin {
 
+  include mopensuse::packages::phpmyadminbase
   #package {'phpMyAdmin':
   #  ensure => present
   #}
@@ -18,12 +19,6 @@ class mopensuse::packages::phpmyadmin {
     source  => "puppet:///modules/${module_name}/phpMyAdmin/vhost.conf",
     require => [ Package['apache2'], Class['::phpmyadmin'] ],
     notify  => Service['apache2']
-  }
-
-  class { '::phpmyadmin':
-    manage_apache   => false,
-    manage_config   => false,
-    preseed_package => false
   }
 
   file {'/etc/phpMyAdmin/config.inc.php.org':
