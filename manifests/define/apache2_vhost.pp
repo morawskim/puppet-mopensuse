@@ -9,7 +9,8 @@ define mopensuse::define::apache2_vhost(
     $vhost_aliases  = [],
     $enable_phpinfo_alias = true,
     $vhost_setenv = ['MMO_DEV 1'],
-    $vhost_proxy_pass = []
+    $vhost_proxy_pass = [],
+    $timeout        = 60,
 ) {
     include mopensuse::services::apache2
 
@@ -39,6 +40,7 @@ define mopensuse::define::apache2_vhost(
 
     $setenv = $vhost_setenv
     $proxy_pass = $vhost_proxy_pass
+    $server_timeout = $timeout
 
     file { $vhost_path:
         ensure  => present,
