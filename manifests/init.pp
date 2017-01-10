@@ -223,4 +223,5 @@ class mopensuse {
   include mopensuse::samba::users::marcin
   
   include mopensuse::pki::hosting-ftp
+  include mopensuse::sysctl::inotify
 }
