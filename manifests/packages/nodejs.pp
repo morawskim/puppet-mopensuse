@@ -92,4 +92,10 @@ class mopensuse::packages::nodejs {
     provider => 'npm',
     require  => Package['nodejs']
   }
+
+  package { 'requirejs':
+    ensure   => 'present',
+    provider => 'npm',
+    require  => Package['nodejs']
+  }
 }
