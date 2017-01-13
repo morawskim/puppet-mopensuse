@@ -71,6 +71,14 @@ class mopensuse::packages::apache2 {
       notify  => Class['mopensuse::services::apache2']
   }
 
+  exec {'enable_apache_mod_headers':
+      command => 'a2enmod headers',
+      unless  => 'a2enmod -q headers',
+      path    => ['/usr/sbin/'],
+      require => [ Package['apache2'] ],
+      notify  => Class['mopensuse::services::apache2']
+  }
+
   exec {'define_apache_ssl_flag':
     command => 'a2enflag SSL',
     path    => ['/usr/sbin/', '/usr/bin', '/bin'],
