@@ -11,6 +11,10 @@ define mopensuse::define::apache2_vhost(
     $vhost_setenv = ['MMO_DEV 1'],
     $vhost_proxy_pass = [],
     $timeout        = 60,
+    $ssl            = false,
+    $ssl_cert       = undef,
+    $ssl_key        = undef,
+    $ssl_chain      = undef
 ) {
     include mopensuse::services::apache2
 
@@ -41,6 +45,13 @@ define mopensuse::define::apache2_vhost(
     $setenv = $vhost_setenv
     $proxy_pass = $vhost_proxy_pass
     $server_timeout = $timeout
+    $servername = $server_name
+    $serveradmin = $server_admin
+    if $ssl {
+      $nvh_addr_port = 443
+    } else {
+      $nvh_addr_port = 80
+    }
 
     file { $vhost_path:
         ensure  => present,

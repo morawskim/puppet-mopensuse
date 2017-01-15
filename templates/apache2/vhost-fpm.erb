@@ -12,9 +12,8 @@
 # The first VirtualHost section is used for requests without a known
 # server name.
 #
-<VirtualHost *:80>
-  ServerAdmin <%= @server_admin %>
-  ServerName <%= @server_name %>
+
+<%= scope.function_template(["mopensuse/apache2/partials/_file_header.erb"]) -%>
   <%- if @serveraliases and !scope.function_empty([@serveraliases]) -%>
       <%= scope.function_template(["apache/vhost/_serveralias.erb"]) -%>
   <%- end -%>
@@ -23,6 +22,7 @@
   # documents. By default, all requests are taken from this directory, but
   # symbolic links and aliases may be used to point to other locations.
   DocumentRoot <%= @document_root %>
+<%= scope.function_template(["apache/vhost/_ssl.erb"]) -%>
 
 <%= scope.function_template(["apache/vhost/_aliases.erb"]) -%>
 
@@ -100,4 +100,4 @@
   </Directory>
 
 <%= scope.function_template(["mopensuse/apache2/partials/_phpfpm.erb"]) %>
-</VirtualHost>
+<%= scope.function_template(["apache/vhost/_file_footer.erb"]) -%>
