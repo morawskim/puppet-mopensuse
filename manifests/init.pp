@@ -12,6 +12,7 @@
 #
 class mopensuse {
 
+  include mopensuse::packages::ag
   include mopensuse::packages::alien
   include mopensuse::packages::apache2
   include mopensuse::packages::apachetop
