@@ -211,6 +211,7 @@ class mopensuse {
   include mopensuse::packages::gui::xclip
   include mopensuse::packages::gui::xorg-intel
   include mopensuse::packages::gui::xorg_x11_server_extra
+  include mopensuse::packages::gui::xrectsel
   include mopensuse::packages::gui::xwininfo
   include mopensuse::packages::gui::yakuake
   include mopensuse::packages::gui::zeal
