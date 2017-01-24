@@ -64,6 +64,7 @@ class mopensuse {
   include mopensuse::packages::inotify-tools
   include mopensuse::packages::jenkins
   include mopensuse::packages::jq
+  include mopensuse::packages::json_tools
   include mopensuse::packages::kiwi
   include mopensuse::packages::libguestfs
   include mopensuse::packages::libxml2-tools
