@@ -113,6 +113,7 @@ class mopensuse {
   include mopensuse::packages::pktstat
   include mopensuse::packages::postfix
   include mopensuse::packages::procps
+  include mopensuse::packages::pv
   include mopensuse::packages::pwgen
   include mopensuse::packages::qemu_kvm
   include mopensuse::packages::rar
