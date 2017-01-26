@@ -81,6 +81,7 @@ class mopensuse {
   include mopensuse::packages::monitoring
   include mopensuse::packages::monoid
   include mopensuse::packages::mphp
+  include mopensuse::packages::msmtp
   include mopensuse::packages::mssys
   include mopensuse::packages::mutt
   include mopensuse::packages::mysql
