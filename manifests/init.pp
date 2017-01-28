@@ -191,6 +191,7 @@ class mopensuse {
   include mopensuse::packages::gui::pidgin
   include mopensuse::packages::gui::plantuml
   include mopensuse::packages::gui::plasma-nm-openvpn
+  include mopensuse::packages::gui::postman
   include mopensuse::packages::gui::recordmydesktop
   include mopensuse::packages::gui::redshift
   include mopensuse::packages::gui::retext
