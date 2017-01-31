@@ -186,6 +186,7 @@ class mopensuse {
   include mopensuse::packages::gui::minitube
   include mopensuse::packages::gui::mplayer
   include mopensuse::packages::gui::mysql-workbench
+  include mopensuse::packages::gui::nemiver
   include mopensuse::packages::gui::okteta
   include mopensuse::packages::gui::owasp_zap
   include mopensuse::packages::gui::owncloud-client
