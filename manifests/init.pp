@@ -88,6 +88,7 @@ class mopensuse {
   include mopensuse::packages::mysql
   include mopensuse::packages::mytop
   include mopensuse::packages::net_snmp
+  include mopensuse::packages::netcat_openbsd
   include mopensuse::packages::nethogs
   include mopensuse::packages::network
   include mopensuse::packages::nfs
