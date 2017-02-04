@@ -172,6 +172,7 @@ class mopensuse {
   include mopensuse::packages::gui::glxgears
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::jetbrains-download-scripts
+  include mopensuse::packages::gui::jetbrains_toolbox
   include mopensuse::packages::gui::kapptemplate
   include mopensuse::packages::gui::kate
   include mopensuse::packages::gui::kcachegrind
