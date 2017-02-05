@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::filesystems {
+class mopensuse::zypper::repositories::filesystems(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::filesystems {
 
   zypprepo {'filesystems':
       baseurl      => "http://download.opensuse.org/repositories/filesystems/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Filesystem tools and FUSE-related packages (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

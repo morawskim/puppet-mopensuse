@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::systemsmanagement_machinery {
+class mopensuse::zypper::repositories::systemsmanagement_machinery(
+    $enabled = 1
+) {
 
     include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::systemsmanagement_machinery {
 
     zypprepo {'systemsmanagement_machinery':
         baseurl      => "http://download.opensuse.org/repositories/systemsmanagement:/machinery/openSUSE_${::operatingsystemrelease}/",
-        enabled      => 1,
+        enabled      => $enabled,
         autorefresh  => 1,
         descr        => "Machinery systems management toolkit (openSUSE_${::operatingsystemrelease})",
         gpgcheck     => 1,

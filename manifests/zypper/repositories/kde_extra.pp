@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::kde_extra {
+class mopensuse::zypper::repositories::kde_extra(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::kde_extra {
   
   zypprepo {'kde_extra':
     baseurl      => "http://download.opensuse.org/repositories/KDE:/Extra/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Additional packages maintained by the KDE team (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

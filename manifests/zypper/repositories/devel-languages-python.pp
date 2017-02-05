@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::devel-languages-python {
+class mopensuse::zypper::repositories::devel-languages-python(
+    $enabled = 1
+) {
     
     include mopensuse::zypper::refresh
     
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::devel-languages-python {
     
     zypprepo {'devel-languages-python':
         baseurl      => "http://download.opensuse.org/repositories/devel:/languages:/python/openSUSE_${::operatingsystemrelease}/",
-        enabled      => 1,
+        enabled      => $enabled,
         autorefresh  => 1,
         descr        => "Python Modules (openSUSE_${::operatingsystemrelease})",
         gpgcheck     => 1,

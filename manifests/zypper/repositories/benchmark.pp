@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::benchmark {
+class mopensuse::zypper::repositories::benchmark(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::benchmark {
 
   zypprepo {'benchmark':
     baseurl      => "http://download.opensuse.org/repositories/benchmark/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Benchmarks (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

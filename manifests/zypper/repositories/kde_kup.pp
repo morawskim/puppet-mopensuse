@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::kde_kup {
+class mopensuse::zypper::repositories::kde_kup(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::kde_kup {
   
   zypprepo {'kde_kup':
     baseurl      => "http://download.opensuse.org/repositories/home:/simper:/kup/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Kup Backup System (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

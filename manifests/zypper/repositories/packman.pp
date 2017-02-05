@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::packman {
+class mopensuse::zypper::repositories::packman(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::packman {
   
   zypprepo {'packman':
     baseurl      => "http://packman.inode.at/suse/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Packman Software Repository (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

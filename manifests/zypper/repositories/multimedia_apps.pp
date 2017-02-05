@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::multimedia_apps {
+class mopensuse::zypper::repositories::multimedia_apps(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::multimedia_apps {
 
   zypprepo {'multimedia_apps':
     baseurl      => "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Multimedia Applications (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

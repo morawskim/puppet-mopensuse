@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::server_php_extensions {
+class mopensuse::zypper::repositories::server_php_extensions(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::server_php_extensions {
 
   zypprepo {'server_php_extensions':
     baseurl      => "http://download.opensuse.org/repositories/server:/php:/extensions/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "PHP extensions (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

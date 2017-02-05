@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::libdvdcss {
+class mopensuse::zypper::repositories::libdvdcss(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::libdvdcss {
   
   zypprepo {'libdvdcss':
     baseurl      => "http://opensuse-guide.org/repo/${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "libdvdcss Repository (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::google-chrome {
+class mopensuse::zypper::repositories::google-chrome(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::google-chrome {
   
   zypprepo {'google-chrome':
     baseurl      => "http://dl.google.com/linux/chrome/rpm/stable/x86_64",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Google chrome repository",
     gpgcheck     => 1,

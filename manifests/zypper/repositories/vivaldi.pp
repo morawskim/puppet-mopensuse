@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::vivaldi {
+class mopensuse::zypper::repositories::vivaldi(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -7,7 +9,7 @@ class mopensuse::zypper::repositories::vivaldi {
   
   zypprepo {'vivaldi':
     baseurl      => "http://repo.vivaldi.com/archive/rpm/x86_64",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Vivaldi repository",
     gpgcheck     => 1,

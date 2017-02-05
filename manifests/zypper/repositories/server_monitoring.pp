@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::server_monitoring {
+class mopensuse::zypper::repositories::server_monitoring(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::server_monitoring {
   
   zypprepo {'server_monitoring':
     baseurl      => "http://download.opensuse.org/repositories/server:/monitoring/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Server Monitoring Software (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

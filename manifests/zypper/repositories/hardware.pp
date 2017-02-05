@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::hardware {
+class mopensuse::zypper::repositories::hardware(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::hardware {
   
   zypprepo {'hardware':
     baseurl      => "http://download.opensuse.org/repositories/hardware/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Hardware tools (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::ruby_extensions {
+class mopensuse::zypper::repositories::ruby_extensions(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::ruby_extensions {
   
   zypprepo {'devel_languages_ruby_extensions':
     baseurl      => "http://download.opensuse.org/repositories/devel:/languages:/ruby:/extensions/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 0,
     descr        => "Ruby Extensions (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

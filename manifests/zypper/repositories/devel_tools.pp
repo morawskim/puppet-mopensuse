@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::devel_tools {
+class mopensuse::zypper::repositories::devel_tools(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::devel_tools {
   
   zypprepo {'devel_tools':
     baseurl      => "http://download.opensuse.org/repositories/devel:/tools/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Generic Development Tools (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

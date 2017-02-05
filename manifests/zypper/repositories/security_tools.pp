@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::security_tools {
+class mopensuse::zypper::repositories::security_tools(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::security_tools {
 
   zypprepo {'security_tools':
     baseurl      => "http://download.opensuse.org/repositories/security:tools/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Security tools for auditing and scanning (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

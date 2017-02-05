@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::isv_owncloud_desktop {
+class mopensuse::zypper::repositories::isv_owncloud_desktop(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::isv_owncloud_desktop {
   
   zypprepo {'isv_owncloud_desktop':
     baseurl      => "http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "The ownCloud Desktop Client (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

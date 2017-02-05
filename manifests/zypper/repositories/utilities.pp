@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::utilities {
+class mopensuse::zypper::repositories::utilities(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::utilities {
   
   zypprepo {'utilities':
     baseurl      => "http://download.opensuse.org/repositories/utilities/openSUSE_${::operatingsystemrelease}",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "all the small tools for the shell (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,

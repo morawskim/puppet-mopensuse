@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::jenkins {
+class mopensuse::zypper::repositories::jenkins(
+    $enabled = 1
+) {
   
   include mopensuse::zypper::refresh
   
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::jenkins {
   
   zypprepo {'jenkins':
     baseurl      => "http://pkg.jenkins-ci.org/opensuse/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Jenkins",
     gpgcheck     => 1,

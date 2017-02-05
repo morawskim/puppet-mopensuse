@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::slack {
+class mopensuse::zypper::repositories::slack(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -8,7 +10,7 @@ class mopensuse::zypper::repositories::slack {
 
   zypprepo {'slack':
     baseurl      => "https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Slack",
     gpgcheck     => 0,

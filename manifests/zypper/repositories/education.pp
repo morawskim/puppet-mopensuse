@@ -1,4 +1,6 @@
-class mopensuse::zypper::repositories::education {
+class mopensuse::zypper::repositories::education(
+    $enabled = 1
+) {
 
   include mopensuse::zypper::refresh
 
@@ -6,7 +8,7 @@ class mopensuse::zypper::repositories::education {
 
   zypprepo {'education':
     baseurl      => "http://download.opensuse.org/repositories/Education/openSUSE_${::operatingsystemrelease}/",
-    enabled      => 1,
+    enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Applications for education users (openSUSE_${::operatingsystemrelease})",
     gpgcheck     => 1,
