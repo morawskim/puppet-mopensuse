@@ -1,6 +1,7 @@
 class mopensuse::packages::jenkins(
   $port=8880,
-  $reverse_proxying=true
+  $reverse_proxying=true,
+  $service_enable = true
 ) {
 
   include mopensuse::zypper::repositories::jenkins
@@ -75,7 +76,7 @@ class mopensuse::packages::jenkins(
       repo            => false,
       direct_download => undef,
       manage_datadirs => true,
-      service_enable  => true,
+      service_enable  => $service_enable,
       install_java    => false,
       cli             => false,
       service_ensure  => 'running',
