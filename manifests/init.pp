@@ -75,6 +75,7 @@ class mopensuse {
   include mopensuse::packages::lynx
   include mopensuse::packages::machinery
   include mopensuse::packages::mailhog
+  include mopensuse::packages::mailutil
   include mopensuse::packages::maven
   include mopensuse::packages::mc
   include mopensuse::packages::memcached
