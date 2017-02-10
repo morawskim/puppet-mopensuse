@@ -156,6 +156,7 @@ class mopensuse {
   include mopensuse::packages::wireshark
   include mopensuse::packages::wpcli
   include mopensuse::packages::x11vnc
+  include mopensuse::packages::xtrabackup
   include mopensuse::packages::xvfb
   include mopensuse::packages::yadm
   include mopensuse::packages::youtube-dl
