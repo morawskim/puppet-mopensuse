@@ -97,6 +97,7 @@ class mopensuse {
   include mopensuse::packages::nfs-server
   include mopensuse::packages::ngrep
   include mopensuse::packages::ngrok
+  include mopensuse::packages::nmon
   include mopensuse::packages::nodejs
   include mopensuse::packages::notify-send
   include mopensuse::packages::ntfs3g
