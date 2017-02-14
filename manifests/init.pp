@@ -80,6 +80,7 @@ class mopensuse {
   include mopensuse::packages::mc
   include mopensuse::packages::memcached
   include mopensuse::packages::mitmproxy_bundled
+  include mopensuse::packages::monit
   include mopensuse::packages::monitoring
   include mopensuse::packages::monoid
   include mopensuse::packages::mozilla_nss_tools
