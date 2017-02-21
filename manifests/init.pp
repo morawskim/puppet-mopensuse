@@ -134,6 +134,7 @@ class mopensuse {
   include mopensuse::packages::skype
   include mopensuse::packages::smbnetfs
   include mopensuse::packages::smtpcli
+  include mopensuse::packages::socat
   include mopensuse::packages::sqlite3-devel
   include mopensuse::packages::srm
   include mopensuse::packages::sshd
