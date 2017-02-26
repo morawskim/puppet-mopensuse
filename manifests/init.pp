@@ -172,6 +172,7 @@ class mopensuse {
   include mopensuse::packages::gui::byzanz
   include mopensuse::packages::gui::calibre
   include mopensuse::packages::gui::chrome
+  include mopensuse::packages::gui::chromium
   include mopensuse::packages::gui::clion
   include mopensuse::packages::gui::dfeet
   include mopensuse::packages::gui::filezilla
