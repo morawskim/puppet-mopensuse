@@ -171,6 +171,7 @@ class mopensuse {
   include mopensuse::packages::gui::adobe_source_code_pro_fonts
   include mopensuse::packages::gui::byzanz
   include mopensuse::packages::gui::calibre
+  include mopensuse::packages::gui::cherrytree
   include mopensuse::packages::gui::chrome
   include mopensuse::packages::gui::chromium
   include mopensuse::packages::gui::clion
