@@ -121,6 +121,7 @@ class mopensuse {
   include mopensuse::packages::postfix
   include mopensuse::packages::procps
   include mopensuse::packages::proxychains_ng
+  include mopensuse::packages::putty
   include mopensuse::packages::pv
   include mopensuse::packages::pwgen
   include mopensuse::packages::qemu_kvm
