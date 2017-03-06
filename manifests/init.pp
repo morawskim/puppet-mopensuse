@@ -45,6 +45,7 @@ class mopensuse {
   include mopensuse::packages::dnsmasq
   include mopensuse::packages::docker
   include mopensuse::packages::dpkg
+  include mopensuse::packages::enhancd
   include mopensuse::packages::fakeprovide
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
