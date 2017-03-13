@@ -88,6 +88,7 @@ class mopensuse {
   include mopensuse::packages::mphp
   include mopensuse::packages::msmtp
   include mopensuse::packages::mssys
+  include mopensuse::packages::multitail
   include mopensuse::packages::mutt
   include mopensuse::packages::mycli
   include mopensuse::packages::mysql
