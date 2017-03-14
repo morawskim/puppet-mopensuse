@@ -98,6 +98,7 @@ class mopensuse {
   include mopensuse::packages::nethogs
   include mopensuse::packages::network
   include mopensuse::packages::nfs
+  include mopensuse::packages::newsbeuter
   include mopensuse::packages::nfs-server
   include mopensuse::packages::ngrep
   include mopensuse::packages::ngrok
