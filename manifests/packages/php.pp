@@ -9,9 +9,10 @@ class mopensuse::packages::php {
   package {['php5', 'php5-fpm', 'php5-mysql', 'php5-ldap', 'php5-soap', 'php5-pgsql',
     'php5-phar', 'php5-devel', 'php5-readline', 'php5-curl', 'php5-intl', 'php5-gettext',
     'php5-xsl', 'php5-zlib', 'php5-xmlwriter', 'php5-bcmath', 'php5-sockets', 'php5-pcntl',
-    'php5-ctype', 'php5-gd', 'php5-xmlreader', 'php5-ssh2', 'php5-zip',
+    'php5-ctype', 'php5-gd', 'php5-xmlreader', 'php5-ssh2', 'php5-zip', 'php5-ftp',
     'php5-iconv', 'php5-fileinfo', 'php5-tokenizer', 'php5-exif']:
-    ensure => present,
+    ensure  => present,
+    require => Class['mopensuse::zypper::repositories::server_php_extensions'],
     notify  => Service['php-fpm']
   }
 

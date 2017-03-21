@@ -12,7 +12,7 @@ class mopensuse::packages::php56v {
   $pool_listen_group = 'www'
   $pool_listen_mode  = '0660'
 
-  package {['php56', 'php56-fpm', 'php56-mysql', 'php56-ldap', 'php56-soap', 
+  package {['php56', 'php56-fpm', 'php56-mysql', 'php56-ldap', 'php56-soap', 'php56-ftp',
     'php56-pgsql', 'php56-phar', 'php56-devel', 'php56-readline', 'php56-xdebug', 
     'php56-redis', 'php56-curl', 'php56-mbstring', 'php56-json', 'php56-intl', 
     'php56-gettext', 'php56-xsl', 'php56-zlib', 'php56-xmlwriter', 'php56-bcmath', 'php56-sockets',

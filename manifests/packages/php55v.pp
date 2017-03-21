@@ -18,7 +18,7 @@ class mopensuse::packages::php55v {
     'php55v-gettext', 'php55v-xsl', 'php55v-zlib', 'php55v-xmlwriter', 'php55v-bcmath',
     'php55v-sockets', 'php55v-iconv', 'php55v-fileinfo', 'php55v-tokenizer', 'php55v-exif',
     'php55v-pcntl', php55v-ctype, 'php55v-gd', 'php55v-xmlreader', 'php55v-zip',
-    'php55v-mcrypt'
+    'php55v-mcrypt', 'php55v-ftp'
 ]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
