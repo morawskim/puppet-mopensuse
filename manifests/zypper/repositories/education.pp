@@ -2,15 +2,20 @@ class mopensuse::zypper::repositories::education(
     $enabled = 1
 ) {
 
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
 
-  $gpg_key = "http://download.opensuse.org/repositories/Education/openSUSE_${::operatingsystemrelease}/repodata/repomd.xml.key"
+  $gpg_key = "http://download.opensuse.org/repositories/Education/${dist_key}/repodata/repomd.xml.key"
 
   zypprepo {'education':
-    baseurl      => "http://download.opensuse.org/repositories/Education/openSUSE_${::operatingsystemrelease}/",
+    baseurl      => "http://download.opensuse.org/repositories/Education/${dist_key}/",
     enabled      => $enabled,
     autorefresh  => 1,
-    descr        => "Applications for education users (openSUSE_${::operatingsystemrelease})",
+    descr        => "Applications for education users (${dist_key})",
     gpgcheck     => 1,
     gpgkey       => $gpg_key,
     type         => 'rpm-md',

@@ -2,6 +2,11 @@ class mopensuse::zypper::repositories::libdvdcss(
     $enabled = 1
 ) {
   
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
   
   $gpg_key = "http://opensuse-guide.org/repo/${::operatingsystemrelease}/repodata/repomd.xml.key"
@@ -10,7 +15,7 @@ class mopensuse::zypper::repositories::libdvdcss(
     baseurl      => "http://opensuse-guide.org/repo/${::operatingsystemrelease}/",
     enabled      => $enabled,
     autorefresh  => 1,
-    descr        => "libdvdcss Repository (openSUSE_${::operatingsystemrelease})",
+    descr        => "libdvdcss Repository (${dist_key})",
     gpgcheck     => 1,
     gpgkey       => $gpg_key,
     type         => 'rpm-md',

@@ -2,6 +2,11 @@ class mopensuse::zypper::repositories::jenkins(
     $enabled = 1
 ) {
   
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
   
   $gpg_key = "http://pkg.jenkins-ci.org/opensuse/repodata/repomd.xml.key"

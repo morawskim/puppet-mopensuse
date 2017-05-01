@@ -2,15 +2,20 @@ class mopensuse::zypper::repositories::systemsmanagement_machinery(
     $enabled = 1
 ) {
 
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
     include mopensuse::zypper::refresh
 
-    $gpg_key = "http://download.opensuse.org/repositories/systemsmanagement:/machinery/openSUSE_${::operatingsystemrelease}/repodata/repomd.xml.key"
+    $gpg_key = "http://download.opensuse.org/repositories/systemsmanagement:/machinery/${dist_key}/repodata/repomd.xml.key"
 
     zypprepo {'systemsmanagement_machinery':
-        baseurl      => "http://download.opensuse.org/repositories/systemsmanagement:/machinery/openSUSE_${::operatingsystemrelease}/",
+        baseurl      => "http://download.opensuse.org/repositories/systemsmanagement:/machinery/${dist_key}/",
         enabled      => $enabled,
         autorefresh  => 1,
-        descr        => "Machinery systems management toolkit (openSUSE_${::operatingsystemrelease})",
+        descr        => "Machinery systems management toolkit (${dist_key})",
         gpgcheck     => 1,
         gpgkey       => $gpg_key,
         type         => 'rpm-md',

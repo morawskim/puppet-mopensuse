@@ -2,6 +2,11 @@ class mopensuse::zypper::repositories::vivaldi(
     $enabled = 1
 ) {
   
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
   
   $gpg_key = "https://gist.githubusercontent.com/morawskim/dcee4dd70958c4e9ede389c45f7f8d5f/raw/c47323f1cd395b5c79d0fc23cd2bdb19b6b302df/vivaldi_gpg.pub"

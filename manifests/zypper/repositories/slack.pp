@@ -2,6 +2,11 @@ class mopensuse::zypper::repositories::slack(
     $enabled = 1
 ) {
 
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
 
   $gpg_packagecloud = "https://gist.githubusercontent.com/morawskim/8d169cd436bad32bdd034054255db796/raw/7123e2d371cc3d7889a97107d7b4a6f054481b64/gpg_packagecloud.pub"

@@ -2,15 +2,20 @@ class mopensuse::zypper::repositories::games_tools(
     $enabled = 1
 ) {
   
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
   
-  $gpg_key = "http://download.opensuse.org/repositories/games:/tools/openSUSE_${::operatingsystemrelease}/repodata/repomd.xml.key"
+  $gpg_key = "http://download.opensuse.org/repositories/games:/tools/${dist_key}/repodata/repomd.xml.key"
   
   zypprepo {'games_tools':
-      baseurl      => "http://download.opensuse.org/repositories/games:/tools/openSUSE_${::operatingsystemrelease}/",
+      baseurl      => "http://download.opensuse.org/repositories/games:/tools/${dist_key}/",
     enabled      => $enabled,
     autorefresh  => 1,
-    descr        => "Tools for Gamers (openSUSE_${::operatingsystemrelease})",
+    descr        => "Tools for Gamers (${dist_key})",
     gpgcheck     => 1,
     gpgkey       => $gpg_key,
     type         => 'rpm-md',

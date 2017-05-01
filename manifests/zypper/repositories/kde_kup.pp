@@ -2,15 +2,20 @@ class mopensuse::zypper::repositories::kde_kup(
     $enabled = 1
 ) {
   
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
   
-  $gpg_key = "http://download.opensuse.org/repositories/home:/simper:/kup/openSUSE_${::operatingsystemrelease}/repodata/repomd.xml.key"
+  $gpg_key = "http://download.opensuse.org/repositories/home:/simper:/kup/${dist_key}/repodata/repomd.xml.key"
   
   zypprepo {'kde_kup':
-    baseurl      => "http://download.opensuse.org/repositories/home:/simper:/kup/openSUSE_${::operatingsystemrelease}/",
+    baseurl      => "http://download.opensuse.org/repositories/home:/simper:/kup/${dist_key}/",
     enabled      => $enabled,
     autorefresh  => 1,
-    descr        => "Kup Backup System (openSUSE_${::operatingsystemrelease})",
+    descr        => "Kup Backup System (${dist_key})",
     gpgcheck     => 1,
     gpgkey       => $gpg_key,
     type         => 'rpm-md',

@@ -2,15 +2,20 @@ class mopensuse::zypper::repositories::kde_extra(
     $enabled = 1
 ) {
   
+  if $::operatingsystemrelease > 13.2 {
+    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
+  } else {
+    $dist_key = "openSUSE_${::operatingsystemrelease}"
+  }
   include mopensuse::zypper::refresh
   
-  $gpg_key = "http://download.opensuse.org/repositories/KDE:/Extra/openSUSE_${::operatingsystemrelease}/repodata/repomd.xml.key"
+  $gpg_key = "http://download.opensuse.org/repositories/KDE:/Extra/${dist_key}/repodata/repomd.xml.key"
   
   zypprepo {'kde_extra':
-    baseurl      => "http://download.opensuse.org/repositories/KDE:/Extra/openSUSE_${::operatingsystemrelease}/",
+    baseurl      => "http://download.opensuse.org/repositories/KDE:/Extra/${dist_key}/",
     enabled      => $enabled,
     autorefresh  => 1,
-    descr        => "Additional packages maintained by the KDE team (openSUSE_${::operatingsystemrelease})",
+    descr        => "Additional packages maintained by the KDE team (${dist_key})",
     gpgcheck     => 1,
     gpgkey       => $gpg_key,
     type         => 'rpm-md',
