@@ -156,6 +156,7 @@ class mopensuse {
   include mopensuse::packages::stunnel
   include mopensuse::packages::susepaste
   include mopensuse::packages::swaks
+  include mopensuse::packages::sysstat
   include mopensuse::packages::taskwarrior
   include mopensuse::packages::tcpdump
   include mopensuse::packages::testdisk
