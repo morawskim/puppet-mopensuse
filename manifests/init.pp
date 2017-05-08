@@ -56,6 +56,7 @@ class mopensuse {
   include mopensuse::packages::gearmand
   include mopensuse::packages::gettext
   include mopensuse::packages::git-server
+  include mopensuse::packages::git_extras
   include mopensuse::packages::graphviz
   include mopensuse::packages::hstr
   include mopensuse::packages::html2text
