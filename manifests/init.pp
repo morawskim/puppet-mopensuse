@@ -160,6 +160,7 @@ class mopensuse {
   include mopensuse::packages::taskwarrior
   include mopensuse::packages::tcpdump
   include mopensuse::packages::testdisk
+  include mopensuse::packages::tig
   include mopensuse::packages::tmux
   include mopensuse::packages::tomcat
   include mopensuse::packages::translateshell
