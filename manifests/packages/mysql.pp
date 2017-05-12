@@ -24,6 +24,7 @@ class mopensuse::packages::mysql(
     includedir              => '/etc/my.cnf.d',
     purge_conf_dir          => false,
     manage_config_file      => false,
+    root_group              => 'mysql',
     require                 => Package['mariadb']
   }
   
