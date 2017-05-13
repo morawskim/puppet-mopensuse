@@ -27,7 +27,7 @@ define mopensuse::user::account (
     ensure  =>  directory,
     owner   =>  $username,
     group   =>  $username,
-    mode    =>  '0750',
+    mode    =>  '0755',
     require =>  [ User[$username], Group[$username] ],
   }
   
