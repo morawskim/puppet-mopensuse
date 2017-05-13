@@ -76,14 +76,7 @@ class mopensuse::user::marcin (
     user    => $username,
     require => Mopensuse::User::Account[$username]
   }
-  
-  mopensuse::user::config::composer{$username:
-    user               => $username,
-    require            => Mopensuse::User::Account[$username],
-    composer_home      => "${user_home_path}/.composer",
-    github_oauth_token => $github_oauth_token
-  }
-  
+
   mopensuse::user::config::vim{$username:
     user    => $username,
     user_home_path => $user_home_path,
