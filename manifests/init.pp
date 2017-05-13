@@ -157,6 +157,7 @@ class mopensuse {
   include mopensuse::packages::susepaste
   include mopensuse::packages::swaks
   include mopensuse::packages::sysstat
+  include mopensuse::packages::systemd
   include mopensuse::packages::taskwarrior
   include mopensuse::packages::tcpdump
   include mopensuse::packages::testdisk
