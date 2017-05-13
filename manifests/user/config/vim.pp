@@ -13,7 +13,6 @@ define mopensuse::user::config::vim (
     owner      => $user,
     group      => $user,
     submodules => true,
-    require    => Mopensuse::User::Account[$user]
   }
   
   file {"${user_home_path}/.vimrc":

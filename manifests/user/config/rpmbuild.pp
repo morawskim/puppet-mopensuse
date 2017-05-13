@@ -11,6 +11,5 @@ define mopensuse::user::config::rpmbuild (
         owner      => $user,
         group      => $user,
         submodules => true,
-        require    => Mopensuse::User::Account[$user]
     }
 }

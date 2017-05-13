@@ -3,21 +3,11 @@ class mopensuse::user::marcin (
   $user_home_path,
   $password,
   $realname,
-  
-  $git_user_name,
-  $git_user_email,
-  $git_diff_tool,
-  
-  $github_oauth_token,
-  
-  $owncloud_desktop_localpath,
-  $owncloud_desktop_http_user,
-  $owncloud_desktop_url,
-  $owncloud_desktop_user,
-  
   $ssh_keys = {},
 ) {
-  
+
+  include mopensuse::packages::gui::adobe_source_code_pro_fonts
+
   mopensuse::user::account {$username:
     username      => $username,
     user_home_dir => $user_home_path,
@@ -25,84 +15,30 @@ class mopensuse::user::marcin (
     realname      => $realname,
     sshkeys       => $ssh_keys
   }
-  
+
   mopensuse::user::config::vboxusers-group{$username:
     user    => $username,
     require => Mopensuse::User::Account[$username]
   }
-  
+
   mopensuse::user::config::disk-group{$username:
     user    => $username,
     require => Mopensuse::User::Account[$username]
   }
-  
-  mopensuse::user::config::profile{$username:
-    user           => $username,
-    user_home_path => $user_home_path,
-    require        => Mopensuse::User::Account[$username]
-  }
-  
-  mopensuse::user::config::project-dir{$username:
-    user           => $username,
-    user_home_path => $user_home_path,
-    require        => Mopensuse::User::Account[$username]
-  }
-  
-  mopensuse::user::config::git{$username:
-    user           => $username,
-    user_home_path => $user_home_path,
-    git_user_name  => $git_user_name,
-    git_user_email => $git_user_email,
-    git_diff_tool  => $git_diff_tool,
-    require        => Mopensuse::User::Account[$username]
-  }
-  
+
   mopensuse::user::config::vagrant-group{$username:
     user    => $username,
     require => Mopensuse::User::Account[$username]
   }
-  
-  mopensuse::user::config::redshift{$username:
-    kde_autostar_dir    => "${user_home_path}/.kde4/Autostart",
-    require             => Mopensuse::User::Account[$username]
-  }
-  
+
   mopensuse::user::config::users-group{$username:
     user    => $username,
     require => Mopensuse::User::Account[$username]
   }
-  
+
   mopensuse::user::config::sshfs-group{$username:
     user    => $username,
     require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::vim{$username:
-    user    => $username,
-    user_home_path => $user_home_path,
-    require => Mopensuse::User::Account[$username]
-  }
-  
-  mopensuse::user::config::kde4{$username:
-    user    => $username,
-    user_home_path => $user_home_path,
-    require => Mopensuse::User::Account[$username]
-  }
-  
-  mopensuse::user::config::owncloud{$username:
-    user                       => $username,
-    user_home_path             => $user_home_path,
-    owncloud_desktop_localpath => $owncloud_desktop_localpath,
-    owncloud_desktop_http_user => $owncloud_desktop_http_user,
-    owncloud_desktop_url       => $owncloud_desktop_url,
-    owncloud_desktop_user      => $owncloud_desktop_user,
-    require                    => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::rpmbuild{$username:
-    user           => $username,
-    user_home_path => $user_home_path,
-    require        => Mopensuse::User::Account[$username]
   }
 
   mopensuse::user::config::dialout-group{$username:
@@ -115,13 +51,18 @@ class mopensuse::user::marcin (
       require => Mopensuse::User::Account[$username]
   }
 
+  mopensuse::user::config::www-group{$username:
+      user    => $username,
+      require => Mopensuse::User::Account[$username]
+  }
+
   mopensuse::user::config::docker-group{$username:
       user    => $username,
       require => Mopensuse::User::Account[$username]
   }
 
-  mopensuse::user::config::krunner_kopete{$username:
-    user           => $username,
-    user_home_path => $user_home_path,
+  mopensuse::user::config::systemd_journal_group{$username:
+    user    => $username,
+    require => Mopensuse::User::Account[$username]
   }
 }

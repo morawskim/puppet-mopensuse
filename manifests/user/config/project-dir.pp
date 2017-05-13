@@ -8,7 +8,6 @@ define mopensuse::user::config::project-dir(
     mode    => '0755',
     owner   => $user,
     group   => $user,
-    require => Mopensuse::User::Account[$user]
   }
   
 }

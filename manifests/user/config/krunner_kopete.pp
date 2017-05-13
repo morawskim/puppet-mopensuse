@@ -9,7 +9,6 @@ define mopensuse::user::config::krunner_kopete (
     section => 'Plugins',
     setting => 'kopete_runnerEnabled',
     value   => 'false',
-    require => Mopensuse::User::Account[$user]
   }
 
   ini_setting { "krunner kopetecontacts":
@@ -18,6 +17,5 @@ define mopensuse::user::config::krunner_kopete (
     section => 'Plugins',
     setting => 'kopetecontacts_runnerEnabled',
     value   => 'true',
-    require => Mopensuse::User::Account[$user]
   }
 }
