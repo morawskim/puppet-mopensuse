@@ -181,7 +181,7 @@ class mopensuse {
   include mopensuse::packages::xvfb
   include mopensuse::packages::yadm
   include mopensuse::packages::youtube-dl
-  include mopensuse::packages::yum_utils
+  include mopensuse::packages::yum_scripts
   include mopensuse::packages::zabbix
   include mopensuse::packages::zabbix-agent
   
