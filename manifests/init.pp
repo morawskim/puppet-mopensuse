@@ -63,6 +63,7 @@ class mopensuse {
   include mopensuse::packages::html2text
   include mopensuse::packages::httperf
   include mopensuse::packages::httpie
+  include mopensuse::packages::httpry
   include mopensuse::packages::httrack
   include mopensuse::packages::imagemagick
   include mopensuse::packages::inotify-tools
