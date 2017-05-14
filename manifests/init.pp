@@ -49,6 +49,7 @@ class mopensuse {
   include mopensuse::packages::easy_rsa2
   include mopensuse::packages::enhancd
   include mopensuse::packages::fakeprovide
+  include mopensuse::packages::fbcat
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
   include mopensuse::packages::fontawesome
