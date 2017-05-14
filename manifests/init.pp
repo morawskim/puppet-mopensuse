@@ -137,6 +137,7 @@ class mopensuse {
   include mopensuse::packages::putty
   include mopensuse::packages::pv
   include mopensuse::packages::pwgen
+  include mopensuse::packages::python3_docopt
   include mopensuse::packages::python_keyring
   include mopensuse::packages::qemu_kvm
   include mopensuse::packages::rar
