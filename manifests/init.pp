@@ -152,6 +152,7 @@ class mopensuse {
   include mopensuse::packages::smtpcli
   include mopensuse::packages::socat
   include mopensuse::packages::sqlite3-devel
+  include mopensuse::packages::squashfs
   include mopensuse::packages::srm
   include mopensuse::packages::sshd
   include mopensuse::packages::sshfs
