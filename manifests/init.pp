@@ -203,6 +203,7 @@ class mopensuse {
   include mopensuse::packages::gui::ghex
   include mopensuse::packages::gui::gitg
   include mopensuse::packages::gui::glxgears
+  include mopensuse::packages::gui::gobby
   include mopensuse::packages::gui::hardinfo
   include mopensuse::packages::gui::jetbrains-download-scripts
   include mopensuse::packages::gui::jetbrains_toolbox
