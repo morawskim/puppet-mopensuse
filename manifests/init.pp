@@ -31,6 +31,7 @@ class mopensuse {
   include mopensuse::packages::colordiff
   include mopensuse::packages::colout
   include mopensuse::packages::composer
+  include mopensuse::packages::createrepo
   include mopensuse::packages::ctags
   include mopensuse::packages::cups
   include mopensuse::packages::daps
