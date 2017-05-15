@@ -232,6 +232,7 @@ class mopensuse {
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::poedit
   include mopensuse::packages::gui::postman
+  include mopensuse::packages::gui::qps
   include mopensuse::packages::gui::recordmydesktop
   include mopensuse::packages::gui::redshift
   include mopensuse::packages::gui::retext
