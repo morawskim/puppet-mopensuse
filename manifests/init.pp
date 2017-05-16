@@ -177,6 +177,7 @@ class mopensuse {
   include mopensuse::packages::ungifsicle
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
+  include mopensuse::packages::vdirsyncer
   include mopensuse::packages::vim
   include mopensuse::packages::virtualbox
   include mopensuse::packages::wget
