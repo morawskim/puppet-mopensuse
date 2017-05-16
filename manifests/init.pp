@@ -70,6 +70,7 @@ class mopensuse {
   include mopensuse::packages::imagemagick
   include mopensuse::packages::inotify-tools
   include mopensuse::packages::iperf
+  include mopensuse::packages::isync
   include mopensuse::packages::jenkins
   include mopensuse::packages::jq
   include mopensuse::packages::json_tools
