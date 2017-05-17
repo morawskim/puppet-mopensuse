@@ -3,8 +3,8 @@ class mopensuse::packages::php55v {
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
 
-  $phpname = 'php55'
-  $service_name = "${phpname}v-fpm"
+  $phpname = 'php55v'
+  $service_name = "${phpname}-fpm"
   $phpfpm_prefix = "/opt/php/${phpname}"
   $pool_name = "${phpname}"
   $pool_dir = "${phpfpm_prefix}/etc/php5/fpm/pool.d"
@@ -22,16 +22,16 @@ class mopensuse::packages::php55v {
 ]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service['php-fpm']
+    notify  => Service[$service_name]
   }
 
-  file {'/opt/php/php55/etc/php5/conf.d/custom.ini':
+  file {'/opt/php/php55v/etc/php5/conf.d/custom.ini':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
     source  => "puppet:///modules/${module_name}/php/php-custom.ini",
-    notify  => [ Service['php-fpm'] ],
+    notify  => [ Service[$service_name] ],
     require => Package['php55v']
   }
 

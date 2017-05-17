@@ -126,7 +126,7 @@ class mopensuse {
   include mopensuse::packages::php54v
   include mopensuse::packages::php55v
   include mopensuse::packages::php56v
-  include mopensuse::packages::php7v
+  include mopensuse::packages::php70v
   include mopensuse::packages::php-dev-scripts
   include mopensuse::packages::phpldapadmin
   include mopensuse::packages::phpmyadmin

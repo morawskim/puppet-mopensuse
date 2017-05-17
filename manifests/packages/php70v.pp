@@ -1,9 +1,9 @@
-class mopensuse::packages::php7v {
+class mopensuse::packages::php70v {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
 
-  $phpname = 'php7'
+  $phpname = 'php70v'
   $service_name = "${phpname}-fpm"
   $phpfpm_prefix = "/opt/php/${phpname}"
   $pool_name = "${phpname}"
@@ -12,26 +12,26 @@ class mopensuse::packages::php7v {
   $pool_listen_group = 'www'
   $pool_listen_mode  = '0660'
 
-  package {['php7', 'php7-fpm', 'php7-mysql', 'php7-ldap', 'php7-soap', 'php7-iconv',
-    'php7-pgsql', 'php7-phar', 'php7-devel', 'php7-readline', 'php7-curl',
-    'php7-mbstring', 'php7-json', 'php7-intl', 'php7-gettext', 'php7-xsl', 'php7-zlib',
-    'php7-xmlwriter', 'php7-bcmath', 'php7-sockets', 'php7-pcntl', 'php7-ctype', 'php7-gd',
-    'php7-xmlreader', 'php7-zip', 'php7-fileinfo', 'php7-tokenizer', 'php7-exif',
-    'php7-mcrypt', 'php7-ftp'
+  package {['php70v', 'php70v-fpm', 'php70v-mysql', 'php70v-ldap', 'php70v-soap', 'php70v-iconv',
+    'php70v-pgsql', 'php70v-phar', 'php70v-devel', 'php70v-readline', 'php70v-curl',
+    'php70v-mbstring', 'php70v-json', 'php70v-intl', 'php70v-gettext', 'php70v-xsl', 'php70v-zlib',
+    'php70v-xmlwriter', 'php70v-bcmath', 'php70v-sockets', 'php70v-pcntl', 'php70v-ctype', 'php70v-gd',
+    'php70v-xmlreader', 'php70v-zip', 'php70v-fileinfo', 'php70v-tokenizer', 'php70v-exif',
+    'php70v-mcrypt', 'php70v-ftp'
 ]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service['php-fpm']
+    notify  => Service[$service_name]
   }
 
-  file{'/opt/php/php7/etc/php7/conf.d/custom.ini':
+  file{'/opt/php/php70v/etc/php7/conf.d/custom.ini':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
     source  => "puppet:///modules/${module_name}/php/php-custom.ini",
-    notify  => Service['php-fpm'],
-    require => Package['php7']
+    notify  => Service[$service_name],
+    require => Package['php70v']
   }
 
   mopensuse::define::php_fpm {$phpname:
@@ -43,6 +43,7 @@ class mopensuse::packages::php7v {
     pid_file                       => "/run/${phpname}-fpm.pid",
     error_log                      => "/var/log/${phpname}-fpm.log",
     syslog_ident                   => "${phpname}-fpm",
+    require                        => Package['php70v-fpm']
   }
 
   mopensuse::define::php_fpm_pool {$pool_name:

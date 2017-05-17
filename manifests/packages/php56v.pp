@@ -3,7 +3,7 @@ class mopensuse::packages::php56v {
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
 
-  $phpname = 'php56'
+  $phpname = 'php56v'
   $service_name = "${phpname}-fpm"
   $phpfpm_prefix = "/opt/php/${phpname}"
   $pool_name = "${phpname}"
@@ -12,25 +12,25 @@ class mopensuse::packages::php56v {
   $pool_listen_group = 'www'
   $pool_listen_mode  = '0660'
 
-  package {['php56', 'php56-fpm', 'php56-mysql', 'php56-ldap', 'php56-soap', 'php56-ftp',
-    'php56-pgsql', 'php56-phar', 'php56-devel', 'php56-readline', 'php56-xdebug', 
-    'php56-redis', 'php56-curl', 'php56-mbstring', 'php56-json', 'php56-intl', 
-    'php56-gettext', 'php56-xsl', 'php56-zlib', 'php56-xmlwriter', 'php56-bcmath', 'php56-sockets',
-    'php56-pcntl', php56-ctype, 'php56-gd', 'php56-xmlreader', 'php56-zip', 'php56-tokenizer',
-    'php56-iconv', 'php56-fileinfo', 'php56-exif', 'php56-mcrypt']:
+  package {['php56v', 'php56v-fpm', 'php56v-mysql', 'php56v-ldap', 'php56v-soap', 'php56v-ftp',
+    'php56v-pgsql', 'php56v-phar', 'php56v-devel', 'php56v-readline', 'php56v-xdebug',
+    'php56v-redis', 'php56v-curl', 'php56v-mbstring', 'php56v-json', 'php56v-intl',
+    'php56v-gettext', 'php56v-xsl', 'php56v-zlib', 'php56v-xmlwriter', 'php56v-bcmath', 'php56v-sockets',
+    'php56v-pcntl', php56v-ctype, 'php56v-gd', 'php56v-xmlreader', 'php56v-zip', 'php56v-tokenizer',
+    'php56v-iconv', 'php56v-fileinfo', 'php56v-exif', 'php56v-mcrypt']:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service['php-fpm']
+    notify  => Service[$service_name]
   }
 
-  file {'/opt/php/php56/etc/php5/conf.d/custom.ini':
+  file {'/opt/php/php56v/etc/php5/conf.d/custom.ini':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
     source  => "puppet:///modules/${module_name}/php/php-custom.ini",
-    notify  => [ Service['php-fpm'] ],
-    require => Package['php56']
+    notify  => [ Service[$service_name] ],
+    require => Package['php56v']
   }
 
   mopensuse::define::php_fpm {$phpname:
@@ -42,6 +42,7 @@ class mopensuse::packages::php56v {
     pid_file                       => "/run/${phpname}-fpm.pid",
     error_log                      => "/var/log/${phpname}-fpm.log",
     syslog_ident                   => "${phpname}-fpm",
+    require                        => Package['php56v-fpm']
   }
 
   mopensuse::define::php_fpm_pool {$pool_name:
