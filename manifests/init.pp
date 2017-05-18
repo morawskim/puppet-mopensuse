@@ -174,6 +174,7 @@ class mopensuse {
   include mopensuse::packages::tomcat
   include mopensuse::packages::translateshell
   include mopensuse::packages::tree
+  include mopensuse::packages::tsung
   include mopensuse::packages::ttyrec
   include mopensuse::packages::ungifsicle
   include mopensuse::packages::vagrant
