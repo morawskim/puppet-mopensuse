@@ -137,6 +137,7 @@ class mopensuse {
   include mopensuse::packages::powerline
   include mopensuse::packages::procps
   include mopensuse::packages::proxychains_ng
+  include mopensuse::packages::puppet
   include mopensuse::packages::putty
   include mopensuse::packages::pv
   include mopensuse::packages::pwgen
