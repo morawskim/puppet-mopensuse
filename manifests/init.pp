@@ -228,6 +228,7 @@ class mopensuse {
   include mopensuse::packages::gui::krunner_kopetecontacts
   include mopensuse::packages::gui::krusader
   #include mopensuse::packages::gui::kup
+  include mopensuse::packages::gui::labplot
   include mopensuse::packages::gui::libqt4-x11
   include mopensuse::packages::gui::live_usb_gui
   include mopensuse::packages::gui::lshw-gui
