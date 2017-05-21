@@ -222,6 +222,7 @@ class mopensuse {
   include mopensuse::packages::gui::kapptemplate
   include mopensuse::packages::gui::kate
   include mopensuse::packages::gui::kcachegrind
+  include mopensuse::packages::gui::kdbg
   include mopensuse::packages::gui::kdeconnect
   include mopensuse::packages::gui::kdiff3
   include mopensuse::packages::gui::krdc
