@@ -213,6 +213,7 @@ class mopensuse {
   include mopensuse::packages::gui::ghex
   include mopensuse::packages::gui::gitg
   include mopensuse::packages::gui::glade
+  include mopensuse::packages::gui::glogg
   include mopensuse::packages::gui::glxgears
   include mopensuse::packages::gui::gobby
   include mopensuse::packages::gui::gvim
