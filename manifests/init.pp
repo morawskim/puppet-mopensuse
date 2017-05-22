@@ -241,6 +241,7 @@ class mopensuse {
   include mopensuse::packages::gui::owasp_zap
   include mopensuse::packages::gui::owncloud-client
   include mopensuse::packages::gui::pdfchain
+  include mopensuse::packages::gui::pdfcompare
   include mopensuse::packages::gui::pgadmin
   include mopensuse::packages::gui::phpstorm
   include mopensuse::packages::gui::pidgin
