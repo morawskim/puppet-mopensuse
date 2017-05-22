@@ -250,6 +250,8 @@ class mopensuse {
   include mopensuse::packages::gui::plasma-nm-openvpn
   include mopensuse::packages::gui::poedit
   include mopensuse::packages::gui::postman
+  include mopensuse::packages::gui::python_kde4
+  include mopensuse::packages::gui::python_kdebase4
   include mopensuse::packages::gui::qps
   include mopensuse::packages::gui::recordmydesktop
   include mopensuse::packages::gui::redshift
