@@ -215,6 +215,7 @@ class mopensuse {
   include mopensuse::packages::gui::glade
   include mopensuse::packages::gui::glogg
   include mopensuse::packages::gui::glxgears
+  include mopensuse::packages::gui::gnome_disk_utility
   include mopensuse::packages::gui::gobby
   include mopensuse::packages::gui::gvim
   include mopensuse::packages::gui::hardinfo
