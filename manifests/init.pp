@@ -237,6 +237,7 @@ class mopensuse {
   include mopensuse::packages::gui::live_usb_gui
   include mopensuse::packages::gui::lshw-gui
   include mopensuse::packages::gui::minitube
+  include mopensuse::packages::gui::mozillathunderbird
   include mopensuse::packages::gui::mplayer
   include mopensuse::packages::gui::mysql-workbench
   include mopensuse::packages::gui::nemiver
