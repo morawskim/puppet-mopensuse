@@ -12,5 +12,6 @@ class mopensuse::packages::gui::recordmydesktop {
   package {'qt-recordmydesktop':
     ensure => present,
     install_options => [ {'--from' => 'multimedia_apps'} ],
+    require => Class['mopensuse::zypper::repositories::multimedia_apps']
   }
 }
