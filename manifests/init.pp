@@ -246,7 +246,6 @@ class mopensuse {
   include mopensuse::packages::gui::pdfchain
   include mopensuse::packages::gui::pdfcompare
   include mopensuse::packages::gui::pgadmin
-  include mopensuse::packages::gui::phpstorm
   include mopensuse::packages::gui::pidgin
   include mopensuse::packages::gui::plantuml
   include mopensuse::packages::gui::plasma-nm-openvpn
