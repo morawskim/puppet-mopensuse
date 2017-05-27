@@ -1,6 +1,7 @@
 class mopensuse::packages::php70v {
 
   include mopensuse::zypper::repositories::morawskim
+  include mopensuse::zypper::repositories::server_monitoring
   include mopensuse::packages::php
 
   $phpname = 'php70v'
@@ -21,6 +22,18 @@ class mopensuse::packages::php70v {
 ]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim'],
+    notify  => Service[$service_name]
+  }
+
+  package {['php70v-xdebug', 'php70v-redis', 'php70v-imagick', 'php70v-mailparse']:
+    ensure  => present,
+    require => Class['mopensuse::zypper::repositories::morawskim'],
+    notify  => Service[$service_name]
+  }
+
+  package {['php70v-gearman']:
+    ensure  => present,
+    require => Class['mopensuse::zypper::repositories::server_monitoring'],
     notify  => Service[$service_name]
   }
 
