@@ -24,12 +24,6 @@ class mopensuse::packages::nodejs_packages {
     require  => Class['mopensuse::packages::nodejs']
   }
 
-  package { 'phantomjs':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Class['mopensuse::packages::nodejs']
-  }
-
   package { 'localtunnel':
     ensure   => 'present',
     provider => 'npm',
