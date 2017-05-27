@@ -1,7 +1,7 @@
 class mopensuse::packages::gui::vlc-qt {
-  
+
   package {'vlc-qt':
-    ensure => present
+    ensure => present,
+    install_options => [ {'--repo' => 'packman'} ]
   }
-  
 }
