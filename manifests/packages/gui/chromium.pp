@@ -2,7 +2,13 @@ class mopensuse::packages::gui::chromium {
 
   include mopensuse::zypper::repositories::packman
 
-  package{['chromium', 'chromium-ffmpeg']:
+  if $::operatingsystemrelease > 13.2 {
+    $packagename = 'chromium-ffmpegsumo'
+  } else {
+    $packagename = 'chromium-ffmpeg'
+  }
+
+  package{['chromium', $packagename]:
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::packman']
   }
