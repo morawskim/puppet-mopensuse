@@ -2,25 +2,22 @@ class mopensuse::packages::vagrant(
   $vagrant_nfsd_users,
   $vagrant_home = '/usr/share/vagrant'
 ) {
-  
+
   include mopensuse::zypper::repositories::morawskim
-  
-  #todo mmo create vagrant facts!
-  #rpm -qi vagrant | grep Version | cut -d: -f2 | tr -d ' '
-  #vagrant -v | cut -d' ' -f2
-  $vagrant_version = '1.7.4'
-  
+  include mopensuse::packages::bash
+  include mopensuse::packages::augeas
+
   package {'vagrant':
     ensure  => present,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
-  
-  file {"/etc/bash_completion.d/vagrant-${vagrant_version}.sh":
+
+  file {"/etc/bash_completion.d/vagrant-${::vagrant_version}.sh":
     ensure  => link,
-    target  => "/opt/vagrant/embedded/gems/gems/vagrant-${vagrant_version}/contrib/bash/completion.sh",
+    target  => "/opt/vagrant/embedded/gems/gems/vagrant-${::vagrant_version}/contrib/bash/completion.sh",
     require => [ Package['vagrant'], Class['mopensuse::packages::bash'] ]
   }
-  
+
   group { 'vagrant':
     ensure => 'present',
   }
@@ -32,14 +29,14 @@ class mopensuse::packages::vagrant(
     group    => 'vagrant',
     require  => Group['vagrant']
   }
-  
+
   augeas { "/files/etc/environment/VAGRANT_HOME":
     changes => [
       "set /files/etc/environment/VAGRANT_HOME '$vagrant_home'",
     ],
-    require => [ Package["augeas"], File[$vagrant_home] ]
+    require => [ Class["mopensuse::packages::augeas"], File[$vagrant_home] ]
   }
-  
+
   file { '/etc/sudoers.d/vagrant':
     ensure  => present,
     mode    => '0740',
