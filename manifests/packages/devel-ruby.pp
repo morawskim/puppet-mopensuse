@@ -5,10 +5,11 @@ class mopensuse::packages::devel-ruby {
     include mopensuse::packages::valgrind-devel
     include mopensuse::packages::apache2
     include mopensuse::services::apache2
+    include mopensuse::packages::bundler
     
     package {['patterns-openSUSE-devel_ruby', 'ruby', 'ruby2.1-devel',
         'ruby2.1-devel-extra', 'ruby-devel', 'rubygem-passenger',
-        'rubygem-passenger-apache2', 'rubygem-bundler', 'completion-ruby',
+        'rubygem-passenger-apache2', 'completion-ruby',
         'ruby2.1-rubygem-ruby-debug-ide', 'ruby2.1-rubygem-gem2rpm', 'rbenv',
         'ruby-build'
              ]:
