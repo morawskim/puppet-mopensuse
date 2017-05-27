@@ -229,7 +229,6 @@ class mopensuse {
   include mopensuse::packages::gui::kdeconnect
   include mopensuse::packages::gui::kdiff3
   include mopensuse::packages::gui::krdc
-  include mopensuse::packages::gui::krunner_kopetecontacts
   include mopensuse::packages::gui::krusader
   #include mopensuse::packages::gui::kup
   include mopensuse::packages::gui::labplot
