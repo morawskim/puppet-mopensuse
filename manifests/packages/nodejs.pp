@@ -1,101 +1,19 @@
 class mopensuse::packages::nodejs {
 
-  package {'nodejs':
+  include mopensuse::packages::nodejs_packages
+
+  if $::operatingsystemrelease > 13.2 {
+    $packagename = 'nodejs4'
+  } else {
+    $packagename = 'nodejs'
+  }
+
+  package {$packagename:
     ensure => present
   }
 
-  package {'nodejs-devel':
+  package {"${packagename}-devel":
     ensure  => present,
-    require => Package['nodejs']
-  }
-
-  package { 'jshint':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'grunt-cli':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'less':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'jslint':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'phantomjs':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'localtunnel':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'gulp-cli':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'nativefier':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'http-server':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'bower':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'babel-cli':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'json-server':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'node-inspector':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'stylelint':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
-  }
-
-  package { 'requirejs':
-    ensure   => 'present',
-    provider => 'npm',
-    require  => Package['nodejs']
+    require => Package[$packagename]
   }
 }
