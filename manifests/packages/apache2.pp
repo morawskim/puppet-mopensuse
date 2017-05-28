@@ -67,7 +67,7 @@ class mopensuse::packages::apache2 {
       command => 'a2enmod proxy_http',
       unless  => 'a2enmod -q proxy_http',
       path    => ['/usr/sbin/'],
-      require => [ Package['apache2'] ],
+      require => [ Package['apache2'], Exec['enable_apache_mod_proxy'] ],
       notify  => Class['mopensuse::services::apache2']
   }
 
