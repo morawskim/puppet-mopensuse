@@ -4,6 +4,7 @@ class mopensuse::packages::gui::mplayer {
 
   package{'MPlayer':
     ensure          => present,
-    install_options => [ {'--from' => 'packman'} ]
+    install_options => [ {'--from' => 'packman'} ],
+    require         => Class['mopensuse::zypper::repositories::packman']
   }
 }
