@@ -12,10 +12,12 @@ class mopensuse::packages::vagrant(
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 
-  file {"/etc/bash_completion.d/vagrant-${::vagrant_version}.sh":
-    ensure  => link,
-    target  => "/opt/vagrant/embedded/gems/gems/vagrant-${::vagrant_version}/contrib/bash/completion.sh",
-    require => [ Package['vagrant'], Class['mopensuse::packages::bash'] ]
+  if $::vagrant_version {
+    file {"/etc/bash_completion.d/vagrant-${::vagrant_version}.sh":
+        ensure  => link,
+        target  => "/opt/vagrant/embedded/gems/gems/vagrant-${::vagrant_version}/contrib/bash/completion.sh",
+        require => [ Package['vagrant'], Class['mopensuse::packages::bash'] ]
+    }
   }
 
   group { 'vagrant':
