@@ -103,6 +103,7 @@ class mopensuse {
   include mopensuse::packages::mutt
   include mopensuse::packages::mycli
   include mopensuse::packages::mysql
+  include mopensuse::packages::mysql_utilities
   include mopensuse::packages::mytop
   include mopensuse::packages::net_snmp
   include mopensuse::packages::netcat_openbsd
