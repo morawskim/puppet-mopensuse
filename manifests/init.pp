@@ -151,6 +151,7 @@ class mopensuse {
   include mopensuse::packages::rar
   include mopensuse::packages::redis
   include mopensuse::packages::rpmbuild
+  include mopensuse::packages::rpmorphan
   include mopensuse::packages::samba
   include mopensuse::packages::samba-client
   include mopensuse::packages::selenium
