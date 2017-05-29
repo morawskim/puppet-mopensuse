@@ -6,13 +6,13 @@ class mopensuse::packages::devel-ruby {
     include mopensuse::packages::apache2
     include mopensuse::services::apache2
     include mopensuse::packages::bundler
+    include mopensuse::packages::ruby_build
     
     package {['patterns-openSUSE-devel_ruby', 'ruby', 'ruby2.1-devel',
         'ruby2.1-devel-extra', 'ruby-devel', 'rubygem-passenger',
         'rubygem-passenger-apache2', 'completion-ruby',
-        'ruby2.1-rubygem-ruby-debug-ide', 'ruby2.1-rubygem-gem2rpm', 'rbenv',
-        'ruby-build'
-             ]:
+        'ruby2.1-rubygem-ruby-debug-ide', 'ruby2.1-rubygem-gem2rpm', 'rbenv'
+    ]:
     ensure  => present,
     require => [
         Class['mopensuse::zypper::repositories::ruby_extensions'],
