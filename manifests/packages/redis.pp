@@ -1,7 +1,7 @@
 class mopensuse::packages::redis {
 
   if $::operatingsystemrelease > 13.2 {
-    $servicename = 'redis@bin'
+    $servicename = 'redis@default'
   } else {
     $servicename = 'redis'
   }
@@ -10,12 +10,12 @@ class mopensuse::packages::redis {
     ensure => present
   }
 
-  file {'/etc/redis/bin.conf':
+  file {'/etc/redis/default.conf':
     ensure  => present,
     mode    => '0640',
     owner   => 'redis',
     group   => 'redis',
-    source  => "puppet:///modules/${module_name}/redis/bin.conf",
+    source  => "file:///etc/redis/default.conf.example",
     notify  => [ Service[$servicename] ],
     require => Package['redis']
   }
@@ -33,6 +33,6 @@ class mopensuse::packages::redis {
     enable     => true,
     hasrestart => true,
     hasstatus  => true,
-    require    => [ Package['redis'], File['/etc/redis/bin.conf'] ]
+    require    => [ Package['redis'], File['/etc/redis/default.conf'] ]
   }
 }
