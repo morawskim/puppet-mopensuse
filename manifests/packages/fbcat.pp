@@ -1,9 +1,9 @@
-class mopensuse::packages::fbcat {
+class mopensuse::packages::fbcat($ensure = 'present') {
 
     include mopensuse::zypper::repositories::utilities
 
     package {'fbcat':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::utilities']
     }
 }

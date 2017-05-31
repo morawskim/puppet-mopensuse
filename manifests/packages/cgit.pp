@@ -1,4 +1,4 @@
-class mopensuse::packages::cgit {
+class mopensuse::packages::cgit($ensure = 'present') {
   
     include mopensuse::packages::apache2
     include mopensuse::packages::augeas
@@ -7,11 +7,11 @@ class mopensuse::packages::cgit {
     include mopensuse::zypper::repositories::morawskim
     
     package {'cgit':
-        ensure => present
+        ensure => $ensure,
     }
     
     package {'cgit-filter-syntaxhiglight':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::morawskim']
     }
   

@@ -1,9 +1,9 @@
-class mopensuse::packages::alien {
+class mopensuse::packages::alien($ensure = 'present') {
 
     include mopensuse::zypper::repositories::utilities
 
     package {'alien':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::utilities']
     }
 }

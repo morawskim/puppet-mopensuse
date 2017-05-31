@@ -1,11 +1,11 @@
-class mopensuse::packages::phpldapadmin {
+class mopensuse::packages::phpldapadmin($ensure = 'present') {
 
     include mopensuse::zypper::repositories::morawskim
     include mopensuse::packages::apache2
     include mopensuse::packages::php
 
     package {'phpldapadmin':
-        ensure  => present,
+        ensure  => $ensure,
         require => [ 
             Class['mopensuse::zypper::repositories::morawskim'],
             Class['mopensuse::packages::apache2'],

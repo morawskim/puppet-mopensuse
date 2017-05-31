@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::kapptemplate {
+class mopensuse::packages::gui::kapptemplate($ensure = 'present') {
   
   package {'kapptemplate':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

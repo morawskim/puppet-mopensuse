@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::chrome {
+class mopensuse::packages::gui::chrome($ensure = 'present') {
   
   include mopensuse::zypper::repositories::google-chrome
   

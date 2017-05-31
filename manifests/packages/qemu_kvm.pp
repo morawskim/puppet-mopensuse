@@ -1,6 +1,6 @@
-class mopensuse::packages::qemu_kvm {
+class mopensuse::packages::qemu_kvm($ensure = 'present') {
 
   package {'qemu-kvm':
-    ensure => present
+    ensure => $ensure,
   }
 }

@@ -1,11 +1,11 @@
-class mopensuse::packages::docker {
+class mopensuse::packages::docker($ensure = 'present') {
 
     package {'docker':
-        ensure => present
+        ensure => $ensure,
     }
 
     package {'docker-bash-completion':
-      ensure  => present,
+      ensure  => $ensure,
       require => Package['docker']
     }
 

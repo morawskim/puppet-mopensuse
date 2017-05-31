@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::mysql-workbench {
+class mopensuse::packages::gui::mysql-workbench($ensure = 'present') {
   
   package {'mysql-workbench':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

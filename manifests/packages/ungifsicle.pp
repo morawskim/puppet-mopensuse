@@ -1,6 +1,6 @@
-class mopensuse::packages::ungifsicle {
+class mopensuse::packages::ungifsicle($ensure = 'present') {
 
   package {'ungifsicle':
-    ensure => present,
+    ensure => $ensure,
   }
 }

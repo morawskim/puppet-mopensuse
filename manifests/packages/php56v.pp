@@ -1,4 +1,4 @@
-class mopensuse::packages::php56v {
+class mopensuse::packages::php56v($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
@@ -18,7 +18,7 @@ class mopensuse::packages::php56v {
     'php56v-gettext', 'php56v-xsl', 'php56v-zlib', 'php56v-xmlwriter', 'php56v-bcmath', 'php56v-sockets',
     'php56v-pcntl', php56v-ctype, 'php56v-gd', 'php56v-xmlreader', 'php56v-zip', 'php56v-tokenizer',
     'php56v-iconv', 'php56v-fileinfo', 'php56v-exif', 'php56v-mcrypt']:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service[$service_name]
   }

@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::okteta {
+class mopensuse::packages::gui::okteta($ensure = 'present') {
 
     package {'okteta':
-    ensure  => present,
+    ensure  => $ensure,
   }
 }
 

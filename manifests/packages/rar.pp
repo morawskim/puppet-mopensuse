@@ -1,9 +1,9 @@
-class mopensuse::packages::rar {
+class mopensuse::packages::rar($ensure = 'present') {
 
   include mopensuse::zypper::repositories::packman
 
   package {'rar':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::packman']
   }
 

@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::xwininfo {
+class mopensuse::packages::gui::xwininfo($ensure = 'present') {
 
   package {'xwininfo':
-    ensure  => present,
+    ensure  => $ensure,
   }
 }
 

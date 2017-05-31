@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::pgadmin {
+class mopensuse::packages::gui::pgadmin($ensure = 'present') {
   
   package {'pgadmin3':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

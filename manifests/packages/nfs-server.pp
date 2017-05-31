@@ -1,9 +1,9 @@
-class mopensuse::packages::nfs-server {
+class mopensuse::packages::nfs-server($ensure = 'present') {
   
   include mopensuse::packages::firewall
   
   package {['nfs-kernel-server']:
-    ensure => present
+    ensure => $ensure,
   }
   
   exec {'firewall_open_nfs_server_port':

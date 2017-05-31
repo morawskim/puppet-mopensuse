@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::susepaste_qt {
+class mopensuse::packages::gui::susepaste_qt($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package {'susepaste-qt':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

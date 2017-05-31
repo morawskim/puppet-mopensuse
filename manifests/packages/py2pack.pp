@@ -1,9 +1,9 @@
-class mopensuse::packages::py2pack {
+class mopensuse::packages::py2pack($ensure = 'present') {
 
   include mopensuse::zypper::repositories::devel-languages-python
 
   package {'python-py2pack':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::devel-languages-python']
   }
 }

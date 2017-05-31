@@ -1,9 +1,9 @@
-class mopensuse::packages::gearmand {
+class mopensuse::packages::gearmand($ensure = 'present') {
 
   include mopensuse::zypper::repositories::server_monitoring
 
   package {['gearmand-server', 'gearmand-tools']:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_monitoring']
   }
 }

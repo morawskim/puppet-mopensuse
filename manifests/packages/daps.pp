@@ -1,7 +1,7 @@
-class mopensuse::packages::daps {
+class mopensuse::packages::daps($ensure = 'present') {
   
     package {'daps':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

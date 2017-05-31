@@ -1,7 +1,7 @@
-class mopensuse::packages::openssl {
+class mopensuse::packages::openssl($ensure = 'present') {
   
   package {['openssl']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

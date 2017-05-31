@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::postman {
+class mopensuse::packages::gui::postman($ensure = 'present') {
 
     include mopensuse::zypper::repositories::morawskim
 
     package {'Postman':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::morawskim']
     }
 }

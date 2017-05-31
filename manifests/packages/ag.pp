@@ -1,9 +1,9 @@
-class mopensuse::packages::ag {
+class mopensuse::packages::ag($ensure = 'present') {
 
   include mopensuse::zypper::repositories::utilities
 
   package {'the_silver_searcher':
-    ensure          => present,
+    ensure          => $ensure,
     install_options => [ {'--from' => 'utilities'} ],
     require         => Class['mopensuse::zypper::repositories::utilities']
   }

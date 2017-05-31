@@ -1,7 +1,7 @@
-class mopensuse::packages::nfs {
+class mopensuse::packages::nfs($ensure = 'present') {
   
   package {['nfs-client']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

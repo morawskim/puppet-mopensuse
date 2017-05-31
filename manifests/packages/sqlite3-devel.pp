@@ -1,7 +1,7 @@
-class mopensuse::packages::sqlite3-devel {
+class mopensuse::packages::sqlite3-devel($ensure = 'present') {
     
     package {'sqlite3-devel':
-        ensure => present
+        ensure => $ensure,
     }
     
 }

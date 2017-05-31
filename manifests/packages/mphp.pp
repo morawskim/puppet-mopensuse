@@ -1,4 +1,4 @@
-class mopensuse::packages::mphp(
+class mopensuse::packages::mphp($ensure = 'present')(
     $mphp_sudoers_users
 ) {
 
@@ -13,7 +13,7 @@ class mopensuse::packages::mphp(
   }
 
   package {'mphp-switcher':
-    ensure  => present,
+    ensure  => $ensure,
     require => [
         Class['mopensuse::zypper::repositories::morawskim'],
         Class['mopensuse::packages::php']

@@ -1,9 +1,9 @@
-class mopensuse::packages::monit {
+class mopensuse::packages::monit($ensure = 'present') {
 
   include mopensuse::zypper::repositories::server_monitoring
 
   package {'monit':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_monitoring']
   }
 }

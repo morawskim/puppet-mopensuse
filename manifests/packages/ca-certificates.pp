@@ -1,7 +1,7 @@
-class mopensuse::packages::ca-certificates {
+class mopensuse::packages::ca-certificates($ensure = 'present') {
   
   package {['ca-certificates']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

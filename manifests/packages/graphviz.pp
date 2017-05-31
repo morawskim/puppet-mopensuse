@@ -1,7 +1,7 @@
-class mopensuse::packages::graphviz {
+class mopensuse::packages::graphviz($ensure = 'present') {
   
   package {['graphviz']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

@@ -1,6 +1,6 @@
-class mopensuse::packages::systemd {
+class mopensuse::packages::systemd($ensure = 'present') {
 
   package {'systemd':
-    ensure => present
+    ensure => $ensure,
   }
 }

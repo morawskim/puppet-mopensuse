@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::wireshark-qt {
+class mopensuse::packages::gui::wireshark-qt($ensure = 'present') {
   
   package {'wireshark-ui-qt':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

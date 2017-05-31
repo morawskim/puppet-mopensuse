@@ -1,9 +1,9 @@
-class mopensuse::packages::composer() {
+class mopensuse::packages::composer($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package {'composer':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::vivaldi {
+class mopensuse::packages::gui::vivaldi($ensure = 'present') {
   
   include mopensuse::zypper::repositories::vivaldi
   include mopensuse::packages::augeas

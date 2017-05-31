@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::minitube {
+class mopensuse::packages::gui::minitube($ensure = 'present') {
 
   include mopensuse::zypper::repositories::multimedia_apps
 
   package {'minitube':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::multimedia_apps']
   }
 }

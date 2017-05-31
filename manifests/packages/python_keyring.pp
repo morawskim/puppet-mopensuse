@@ -1,6 +1,6 @@
-class mopensuse::packages::python_keyring {
+class mopensuse::packages::python_keyring($ensure = 'present') {
 
   package {['python-keyring']:
-    ensure  => present,
+    ensure  => $ensure,
   }
 }

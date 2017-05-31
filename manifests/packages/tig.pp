@@ -1,6 +1,6 @@
-class mopensuse::packages::tig {
+class mopensuse::packages::tig($ensure = 'present') {
 
   package {['tig']:
-    ensure => present
+    ensure => $ensure,
   }
 }

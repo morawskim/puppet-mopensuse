@@ -1,7 +1,7 @@
-class mopensuse::packages::logwatch {
+class mopensuse::packages::logwatch($ensure = 'present') {
   
   package {'logwatch':
-    ensure  => present
+    ensure  => $ensure,
   }
   
 }

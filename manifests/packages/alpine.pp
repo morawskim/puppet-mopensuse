@@ -1,6 +1,6 @@
-class mopensuse::packages::alpine {
+class mopensuse::packages::alpine($ensure = 'present') {
 
   package {['alpine']:
-    ensure => present
+    ensure => $ensure,
   }
 }

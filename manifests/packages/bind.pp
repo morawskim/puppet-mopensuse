@@ -1,4 +1,5 @@
 class mopensuse::packages::bind(
+    $ensure = 'present',
     $bind_listen_on = 'any'
 ) {
     
@@ -7,7 +8,7 @@ class mopensuse::packages::bind(
     include mopensuse::packages::firewall
     
     package { 'bind':
-        ensure => present
+        ensure => $ensure,
     }
     
     file { "/etc/named.conf":

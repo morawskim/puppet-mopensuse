@@ -1,9 +1,8 @@
-class mopensuse::packages::firewall {
-  
+class mopensuse::packages::firewall($ensure = 'present') {
+
   include mopensuse::services::firewall
-  
+
   package {'SuSEfirewall2':
-    ensure => present
+    ensure => $ensure,
   }
-  
 }

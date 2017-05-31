@@ -1,9 +1,9 @@
-class mopensuse::packages::vdirsyncer {
+class mopensuse::packages::vdirsyncer($ensure = 'present') {
 
     include mopensuse::zypper::repositories::devel-languages-python
 
     package {'vdirsyncer':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::devel-languages-python']
     }
 }

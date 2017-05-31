@@ -1,7 +1,7 @@
-class mopensuse::packages::sensors {
+class mopensuse::packages::sensors($ensure = 'present') {
   
   package {['sensors', 'cpupower']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

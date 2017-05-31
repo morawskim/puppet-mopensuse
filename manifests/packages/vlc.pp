@@ -1,7 +1,7 @@
-class mopensuse::packages::vlc {
+class mopensuse::packages::vlc($ensure = 'present') {
   
   package {'vlc':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

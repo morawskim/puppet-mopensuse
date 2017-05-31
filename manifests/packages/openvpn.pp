@@ -1,7 +1,7 @@
-class mopensuse::packages::openvpn {
+class mopensuse::packages::openvpn($ensure = 'present') {
   
   package {['openvpn']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

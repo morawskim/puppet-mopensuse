@@ -1,4 +1,4 @@
-class mopensuse::packages::wpcli {
+class mopensuse::packages::wpcli($ensure = 'present') {
 
    wget::fetch {'download wpcli':
       source      => 'https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar',

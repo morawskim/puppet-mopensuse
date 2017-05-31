@@ -1,7 +1,7 @@
-class mopensuse::packages::susepaste {
+class mopensuse::packages::susepaste($ensure = 'present') {
   
   package {['susepaste']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

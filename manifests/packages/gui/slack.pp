@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::slack {
+class mopensuse::packages::gui::slack($ensure = 'present') {
   
   include mopensuse::zypper::repositories::slack
   include mopensuse::zypper::repositories::morawskim

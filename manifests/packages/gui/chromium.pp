@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::chromium {
+class mopensuse::packages::gui::chromium($ensure = 'present') {
 
   include mopensuse::zypper::repositories::packman
 

@@ -1,4 +1,4 @@
-class mopensuse::packages::phpmyadminbase {
+class mopensuse::packages::phpmyadminbase($ensure = 'present') {
 
   class { '::phpmyadmin':
     manage_apache   => false,

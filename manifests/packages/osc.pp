@@ -1,6 +1,6 @@
-class mopensuse::packages::osc {
+class mopensuse::packages::osc($ensure = 'present') {
 
   package {'osc':
-    ensure => present
+    ensure => $ensure,
   }
 }

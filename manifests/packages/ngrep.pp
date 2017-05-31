@@ -1,7 +1,7 @@
-class mopensuse::packages::ngrep {
+class mopensuse::packages::ngrep($ensure = 'present') {
   
   package {'ngrep':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

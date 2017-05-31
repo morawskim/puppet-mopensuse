@@ -1,9 +1,9 @@
-class mopensuse::packages::phing {
+class mopensuse::packages::phing($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package {'phing':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

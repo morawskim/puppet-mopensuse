@@ -1,9 +1,9 @@
-class mopensuse::packages::lnav {
+class mopensuse::packages::lnav($ensure = 'present') {
 
   include mopensuse::zypper::repositories::server_monitoring
 
   package {'lnav':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_monitoring']
   }
 }

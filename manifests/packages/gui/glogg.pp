@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::glogg {
+class mopensuse::packages::gui::glogg($ensure = 'present') {
 
   include mopensuse::zypper::repositories::kde_extra
 
   package {'glogg':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::kde_extra']
   }
 }

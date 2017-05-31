@@ -1,4 +1,4 @@
-class mopensuse::packages::php71v {
+class mopensuse::packages::php71v($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::zypper::repositories::server_monitoring
@@ -20,19 +20,19 @@ class mopensuse::packages::php71v {
     'php71v-xmlreader', 'php71v-zip', 'php71v-fileinfo', 'php71v-tokenizer', 'php71v-exif',
     'php71v-mcrypt', 'php71v-ftp'
 ]:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service[$service_name]
   }
 
   package {['php71v-xdebug', 'php71v-redis', 'php71v-imagick', 'php71v-mailparse']:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service[$service_name]
   }
 
   package {['php71v-gearman']:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_monitoring'],
     notify  => Service[$service_name]
   }

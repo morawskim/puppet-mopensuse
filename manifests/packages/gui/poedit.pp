@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::poedit {
+class mopensuse::packages::gui::poedit($ensure = 'present') {
 
     package {'poedit':
-    ensure  => present,
+    ensure  => $ensure,
   }
 
 }

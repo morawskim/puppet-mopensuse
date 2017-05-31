@@ -1,9 +1,9 @@
-class mopensuse::packages::sslscan {
+class mopensuse::packages::sslscan($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package {'sslscan':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 

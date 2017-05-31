@@ -1,11 +1,12 @@
-class mopensuse::packages::php-dev-scripts (
+class mopensuse::packages::php-dev-scripts(
+  $ensure = 'present',
   $github_oauth_token
 ) {
   
   include mopensuse::zypper::repositories::morawskim
   
   package {'php-development-scripts':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 

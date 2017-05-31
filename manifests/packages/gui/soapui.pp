@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::soapui {
+class mopensuse::packages::gui::soapui($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package { 'SoapUI':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

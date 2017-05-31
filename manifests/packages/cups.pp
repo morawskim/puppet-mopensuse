@@ -1,7 +1,7 @@
-class mopensuse::packages::cups {
+class mopensuse::packages::cups($ensure = 'present') {
   
   package {'cups':
-    ensure => present
+    ensure => $ensure,
   }
   
   service {'cups':

@@ -1,4 +1,4 @@
-class mopensuse::packages::php {
+class mopensuse::packages::php($ensure = 'present') {
   
   $apache_user  = 'wwwrun'
   $apache_group = 'www'
@@ -11,7 +11,7 @@ class mopensuse::packages::php {
     'php5-xsl', 'php5-zlib', 'php5-xmlwriter', 'php5-bcmath', 'php5-sockets', 'php5-pcntl',
     'php5-ctype', 'php5-gd', 'php5-xmlreader', 'php5-ssh2', 'php5-zip', 'php5-ftp',
     'php5-iconv', 'php5-fileinfo', 'php5-tokenizer', 'php5-exif']:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_php_extensions'],
     notify  => Service['php-fpm']
   }
@@ -53,13 +53,13 @@ class mopensuse::packages::php {
   }
 
   package {'php5-redis':
-    ensure  => present,
+    ensure  => $ensure,
     require => [ Package['php5'], Class['mopensuse::zypper::repositories::morawskim'] ],
     notify  => Service['php-fpm']
   }
   
   package {'php5-xdebug':
-    ensure => present,
+    ensure => $ensure,
     require => [ Package['php5'], Class['mopensuse::zypper::repositories::server_php_extensions'] ],
     notify  => Service['php-fpm']
   }

@@ -1,9 +1,9 @@
-class mopensuse::packages::taskwarrior {
+class mopensuse::packages::taskwarrior($ensure = 'present') {
 
     include mopensuse::zypper::repositories::utilities
 
     package {'taskwarrior':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::utilities']
     }
 }

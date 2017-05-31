@@ -1,6 +1,6 @@
-class mopensuse::packages::iperf {
+class mopensuse::packages::iperf($ensure = 'present') {
 
   package {'iperf':
-    ensure          => present,
+    ensure          => $ensure,
   }
 }

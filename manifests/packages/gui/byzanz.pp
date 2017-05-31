@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::byzanz {
+class mopensuse::packages::gui::byzanz($ensure = 'present') {
 
   package {'byzanz':
-    ensure  => present,
+    ensure  => $ensure,
   }
 }
 

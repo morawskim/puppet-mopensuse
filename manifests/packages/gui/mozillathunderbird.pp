@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::mozillathunderbird {
+class mopensuse::packages::gui::mozillathunderbird($ensure = 'present') {
 
   package {'MozillaThunderbird':
-    ensure  => present,
+    ensure  => $ensure,
   }
 
 }

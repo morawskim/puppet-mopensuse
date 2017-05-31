@@ -1,9 +1,9 @@
-class mopensuse::packages::rpmorphan {
+class mopensuse::packages::rpmorphan($ensure = 'present') {
 
   include mopensuse::zypper::repositories::utilities
 
   package {'rpmorphan':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::utilities']
   }
 }

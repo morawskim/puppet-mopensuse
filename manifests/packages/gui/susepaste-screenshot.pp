@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::susepaste-screenshot {
+class mopensuse::packages::gui::susepaste-screenshot($ensure = 'present') {
   
   package {['susepaste-screenshot']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

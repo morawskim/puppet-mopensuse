@@ -1,6 +1,6 @@
-class mopensuse::packages::gui::glade {
+class mopensuse::packages::gui::glade($ensure = 'present') {
 
   package {'glade':
-    ensure => present
+    ensure => $ensure,
   }
 }

@@ -1,4 +1,4 @@
-class mopensuse::packages::skype {
+class mopensuse::packages::skype($ensure = 'present') {
 
    wget::fetch {'download skype':
       source      => 'http://download.skype.com/linux/skype-4.3.0.37-suse.i586.rpm',

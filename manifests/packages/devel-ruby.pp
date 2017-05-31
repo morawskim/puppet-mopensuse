@@ -1,4 +1,4 @@
-class mopensuse::packages::devel-ruby {
+class mopensuse::packages::devel-ruby($ensure = 'present') {
   
     include mopensuse::zypper::repositories::ruby_extensions
     include mopensuse::zypper::repositories::morawskim
@@ -13,7 +13,7 @@ class mopensuse::packages::devel-ruby {
         'rubygem-passenger-apache2', 'completion-ruby',
         'ruby2.1-rubygem-ruby-debug-ide', 'ruby2.1-rubygem-gem2rpm', 'rbenv'
     ]:
-    ensure  => present,
+    ensure  => $ensure,
     require => [
         Class['mopensuse::zypper::repositories::ruby_extensions'],
         Class['mopensuse::zypper::repositories::morawskim']
@@ -50,7 +50,7 @@ class mopensuse::packages::devel-ruby {
 
   package {'debugger-ruby_core_source':
       provider => 'gem',
-      ensure   => 'installed',
+      ensure   => $ensure,
       require  => Package['ruby']
   }
   

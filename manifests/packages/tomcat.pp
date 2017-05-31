@@ -1,4 +1,4 @@
-class mopensuse::packages::tomcat {
+class mopensuse::packages::tomcat($ensure = 'present') {
 
   class { '::tomcat':
       catalina_home       => '/usr/share/tomcat',
@@ -27,7 +27,7 @@ class mopensuse::packages::tomcat {
   }
 
   package {['tomcat', 'tomcat-webapps', 'tomcat-admin-webapps', 'tomcat-docs-webapp']:
-    ensure => present
+    ensure => $ensure,
   }
 
   service {'tomcat':

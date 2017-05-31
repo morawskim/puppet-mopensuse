@@ -1,6 +1,6 @@
-class mopensuse::packages::sysstat {
+class mopensuse::packages::sysstat($ensure = 'present') {
 
   package {'sysstat':
-    ensure          => present,
+    ensure          => $ensure,
   }
 }

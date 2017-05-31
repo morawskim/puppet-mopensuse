@@ -1,4 +1,5 @@
 class mopensuse::packages::mysql(
+  $ensure = 'present',
   $mysql_root_password
 ) {
   
@@ -12,7 +13,7 @@ class mopensuse::packages::mysql(
   #}
   
   package {['mariadb', 'mariadb-errormessages', 'mariadb-client']:
-    ensure => present
+    ensure => $ensure,
   }
   
   class { '::mysql::server':

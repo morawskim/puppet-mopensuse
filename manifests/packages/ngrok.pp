@@ -1,9 +1,9 @@
-class mopensuse::packages::ngrok {
+class mopensuse::packages::ngrok($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package { 'ngrok-client':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

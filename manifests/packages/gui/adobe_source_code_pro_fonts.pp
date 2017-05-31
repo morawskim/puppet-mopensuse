@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::adobe_source_code_pro_fonts {
+class mopensuse::packages::gui::adobe_source_code_pro_fonts($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
   if $::operatingsystemrelease > 13.2 {
@@ -7,7 +7,7 @@ class mopensuse::packages::gui::adobe_source_code_pro_fonts {
     $packagename = 'adobe-source-code-pro-fonts'
   }
   package { $packagename:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

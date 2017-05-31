@@ -1,4 +1,5 @@
 class mopensuse::packages::vagrant(
+  $ensure = 'present',
   $vagrant_nfsd_users,
   $vagrant_home = '/usr/share/vagrant'
 ) {
@@ -8,7 +9,7 @@ class mopensuse::packages::vagrant(
   include mopensuse::packages::augeas
 
   package {'vagrant':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 

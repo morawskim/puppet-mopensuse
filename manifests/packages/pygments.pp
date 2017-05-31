@@ -1,9 +1,9 @@
-class mopensuse::packages::pygments {
+class mopensuse::packages::pygments($ensure = 'present') {
 
   include mopensuse::zypper::repositories::devel-languages-python
 
   package {'python-Pygments':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::devel-languages-python']
   }
 }

@@ -1,6 +1,6 @@
-class mopensuse::packages::gui::retext {
+class mopensuse::packages::gui::retext($ensure = 'present') {
 
   package {'retext':
-    ensure => present
+    ensure => $ensure,
   }
 }

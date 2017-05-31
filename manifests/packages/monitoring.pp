@@ -1,7 +1,7 @@
-class mopensuse::packages::monitoring {
+class mopensuse::packages::monitoring($ensure = 'present') {
   
   package {['iotop', 'htop']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

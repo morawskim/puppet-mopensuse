@@ -1,9 +1,9 @@
-class mopensuse::packages::mssys {
+class mopensuse::packages::mssys($ensure = 'present') {
 
   include mopensuse::zypper::repositories::packman
 
     package {'ms-sys':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::packman']
     }
 

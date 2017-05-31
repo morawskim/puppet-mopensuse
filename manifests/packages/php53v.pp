@@ -1,4 +1,4 @@
-class mopensuse::packages::php53v {
+class mopensuse::packages::php53v($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
@@ -20,7 +20,7 @@ class mopensuse::packages::php53v {
     'php53v-iconv', 'php53v-fileinfo', 'php53v-tokenizer', 'php53v-exif',
     'php53v-mcrypt', 'php53v-ftp',
 ]:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service[$service_name]
   }

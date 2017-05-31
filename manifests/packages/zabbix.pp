@@ -1,4 +1,5 @@
 class mopensuse::packages::zabbix(
+  $ensure = 'present',
   $zabbix_server_db_name,
   $zabbix_server_db_user,
   $zabbix_server_db_pass

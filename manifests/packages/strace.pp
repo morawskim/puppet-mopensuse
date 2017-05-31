@@ -1,7 +1,7 @@
-class mopensuse::packages::strace {
+class mopensuse::packages::strace($ensure = 'present') {
   
   package {['strace']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

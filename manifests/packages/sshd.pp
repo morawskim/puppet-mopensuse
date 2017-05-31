@@ -1,4 +1,4 @@
-class mopensuse::packages::sshd {
+class mopensuse::packages::sshd($ensure = 'present') {
   
   service {'sshd':
     ensure     => running,
@@ -17,7 +17,7 @@ class mopensuse::packages::sshd {
   }
 
   package {'openssh':
-    ensure     => present
+    ensure     => $ensure,
   }
   
 }

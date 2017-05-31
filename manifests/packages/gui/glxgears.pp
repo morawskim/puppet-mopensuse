@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::glxgears {
+class mopensuse::packages::gui::glxgears($ensure = 'present') {
     
     package { 'Mesa-demo-x':
-        ensure  => present,
+        ensure  => $ensure,
     }
     
 }

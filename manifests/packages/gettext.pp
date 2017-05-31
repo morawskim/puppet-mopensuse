@@ -1,7 +1,7 @@
-class mopensuse::packages::gettext {
+class mopensuse::packages::gettext($ensure = 'present') {
   
   package {['gettext-tools', 'gettext-runtime']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

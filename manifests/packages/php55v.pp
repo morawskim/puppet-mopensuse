@@ -1,4 +1,4 @@
-class mopensuse::packages::php55v {
+class mopensuse::packages::php55v($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
@@ -20,7 +20,7 @@ class mopensuse::packages::php55v {
     'php55v-pcntl', php55v-ctype, 'php55v-gd', 'php55v-xmlreader', 'php55v-zip',
     'php55v-mcrypt', 'php55v-ftp'
 ]:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
     notify  => Service[$service_name]
   }

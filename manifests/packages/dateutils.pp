@@ -1,9 +1,9 @@
-class mopensuse::packages::dateutils {
+class mopensuse::packages::dateutils($ensure = 'present') {
     
     include mopensuse::zypper::repositories::utilities
     
     package {'dateutils':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::utilities']
     }
     

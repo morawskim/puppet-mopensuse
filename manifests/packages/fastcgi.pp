@@ -1,6 +1,6 @@
-class mopensuse::packages::fastcgi {
+class mopensuse::packages::fastcgi($ensure = 'present') {
 
   package {'FastCGI':
-    ensure => present
+    ensure => $ensure,
   }
 }

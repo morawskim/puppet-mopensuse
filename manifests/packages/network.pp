@@ -1,6 +1,6 @@
-class mopensuse::packages::network {
+class mopensuse::packages::network($ensure = 'present') {
 
   package {['nmap', 'ipcalc']:
-    ensure => present
+    ensure => $ensure,
   }
 }

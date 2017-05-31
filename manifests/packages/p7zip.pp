@@ -1,6 +1,6 @@
-class mopensuse::packages::p7zip {
+class mopensuse::packages::p7zip($ensure = 'present') {
 
   package {'p7zip':
-    ensure => present
+    ensure => $ensure,
   }
 }

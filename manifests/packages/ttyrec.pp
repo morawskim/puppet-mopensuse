@@ -1,9 +1,9 @@
-class mopensuse::packages::ttyrec {
+class mopensuse::packages::ttyrec($ensure = 'present') {
     
     include mopensuse::zypper::repositories::utilities
     
     package {'ttyrec':
-        ensure  => present,
+        ensure  => $ensure,
         require => Class['mopensuse::zypper::repositories::utilities']
     }
     

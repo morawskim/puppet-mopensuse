@@ -1,6 +1,6 @@
-class mopensuse::packages::gui::gitg {
+class mopensuse::packages::gui::gitg($ensure = 'present') {
 
   package {'gitg':
-    ensure => present
+    ensure => $ensure,
   }
 }

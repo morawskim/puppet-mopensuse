@@ -1,7 +1,7 @@
-class mopensuse::packages::srm {
+class mopensuse::packages::srm($ensure = 'present') {
   
   package {'srm':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

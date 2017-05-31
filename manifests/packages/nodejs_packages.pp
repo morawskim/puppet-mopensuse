@@ -1,85 +1,85 @@
-class mopensuse::packages::nodejs_packages {
+class mopensuse::packages::nodejs_packages($ensure = 'present') {
 
   package { 'jshint':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'grunt-cli':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'less':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'jslint':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'localtunnel':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'gulp-cli':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'nativefier':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'http-server':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'bower':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'babel-cli':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'json-server':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'node-inspector':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'stylelint':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
 
   package { 'requirejs':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }

@@ -1,9 +1,9 @@
-class mopensuse::packages::wrk {
+class mopensuse::packages::wrk($ensure = 'present') {
 
   include mopensuse::zypper::repositories::benchmark
 
   package {'wrk':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::benchmark']
   }
 }

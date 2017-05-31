@@ -1,4 +1,4 @@
-class mopensuse::packages::jenkins(
+class mopensuse::packages::jenkins($ensure = 'present')(
   $port=8880,
   $reverse_proxying=true,
   $service_enable = true,
@@ -9,7 +9,7 @@ class mopensuse::packages::jenkins(
 
   # Manage by class ::jenkins
   #package {'jenkins':
-  #  ensure  => present,
+  #  ensure  => $ensure,
   #  require => Class['mopensuse::zypper::repositories::jenkins']
   #}
 

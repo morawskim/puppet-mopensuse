@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::zeal {
+class mopensuse::packages::gui::zeal($ensure = 'present') {
 
     include mopensuse::zypper::repositories::devel_tools
 
     package {'zeal':
-        ensure  => present,
+        ensure  => $ensure,
         require => Zypprepo['devel_tools']
     }
 }

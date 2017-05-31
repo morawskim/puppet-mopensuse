@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::kdeconnect {
+class mopensuse::packages::gui::kdeconnect($ensure = 'present') {
 
   include mopensuse::zypper::repositories::kde_extra
 
@@ -9,7 +9,7 @@ class mopensuse::packages::gui::kdeconnect {
   }
 
   package {$packagename:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::kde_extra']
   }
 

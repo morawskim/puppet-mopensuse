@@ -1,7 +1,7 @@
-class mopensuse::packages::sshfs {
+class mopensuse::packages::sshfs($ensure = 'present') {
   
   package {['sshfs']:
-    ensure => present
+    ensure => $ensure,
   }
   
   group {'sshfs':

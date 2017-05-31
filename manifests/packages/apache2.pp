@@ -1,10 +1,10 @@
-class mopensuse::packages::apache2 {
+class mopensuse::packages::apache2($ensure = 'present') {
 
   include mopensuse::packages::firewall
   include mopensuse::services::apache2
 
   package {['apache2']:
-    ensure => present
+    ensure => $ensure,
   }
 
   exec {'disable_apache_mod_php5':

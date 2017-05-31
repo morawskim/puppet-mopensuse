@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::calibre {
+class mopensuse::packages::gui::calibre($ensure = 'present') {
     
     package {'calibre':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

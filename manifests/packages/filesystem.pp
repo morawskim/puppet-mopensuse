@@ -1,7 +1,7 @@
-class mopensuse::packages::filesystem {
+class mopensuse::packages::filesystem($ensure = 'present') {
     
     package {'filesystem':
-        ensure => present
+        ensure => $ensure,
     }
     
     file {'/etc/sysctl.d/40-ipforward.conf':

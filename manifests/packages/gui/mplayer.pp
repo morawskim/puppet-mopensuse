@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::mplayer {
+class mopensuse::packages::gui::mplayer($ensure = 'present') {
 
   include mopensuse::zypper::repositories::packman
 

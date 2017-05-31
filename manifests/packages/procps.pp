@@ -1,7 +1,7 @@
-class mopensuse::packages::procps {
+class mopensuse::packages::procps($ensure = 'present') {
   
   package {'procps':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

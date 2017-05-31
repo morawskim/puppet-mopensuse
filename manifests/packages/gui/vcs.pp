@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::vcs {
+class mopensuse::packages::gui::vcs($ensure = 'present') {
   
   package {['gitk', 'kdesvn']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

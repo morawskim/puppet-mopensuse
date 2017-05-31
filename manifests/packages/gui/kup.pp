@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::kup {
+class mopensuse::packages::gui::kup($ensure = 'present') {
   
   include mopensuse::zypper::repositories::kde_kup
   
   package {'kup':
-    ensure  => '0.5.1',
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::kde_kup']
   }
   

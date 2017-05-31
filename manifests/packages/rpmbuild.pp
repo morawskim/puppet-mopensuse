@@ -1,4 +1,4 @@
-class mopensuse::packages::rpmbuild {
+class mopensuse::packages::rpmbuild($ensure = 'present') {
 
   include mopensuse::zypper::repositories::devel_tools
 

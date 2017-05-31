@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::xclip {
+class mopensuse::packages::gui::xclip($ensure = 'present') {
   
   package {['xclip']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

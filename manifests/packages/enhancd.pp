@@ -1,9 +1,9 @@
-class mopensuse::packages::enhancd {
+class mopensuse::packages::enhancd($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
 
   package {['enhancd']:
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 }

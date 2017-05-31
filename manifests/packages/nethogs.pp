@@ -1,7 +1,7 @@
-class mopensuse::packages::nethogs {
+class mopensuse::packages::nethogs($ensure = 'present') {
   
   package {'nethogs':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

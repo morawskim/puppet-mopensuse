@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::krdc {
+class mopensuse::packages::gui::krdc($ensure = 'present') {
   
   package {'krdc':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

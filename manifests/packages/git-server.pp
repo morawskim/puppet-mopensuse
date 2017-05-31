@@ -1,10 +1,10 @@
-class mopensuse::packages::git-server {
+class mopensuse::packages::git-server($ensure = 'present') {
   
   include mopensuse::packages::vcs
   include mopensuse::packages::firewall
   
   package {'git-daemon':
-      ensure => present
+      ensure => $ensure,
   }
   
   file {'/srv/git':

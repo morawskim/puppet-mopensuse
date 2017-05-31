@@ -1,4 +1,4 @@
-class mopensuse::packages::devel-c-cpp {
+class mopensuse::packages::devel-c-cpp($ensure = 'present') {
 
   include mopensuse::zypper::repositories::debug
   include mopensuse::zypper::repositories::debug_update
@@ -6,6 +6,6 @@ class mopensuse::packages::devel-c-cpp {
   package {['glibc-info', 'ltrace', 'posix_cc',
       'swig', 'valgrind', 'patterns-openSUSE-devel_C_C++',
       'patterns-openSUSE-devel_basis', 're2c']:
-    ensure => present
+    ensure => $ensure,
   }
 }

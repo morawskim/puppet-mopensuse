@@ -1,7 +1,7 @@
-class mopensuse::packages::testdisk {
+class mopensuse::packages::testdisk($ensure = 'present') {
   
   package {'testdisk':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

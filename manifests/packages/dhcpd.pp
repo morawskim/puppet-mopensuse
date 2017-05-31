@@ -1,7 +1,7 @@
-class mopensuse::packages::dhcpd {
+class mopensuse::packages::dhcpd($ensure = 'present') {
 
     package {['dhcp-server']:
-        ensure  => present,
+        ensure  => $ensure,
     }
 
     service { 'dhcpd':

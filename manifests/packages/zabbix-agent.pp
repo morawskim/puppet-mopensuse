@@ -1,4 +1,4 @@
-class mopensuse::packages::zabbix-agent {
+class mopensuse::packages::zabbix-agent($ensure = 'present') {
   
   class { '::zabbix::agent':
     manage_repo => false,

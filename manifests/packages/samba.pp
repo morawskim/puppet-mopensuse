@@ -1,11 +1,11 @@
-class mopensuse::packages::samba {
+class mopensuse::packages::samba($ensure = 'present') {
   
   include mopensuse::packages::firewall
   include samba::server
 
   #managed by samba module
   #package {'samba':
-  #  ensure => present
+  #  ensure => $ensure,
   #}
   
   #service { 'smb':
@@ -17,7 +17,7 @@ class mopensuse::packages::samba {
   #}
 
   package {'samba-doc':
-    ensure  => present,
+    ensure  => $ensure,
     require => Package['samba']
   }
 

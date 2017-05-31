@@ -1,7 +1,7 @@
-class mopensuse::packages::mutt {
+class mopensuse::packages::mutt($ensure = 'present') {
   
   package {['mutt']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

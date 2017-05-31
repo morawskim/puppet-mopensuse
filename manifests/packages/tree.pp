@@ -1,7 +1,7 @@
-class mopensuse::packages::tree {
+class mopensuse::packages::tree($ensure = 'present') {
   
   package {['tree']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

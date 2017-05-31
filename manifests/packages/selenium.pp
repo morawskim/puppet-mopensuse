@@ -1,4 +1,5 @@
 class mopensuse::packages::selenium(
+    $ensure = 'present',
     $chromedrive_path
 ) {
 
@@ -23,7 +24,7 @@ class mopensuse::packages::selenium(
     }
 
     package {['selenium', 'selenium-chromedriver']:
-        ensure  => present,
+        ensure  => $ensure,
         require => [
             Class['mopensuse::zypper::repositories::morawskim'],
             Class['mopensuse::packages::xvfb']

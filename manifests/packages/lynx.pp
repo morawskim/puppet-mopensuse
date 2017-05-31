@@ -1,7 +1,7 @@
-class mopensuse::packages::lynx {
+class mopensuse::packages::lynx($ensure = 'present') {
   
   package {['lynx']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

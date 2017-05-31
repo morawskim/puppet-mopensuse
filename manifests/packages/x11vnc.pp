@@ -1,4 +1,5 @@
-class mopensuse::packages::x11vnc (
+class mopensuse::packages::x11vnc(
+  $ensure = 'present',
   $vnc_password
 ) {
 

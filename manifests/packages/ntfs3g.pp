@@ -1,7 +1,7 @@
-class mopensuse::packages::ntfs3g {
+class mopensuse::packages::ntfs3g($ensure = 'present') {
 
     package {'ntfs-3g':
-        ensure  => present,
+        ensure  => $ensure,
     }
 
 }

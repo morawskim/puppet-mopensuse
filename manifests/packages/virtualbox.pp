@@ -1,7 +1,7 @@
-class mopensuse::packages::virtualbox {
+class mopensuse::packages::virtualbox($ensure = 'present') {
   
   package {['virtualbox']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

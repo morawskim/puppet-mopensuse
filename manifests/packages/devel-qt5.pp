@@ -1,4 +1,4 @@
-class mopensuse::packages::devel-qt5 {
+class mopensuse::packages::devel-qt5($ensure = 'present') {
   
     package {['libQt5Gui-private-headers-devel', 'libqt5-qtbase-devel',
         'libqt5-qtdeclarative-devel', 'libqt5-qtsvg-devel',
@@ -10,7 +10,7 @@ class mopensuse::packages::devel-qt5 {
         'libqt5-qtserialport-devel', 'libqt5-qtwebsockets-devel',
         'libQt5WebKit5-devel'
     ]:
-    ensure => present
+    ensure => $ensure,
   }
 
 }

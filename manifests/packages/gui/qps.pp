@@ -1,6 +1,6 @@
-class mopensuse::packages::gui::qps {
+class mopensuse::packages::gui::qps($ensure = 'present') {
 
   package {'qps':
-    ensure => present
+    ensure => $ensure,
   }
 }

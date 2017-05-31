@@ -1,7 +1,7 @@
-class mopensuse::packages::offlineimap {
+class mopensuse::packages::offlineimap($ensure = 'present') {
   
   package {'offlineimap':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

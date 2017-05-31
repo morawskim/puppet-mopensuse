@@ -1,10 +1,10 @@
-class mopensuse::packages::gui::steam {
+class mopensuse::packages::gui::steam($ensure = 'present') {
     
   include mopensuse::zypper::repositories::games_tools
   include mopensuse::packages::firewall
   
   package {'steam':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::games_tools']
   }
   

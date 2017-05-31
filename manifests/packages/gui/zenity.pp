@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::zenity {
+class mopensuse::packages::gui::zenity($ensure = 'present') {
   
   package {'zenity':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

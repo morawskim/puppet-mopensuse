@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::pidgin {
+class mopensuse::packages::gui::pidgin($ensure = 'present') {
   
   package {'pidgin':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

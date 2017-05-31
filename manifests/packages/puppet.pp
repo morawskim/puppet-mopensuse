@@ -1,4 +1,4 @@
-class mopensuse::packages::puppet {
+class mopensuse::packages::puppet($ensure = 'present') {
 
   ini_setting { "puppet stringify_facts":
     ensure  => present,

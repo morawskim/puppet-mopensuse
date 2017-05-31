@@ -1,7 +1,7 @@
-class mopensuse::packages::mytop {
+class mopensuse::packages::mytop($ensure = 'present') {
   
   package {['mytop']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

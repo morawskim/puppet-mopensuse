@@ -1,9 +1,9 @@
-class mopensuse::packages::vcs {
+class mopensuse::packages::vcs($ensure = 'present') {
   
   include ::git
   
   package {['git-svn', 'subversion', 'subversion-bash-completion']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

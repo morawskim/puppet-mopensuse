@@ -1,9 +1,9 @@
-class mopensuse::packages::gui::scrot {
+class mopensuse::packages::gui::scrot($ensure = 'present') {
   
   include mopensuse::zypper::repositories::x11_utilities
   
   package {'scrot':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::x11_utilities']
   }
   

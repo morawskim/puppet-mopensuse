@@ -1,10 +1,10 @@
-class mopensuse::packages::gui::multimedia {
+class mopensuse::packages::gui::multimedia($ensure = 'present') {
 
   include mopensuse::zypper::repositories::packman
   include mopensuse::zypper::repositories::libdvdcss
 
   package {['k3b-codecs', 'ffmpeg', 'lame', 'phonon-backend-vlc']:
-    ensure  => present,
+    ensure  => $ensure,
     install_options => [ {'--from' => 'packman'} ],
     require => [ 
       Class['mopensuse::zypper::repositories::libdvdcss'],
@@ -13,7 +13,7 @@ class mopensuse::packages::gui::multimedia {
   }
 
   package {['phonon4qt5-backend-vlc', 'vlc-codecs', 'flash-player', 'libdvdcss2']:
-    ensure  => present,
+    ensure  => $ensure,
     install_options => [ {'--from' => 'packman'} ],
     require => [ 
       Class['mopensuse::zypper::repositories::libdvdcss'],
@@ -34,12 +34,12 @@ class mopensuse::packages::gui::multimedia {
   }
 
   package {'libmusicbrainz4':
-    ensure => present,
+    ensure => $ensure,
     before => Package['k3b-codecs']
   }
 
   package {'libdvbpsi9':
-    ensure => present,
+    ensure => $ensure,
     before => Package['vlc-codecs']
   }
 }

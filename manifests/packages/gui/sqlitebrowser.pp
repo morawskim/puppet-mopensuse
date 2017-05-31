@@ -1,6 +1,6 @@
- class mopensuse::packages::gui::sqlitebrowser {
+ class mopensuse::packages::gui::sqlitebrowser($ensure = 'present') {
     
    package {'sqlitebrowser':
-        ensure  => present,
+        ensure  => $ensure,
     }
 }

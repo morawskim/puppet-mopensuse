@@ -1,6 +1,6 @@
-class mopensuse::packages::socat {
+class mopensuse::packages::socat($ensure = 'present') {
 
   package {'socat':
-    ensure => present
+    ensure => $ensure,
   }
 }

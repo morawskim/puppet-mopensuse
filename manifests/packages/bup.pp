@@ -1,4 +1,5 @@
 class mopensuse::packages::bup(
+    $ensure = 'present',
     $bup_dir='/srv/bup'
 ) {
 
@@ -6,7 +7,7 @@ class mopensuse::packages::bup(
   include mopensuse::zypper::repositories::devel-languages-python
 
   package {'bup':
-    ensure  => present,
+    ensure  => $ensure,
     require => [
         Class['mopensuse::zypper::repositories::morawskim'],
         Class['mopensuse::zypper::repositories::devel-languages-python']

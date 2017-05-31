@@ -1,9 +1,9 @@
-class mopensuse::packages::pktstat {
+class mopensuse::packages::pktstat($ensure = 'present') {
 
   include mopensuse::zypper::repositories::server_monitoring 
 
   package {'pktstat':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_monitoring']
   }
 }

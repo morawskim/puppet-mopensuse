@@ -1,9 +1,9 @@
-class mopensuse::packages::isync {
+class mopensuse::packages::isync($ensure = 'present') {
 
   include mopensuse::zypper::repositories::server_mail
 
   package {'isync':
-      ensure  => present,
+      ensure  => $ensure,
       require => Class['mopensuse::zypper::repositories::server_mail']
   }
 }

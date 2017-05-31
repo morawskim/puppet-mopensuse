@@ -1,6 +1,6 @@
-class mopensuse::packages::putty {
+class mopensuse::packages::putty($ensure = 'present') {
 
   package {['putty']:
-    ensure => present
+    ensure => $ensure,
   }
 }

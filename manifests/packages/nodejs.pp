@@ -1,4 +1,4 @@
-class mopensuse::packages::nodejs {
+class mopensuse::packages::nodejs($ensure = 'present') {
 
   include mopensuse::packages::nodejs_packages
 
@@ -9,11 +9,11 @@ class mopensuse::packages::nodejs {
   }
 
   package {$packagename:
-    ensure => present
+    ensure => $ensure,
   }
 
   package {"${packagename}-devel":
-    ensure  => present,
+    ensure  => $ensure,
     require => Package[$packagename]
   }
 }

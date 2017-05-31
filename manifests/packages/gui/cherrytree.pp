@@ -1,6 +1,6 @@
-class mopensuse::packages::gui::cherrytree {
+class mopensuse::packages::gui::cherrytree($ensure = 'present') {
 
   package {'cherrytree':
-    ensure => present
+    ensure => $ensure,
   }
 }

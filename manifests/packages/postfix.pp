@@ -1,4 +1,5 @@
-class mopensuse::packages::postfix (
+class mopensuse::packages::postfix(
+  $ensure = 'present',
   $sasl_passwd
 ) {
   
@@ -6,7 +7,7 @@ class mopensuse::packages::postfix (
   #include postfix
   
   package {['cyrus-sasl', 'cyrus-sasl-plain']:
-    ensure => present
+    ensure => $ensure,
   }
   
   exec { 'postfix':
@@ -17,7 +18,7 @@ class mopensuse::packages::postfix (
   }
   
   package {'postfix':
-    ensure => present
+    ensure => $ensure,
   }
   
   service { 'postfix':

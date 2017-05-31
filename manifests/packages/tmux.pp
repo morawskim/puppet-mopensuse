@@ -1,7 +1,7 @@
-class mopensuse::packages::tmux {
+class mopensuse::packages::tmux($ensure = 'present') {
   
   package {['tmux']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

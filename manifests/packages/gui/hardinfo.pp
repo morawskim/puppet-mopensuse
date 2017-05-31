@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::hardinfo {
+class mopensuse::packages::gui::hardinfo($ensure = 'present') {
   
   package {['hardinfo']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

@@ -1,7 +1,7 @@
-class mopensuse::packages::aspell {
+class mopensuse::packages::aspell($ensure = 'present') {
   
   package {['aspell', 'aspell-en', 'aspell-pl']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

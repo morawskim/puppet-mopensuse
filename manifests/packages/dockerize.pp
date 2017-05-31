@@ -1,10 +1,10 @@
-class mopensuse::packages::dockerize {
+class mopensuse::packages::dockerize($ensure = 'present') {
 
     include mopensuse::zypper::repositories::morawskim
     include mopensuse::zypper::repositories::devel-languages-python
 
     package {'dockerize':
-        ensure  => present,
+        ensure  => $ensure,
         require => [
           Class['mopensuse::zypper::repositories::morawskim'],
           Class['mopensuse::zypper::repositories::devel-languages-python']

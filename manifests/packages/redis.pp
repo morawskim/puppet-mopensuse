@@ -1,4 +1,4 @@
-class mopensuse::packages::redis {
+class mopensuse::packages::redis($ensure = 'present') {
 
   if $::operatingsystemrelease > 13.2 {
     $servicename = 'redis@default'
@@ -7,7 +7,7 @@ class mopensuse::packages::redis {
   }
 
   package {'redis':
-    ensure => present
+    ensure => $ensure,
   }
 
   file {'/etc/redis/default.conf':

@@ -1,9 +1,9 @@
-class mopensuse::packages::samba-client {
+class mopensuse::packages::samba-client($ensure = 'present') {
   
   include mopensuse::packages::firewall
   
   package {'samba-client':
-    ensure => present
+    ensure => $ensure,
   }
   
   #firewall samba client

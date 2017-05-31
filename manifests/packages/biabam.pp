@@ -1,7 +1,7 @@
-class mopensuse::packages::biabam {
+class mopensuse::packages::biabam($ensure = 'present') {
   
   package {'biabam':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

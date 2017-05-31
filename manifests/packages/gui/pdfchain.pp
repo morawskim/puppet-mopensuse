@@ -1,6 +1,6 @@
-class mopensuse::packages::gui::pdfchain {
+class mopensuse::packages::gui::pdfchain($ensure = 'present') {
 
   package {'pdfchain':
-    ensure => present
+    ensure => $ensure,
   }
 }

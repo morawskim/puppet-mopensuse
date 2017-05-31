@@ -1,7 +1,7 @@
-class mopensuse::packages::vim {
+class mopensuse::packages::vim($ensure = 'present') {
   
   package {'vim':
-    ensure => present
+    ensure => $ensure,
   }
   
 }

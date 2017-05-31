@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::rsibreak {
+class mopensuse::packages::gui::rsibreak($ensure = 'present') {
 
   package {'rsibreak':
-    ensure  => present,
+    ensure  => $ensure,
   }
 
 }

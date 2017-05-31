@@ -1,6 +1,6 @@
-class mopensuse::packages::yum_scripts {
+class mopensuse::packages::yum_scripts($ensure = 'present') {
 
   package {'yum-scripts':
-    ensure          => present,
+    ensure          => $ensure,
   }
 }

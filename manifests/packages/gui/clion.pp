@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::clion {
+class mopensuse::packages::gui::clion($ensure = 'present') {
     
     exec {'install clion':
         command => 'install-clion',

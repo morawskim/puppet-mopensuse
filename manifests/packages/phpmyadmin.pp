@@ -1,8 +1,8 @@
-class mopensuse::packages::phpmyadmin {
+class mopensuse::packages::phpmyadmin($ensure = 'present') {
 
   include mopensuse::packages::phpmyadminbase
   #package {'phpMyAdmin':
-  #  ensure => present
+  #  ensure => $ensure,
   #}
 
   host {'phpmyadmin.dev':

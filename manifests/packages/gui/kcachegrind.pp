@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::kcachegrind {
+class mopensuse::packages::gui::kcachegrind($ensure = 'present') {
   
   package {'kcachegrind':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

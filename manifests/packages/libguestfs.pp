@@ -1,7 +1,7 @@
-class mopensuse::packages::libguestfs {
+class mopensuse::packages::libguestfs($ensure = 'present') {
   
   package {['libguestfs0', 'guestfs-tools']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

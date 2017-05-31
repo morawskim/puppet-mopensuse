@@ -1,7 +1,7 @@
-class mopensuse::packages::bind-utils {
+class mopensuse::packages::bind-utils($ensure = 'present') {
     
     package {'bind-utils':
-        ensure => present
+        ensure => $ensure,
     }
     
 }

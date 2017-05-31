@@ -1,4 +1,4 @@
-class mopensuse::packages::ftp {
+class mopensuse::packages::ftp($ensure = 'present') {
   
   package{['lftp', 'curlftpfs']: 
     ensure => present

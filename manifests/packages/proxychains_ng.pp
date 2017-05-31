@@ -1,9 +1,9 @@
-class mopensuse::packages::proxychains_ng {
+class mopensuse::packages::proxychains_ng($ensure = 'present') {
 
   include mopensuse::zypper::repositories::network
 
   package {'proxychains-ng':
-    ensure  => present,
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::network']
   }
 }

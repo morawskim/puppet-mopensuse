@@ -1,7 +1,7 @@
-class mopensuse::packages::ctags {
+class mopensuse::packages::ctags($ensure = 'present') {
   
   package {['ctags']:
-    ensure => present
+    ensure => $ensure,
   }
   
 }

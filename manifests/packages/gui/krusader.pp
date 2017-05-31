@@ -1,7 +1,7 @@
-class mopensuse::packages::gui::krusader {
+class mopensuse::packages::gui::krusader($ensure = 'present') {
   
   package {'krusader':
-    ensure  => present,
+    ensure  => $ensure,
   }
   
 }

@@ -1,4 +1,4 @@
-class mopensuse::packages::augeas {
+class mopensuse::packages::augeas($ensure = 'present') {
 
   include mopensuse::zypper::repositories::ruby_extensions
 
@@ -8,7 +8,7 @@ class mopensuse::packages::augeas {
   }
 
   package {'augeas':
-    ensure => present,
+    ensure => $ensure,
     require => Package['ruby2.1-rubygem-ruby-augeas']
   }
 }
