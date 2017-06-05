@@ -261,6 +261,7 @@ class mopensuse {
   include mopensuse::packages::gui::retext
   include mopensuse::packages::gui::rsibreak
   include mopensuse::packages::gui::scrot
+  include mopensuse::packages::gui::sddm
   include mopensuse::packages::gui::shutter
   include mopensuse::packages::gui::skrooge
   include mopensuse::packages::gui::slack
