@@ -34,6 +34,7 @@ class mopensuse {
   include mopensuse::packages::createrepo
   include mopensuse::packages::csvkit
   include mopensuse::packages::ctags
+  include mopensuse::packages::ctop
   include mopensuse::packages::cups
   include mopensuse::packages::daps
   include mopensuse::packages::dateutils
