@@ -65,6 +65,7 @@ class mopensuse {
   include mopensuse::packages::git-server
   include mopensuse::packages::git_extras
   include mopensuse::packages::graphviz
+  include mopensuse::packages::greenmail
   include mopensuse::packages::hstr
   include mopensuse::packages::html2text
   include mopensuse::packages::httperf
