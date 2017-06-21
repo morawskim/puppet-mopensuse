@@ -106,6 +106,7 @@ class mopensuse {
   include mopensuse::packages::multitail
   include mopensuse::packages::mutt
   include mopensuse::packages::mycli
+  include mopensuse::packages::mysql_bench
   include mopensuse::packages::mysql
   include mopensuse::packages::mysql_utilities
   include mopensuse::packages::mytop
