@@ -128,6 +128,7 @@ class mopensuse {
   include mopensuse::packages::openvpn
   include mopensuse::packages::osc
   include mopensuse::packages::p7zip
+  include mopensuse::packages::packer
   include mopensuse::packages::phing
   include mopensuse::packages::php
   include mopensuse::packages::php53v
