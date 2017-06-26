@@ -42,6 +42,7 @@ class mopensuse {
   include mopensuse::packages::debhelper
   include mopensuse::packages::devel-c-cpp
   include mopensuse::packages::devel-java
+  include mopensuse::packages::devel-kde
   include mopensuse::packages::devel-qt5
   include mopensuse::packages::devel-ruby
   include mopensuse::packages::dhcpd
