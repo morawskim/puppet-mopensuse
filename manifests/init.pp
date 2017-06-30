@@ -255,6 +255,7 @@ class mopensuse {
   include mopensuse::packages::gui::owncloud-client
   include mopensuse::packages::gui::pdfchain
   include mopensuse::packages::gui::pdfcompare
+  include mopensuse::packages::gui::peek
   include mopensuse::packages::gui::pgadmin
   include mopensuse::packages::gui::pidgin
   include mopensuse::packages::gui::plantuml
