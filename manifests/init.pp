@@ -20,6 +20,7 @@ class mopensuse {
   include mopensuse::packages::augeas
   include mopensuse::packages::autoconf213
   include mopensuse::packages::bash
+  include mopensuse::packages::bcal
   include mopensuse::packages::biabam
   include mopensuse::packages::bind
   include mopensuse::packages::bsdtar
