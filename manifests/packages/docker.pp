@@ -1,7 +1,10 @@
 class mopensuse::packages::docker($ensure = 'present') {
 
+    include mopensuse::packages::docker_compose
+
     package {'docker':
         ensure => $ensure,
+        before => Class['mopensuse::packages::docker_compose']
     }
 
     package {'docker-bash-completion':
