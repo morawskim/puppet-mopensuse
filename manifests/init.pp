@@ -65,6 +65,7 @@ class mopensuse {
   include mopensuse::packages::gearmand
   include mopensuse::packages::gettext
   include mopensuse::packages::git-server
+  include mopensuse::packages::glances
   include mopensuse::packages::git_extras
   include mopensuse::packages::graphviz
   include mopensuse::packages::greenmail
