@@ -165,6 +165,7 @@ class mopensuse {
   include mopensuse::packages::rpmorphan
   include mopensuse::packages::samba
   include mopensuse::packages::samba-client
+  include mopensuse::packages::scapy
   include mopensuse::packages::selenium
   include mopensuse::packages::sensors
   include mopensuse::packages::skype
