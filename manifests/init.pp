@@ -279,6 +279,7 @@ class mopensuse {
   include mopensuse::packages::gui::sddm
   include mopensuse::packages::gui::shutter
   include mopensuse::packages::gui::skrooge
+  include mopensuse::packages::gui::skypeforlinux
   include mopensuse::packages::gui::slack
   include mopensuse::packages::gui::soapui
   include mopensuse::packages::gui::sqlitebrowser
