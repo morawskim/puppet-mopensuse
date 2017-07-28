@@ -64,6 +64,7 @@ class mopensuse {
   include mopensuse::packages::fzf
   include mopensuse::packages::gearmand
   include mopensuse::packages::gettext
+  include mopensuse::packages::gifsicle
   include mopensuse::packages::git-server
   include mopensuse::packages::glances
   include mopensuse::packages::git_extras
@@ -195,7 +196,6 @@ class mopensuse {
   include mopensuse::packages::tree
   include mopensuse::packages::tsung
   include mopensuse::packages::ttyrec
-  include mopensuse::packages::ungifsicle
   include mopensuse::packages::vagrant
   include mopensuse::packages::vcs
   include mopensuse::packages::vdirsyncer
