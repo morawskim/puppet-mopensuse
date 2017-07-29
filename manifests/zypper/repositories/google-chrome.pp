@@ -16,8 +16,6 @@ class mopensuse::zypper::repositories::google-chrome(
     enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Google chrome repository",
-    gpgcheck     => 1,
-    gpgkey       => $gpg_key,
     type         => 'rpm-md',
     notify       => Class['mopensuse::zypper::refresh']
   }
