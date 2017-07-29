@@ -135,6 +135,7 @@ class mopensuse {
   include mopensuse::packages::p7zip
   include mopensuse::packages::packer
   include mopensuse::packages::password_store
+  include mopensuse::packages::patchutils
   include mopensuse::packages::phing
   include mopensuse::packages::php_build
   include mopensuse::packages::php
