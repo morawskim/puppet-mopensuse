@@ -22,7 +22,7 @@ class mopensuse::zypper::repositories::multimedia_apps(
     notify       => Class['mopensuse::zypper::refresh']
   }
 
-  rpmkey {'3A802234':
+  rpmkey {'E95B46D4':
     ensure  => present,
     source  => $gpg_key,
     before  => Zypprepo['multimedia_apps']
