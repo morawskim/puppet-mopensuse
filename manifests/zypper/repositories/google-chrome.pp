@@ -14,7 +14,7 @@ class mopensuse::zypper::repositories::google-chrome(
   zypprepo {'google-chrome':
     baseurl      => "http://dl.google.com/linux/chrome/rpm/stable/x86_64",
     enabled      => $enabled,
-    autorefresh  => 1,
+    autorefresh  => 0,
     descr        => "Google chrome repository",
     type         => 'rpm-md',
     notify       => Class['mopensuse::zypper::refresh']
@@ -25,5 +25,4 @@ class mopensuse::zypper::repositories::google-chrome(
     source  => $gpg_key,
     before  => Zypprepo['google-chrome']
   }
-  
 }
