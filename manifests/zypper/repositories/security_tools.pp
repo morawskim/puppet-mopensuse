@@ -22,9 +22,11 @@ class mopensuse::zypper::repositories::security_tools(
     notify       => Class['mopensuse::zypper::refresh']
   }
 
-  rpmkey {'EE3D166A':
-    ensure  => present,
-    source  => $gpg_key,
-    before  => Zypprepo['security_tools']
+  if ! defined(Rpmkey['EE3D166A']) {
+    rpmkey {'EE3D166A':
+        ensure  => present,
+        source  => $gpg_key,
+        before  => Zypprepo['security_tools']
+    }
   }
 }
