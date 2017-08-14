@@ -3,6 +3,9 @@ Facter.add(:phps) do
   setcode do
     phps = {}
     php_versions = Facter.value(:php_versions)
+    if php_versions.nil?
+        return nil
+    end
     php_versions.split(' ').each do |dir|
         dirs = Dir.glob("#{dir}/*").select {|f| File.directory? f}
         dirs.each do |dir|
