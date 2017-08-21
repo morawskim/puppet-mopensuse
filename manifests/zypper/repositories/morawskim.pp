@@ -1,5 +1,6 @@
 class mopensuse::zypper::repositories::morawskim(
-    $enabled = 1
+    $enabled = 1,
+    $url = undef
 ) {
   
   if $::operatingsystemrelease > 13.2 {
@@ -7,10 +8,17 @@ class mopensuse::zypper::repositories::morawskim(
   } else {
     $dist_key = "openSUSE_${::operatingsystemrelease}"
   }
+
+  if ! $url {
+    $baseurl = "http://rpm.morawskim.pl/openSUSE:${::operatingsystemrelease}/"
+  } else {
+    $baseurl = $url
+  }
+
   include mopensuse::zypper::refresh
   
   zypprepo {'morawskim':
-    baseurl      => "http://rpm.morawskim.pl/openSUSE:${::operatingsystemrelease}/",
+    baseurl      => $baseurl,
     enabled      => $enabled,
     autorefresh  => 1,
     descr        => "Dodatkowe paczki rpm (${dist_key})",
