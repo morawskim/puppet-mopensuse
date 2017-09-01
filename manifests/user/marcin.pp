@@ -65,4 +65,18 @@ class mopensuse::user::marcin (
     user    => $username,
     require => Mopensuse::User::Account[$username]
   }
+
+  mopensuse::user::config::symlink{'pam_limits':
+    path   => '/etc/security/limits.d/mmo.conf',
+    target => '/home/marcin/.config/pam_limits.conf',
+    owner  => $username,
+    group  => $username,
+  }
+
+  mopensuse::user::config::symlink{'mysql':
+    path   => '/etc/my.cnf.d/mmo.conf',
+    target => '/home/marcin/.config/mysqld_mmo.cnf',
+    owner  => $username,
+    group  => $username,
+  }
 }
