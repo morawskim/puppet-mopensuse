@@ -134,6 +134,7 @@ class mopensuse {
   include mopensuse::packages::osc
   include mopensuse::packages::p7zip
   include mopensuse::packages::packer
+  include mopensuse::packages::pandoc
   include mopensuse::packages::password_store
   include mopensuse::packages::patchutils
   include mopensuse::packages::phing
