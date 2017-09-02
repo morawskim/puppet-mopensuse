@@ -83,4 +83,10 @@ class mopensuse::packages::nodejs_packages($ensure = 'present') {
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { 'create-react-app':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }
