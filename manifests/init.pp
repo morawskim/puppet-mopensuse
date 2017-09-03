@@ -59,6 +59,7 @@ class mopensuse {
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
   include mopensuse::packages::fontawesome
+  include mopensuse::packages::foreman
   include mopensuse::packages::ftp
   include mopensuse::packages::fzf_tmux
   include mopensuse::packages::fzf
