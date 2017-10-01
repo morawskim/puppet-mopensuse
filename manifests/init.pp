@@ -138,6 +138,7 @@ class mopensuse {
   include mopensuse::packages::pandoc
   include mopensuse::packages::password_store
   include mopensuse::packages::patchutils
+  include mopensuse::packages::pax_utils
   include mopensuse::packages::phing
   include mopensuse::packages::php_build
   include mopensuse::packages::php
