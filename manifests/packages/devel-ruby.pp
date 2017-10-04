@@ -48,11 +48,6 @@ class mopensuse::packages::devel-ruby($ensure = 'present') {
       require  => Package['ruby']
   }
 
-  package{'ruby2.1-rubygem-foreman':
-      ensure   => 'present',
-      require  => Package['ruby']
-  }
-
   package {'debugger-ruby_core_source':
       provider => 'gem',
       ensure   => $ensure,
