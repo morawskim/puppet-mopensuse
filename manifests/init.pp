@@ -212,6 +212,7 @@ class mopensuse {
   include mopensuse::packages::wpcli
   include mopensuse::packages::wrk
   include mopensuse::packages::x11vnc
+  include mopensuse::packages::xdebug_tmpfiles
   include mopensuse::packages::xtrabackup
   include mopensuse::packages::xvfb
   include mopensuse::packages::yadm
