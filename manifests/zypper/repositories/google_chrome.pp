@@ -1,4 +1,4 @@
-class mopensuse::zypper::repositories::google-chrome(
+class mopensuse::zypper::repositories::google_chrome(
     $enabled = 1
 ) {
   

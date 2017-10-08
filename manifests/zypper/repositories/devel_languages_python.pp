@@ -1,4 +1,4 @@
-class mopensuse::zypper::repositories::devel-languages-python(
+class mopensuse::zypper::repositories::devel_languages_python(
     $enabled = 1
 ) {
     
@@ -11,7 +11,7 @@ class mopensuse::zypper::repositories::devel-languages-python(
     
     $gpg_key = "http://download.opensuse.org/repositories/devel:/languages:/python/${dist_key}/repodata/repomd.xml.key"
     
-    zypprepo {'devel-languages-python':
+    zypprepo {'devel_languages_python':
         baseurl      => "http://download.opensuse.org/repositories/devel:/languages:/python/${dist_key}/",
         enabled      => $enabled,
         autorefresh  => 1,
@@ -25,7 +25,7 @@ class mopensuse::zypper::repositories::devel-languages-python(
     rpmkey {'EDF0D733':
         ensure  => present,
         source  => $gpg_key,
-        before  => Zypprepo['devel-languages-python']
+        before  => Zypprepo['devel_languages_python']
     }
     
 }
