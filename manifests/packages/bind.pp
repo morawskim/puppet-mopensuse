@@ -3,7 +3,7 @@ class mopensuse::packages::bind(
     $bind_listen_on = 'any'
 ) {
     
-    include mopensuse::packages::bind-utils
+    include mopensuse::packages::bind_utils
     include mopensuse::packages::augeas
     include mopensuse::packages::firewall
     

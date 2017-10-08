@@ -1,4 +1,4 @@
-class mopensuse::packages::nfs-server($ensure = 'present') {
+class mopensuse::packages::nfs_server($ensure = 'present') {
   
   include mopensuse::packages::firewall
   

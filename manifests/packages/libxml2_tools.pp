@@ -1,4 +1,4 @@
-class mopensuse::packages::libxml2-tools($ensure = 'present') {
+class mopensuse::packages::libxml2_tools($ensure = 'present') {
     
     package {'libxml2-tools':
         ensure  => $ensure,

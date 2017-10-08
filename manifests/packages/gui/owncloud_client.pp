@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::owncloud-client($ensure = 'present')  {
+class mopensuse::packages::gui::owncloud_client($ensure = 'present')  {
   
   include mopensuse::zypper::repositories::isv_owncloud_desktop
   

@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::vlc-qt($ensure = 'present') {
+class mopensuse::packages::gui::vlc_qt($ensure = 'present') {
 
   package {'vlc-qt':
     ensure => $ensure,

@@ -1,4 +1,4 @@
-class mopensuse::packages::php-dev-scripts(
+class mopensuse::packages::php_dev_scripts(
   $ensure = 'present',
   $github_oauth_token
 ) {

@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::lshw-gui($ensure = 'present') {
+class mopensuse::packages::gui::lshw_gui($ensure = 'present') {
   
   include mopensuse::zypper::repositories::hardware
   

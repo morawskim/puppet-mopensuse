@@ -3,7 +3,7 @@ class mopensuse::packages::postfix(
   $sasl_passwd
 ) {
   
-  include mopensuse::packages::ca-certificates
+  include mopensuse::packages::ca_certificates
   #include postfix
   
   package {['cyrus-sasl', 'cyrus-sasl-plain']:

@@ -1,4 +1,4 @@
-class mopensuse::packages::devel-qt5($ensure = 'present') {
+class mopensuse::packages::devel_qt5($ensure = 'present') {
   
     package {['libQt5Gui-private-headers-devel', 'libqt5-qtbase-devel',
         'libqt5-qtdeclarative-devel', 'libqt5-qtsvg-devel',

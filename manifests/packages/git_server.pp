@@ -1,4 +1,4 @@
-class mopensuse::packages::git-server($ensure = 'present') {
+class mopensuse::packages::git_server($ensure = 'present') {
 
   include mopensuse::packages::vcs
   include mopensuse::packages::firewall

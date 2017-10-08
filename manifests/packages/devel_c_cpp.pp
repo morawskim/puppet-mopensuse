@@ -1,4 +1,4 @@
-class mopensuse::packages::devel-c-cpp($ensure = 'present') {
+class mopensuse::packages::devel_c_cpp($ensure = 'present') {
 
   include mopensuse::zypper::repositories::debug
   include mopensuse::zypper::repositories::debug_update

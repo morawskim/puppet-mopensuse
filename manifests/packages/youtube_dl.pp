@@ -1,4 +1,4 @@
-class mopensuse::packages::youtube-dl($ensure = 'present') {
+class mopensuse::packages::youtube_dl($ensure = 'present') {
   
   include mopensuse::zypper::repositories::packman
 

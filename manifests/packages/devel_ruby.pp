@@ -1,8 +1,8 @@
-class mopensuse::packages::devel-ruby($ensure = 'present') {
+class mopensuse::packages::devel_ruby($ensure = 'present') {
   
     include mopensuse::zypper::repositories::ruby_extensions
     include mopensuse::zypper::repositories::morawskim
-    include mopensuse::packages::valgrind-devel
+    include mopensuse::packages::valgrind_devel
     include mopensuse::packages::apache2
     include mopensuse::services::apache2
     include mopensuse::packages::bundler
@@ -25,7 +25,7 @@ class mopensuse::packages::devel-ruby($ensure = 'present') {
     ensure   => 'installed',
     require  => [
         Package['debugger-ruby_core_source'],
-        Class['mopensuse::packages::valgrind-devel']
+        Class['mopensuse::packages::valgrind_devel']
         ]
     #/usr/include/ruby-2.1.0
   }

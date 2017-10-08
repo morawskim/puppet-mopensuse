@@ -1,4 +1,4 @@
-class mopensuse::packages::gui::jetbrains-download-scripts($ensure = 'present') {
+class mopensuse::packages::gui::jetbrains_download_scripts($ensure = 'present') {
     
     include mopensuse::zypper::repositories::morawskim
     

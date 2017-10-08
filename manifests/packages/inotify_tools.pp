@@ -1,4 +1,4 @@
-  class mopensuse::packages::inotify-tools($ensure = 'present') {
+  class mopensuse::packages::inotify_tools($ensure = 'present') {
 
     include mopensuse::zypper::repositories::filesystems
 

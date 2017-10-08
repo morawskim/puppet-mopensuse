@@ -1,4 +1,4 @@
-class mopensuse::packages::samba-client($ensure = 'present') {
+class mopensuse::packages::samba_client($ensure = 'present') {
   
   include mopensuse::packages::firewall
   

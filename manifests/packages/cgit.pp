@@ -2,7 +2,7 @@ class mopensuse::packages::cgit($ensure = 'present') {
   
     include mopensuse::packages::apache2
     include mopensuse::packages::augeas
-    include mopensuse::packages::git-server
+    include mopensuse::packages::git_server
     include mopensuse::packages::highlight
     include mopensuse::zypper::repositories::morawskim
     

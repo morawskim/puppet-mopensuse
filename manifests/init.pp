@@ -26,7 +26,7 @@ class mopensuse {
   include mopensuse::packages::bsdtar
   include mopensuse::packages::bup
   include mopensuse::packages::byobu
-  include mopensuse::packages::ca-certificates
+  include mopensuse::packages::ca_certificates
   include mopensuse::packages::cgit
   include mopensuse::packages::cheat
   include mopensuse::packages::colordiff
@@ -41,11 +41,11 @@ class mopensuse {
   include mopensuse::packages::dateutils
   include mopensuse::packages::dbus
   include mopensuse::packages::debhelper
-  include mopensuse::packages::devel-c-cpp
-  include mopensuse::packages::devel-java
-  include mopensuse::packages::devel-kde
-  include mopensuse::packages::devel-qt5
-  include mopensuse::packages::devel-ruby
+  include mopensuse::packages::devel_c_cpp
+  include mopensuse::packages::devel_java
+  include mopensuse::packages::devel_kde
+  include mopensuse::packages::devel_qt5
+  include mopensuse::packages::devel_ruby
   include mopensuse::packages::dhcpd
   include mopensuse::packages::dnsmasq
   include mopensuse::packages::docker
@@ -66,7 +66,7 @@ class mopensuse {
   include mopensuse::packages::gearmand
   include mopensuse::packages::gettext
   include mopensuse::packages::gifsicle
-  include mopensuse::packages::git-server
+  include mopensuse::packages::git_server
   include mopensuse::packages::glances
   include mopensuse::packages::git_extras
   include mopensuse::packages::graphviz
@@ -78,7 +78,7 @@ class mopensuse {
   include mopensuse::packages::httpry
   include mopensuse::packages::httrack
   include mopensuse::packages::imagemagick
-  include mopensuse::packages::inotify-tools
+  include mopensuse::packages::inotify_tools
   include mopensuse::packages::iperf
   include mopensuse::packages::isync
   include mopensuse::packages::jenkins
@@ -86,7 +86,7 @@ class mopensuse {
   include mopensuse::packages::json_tools
   include mopensuse::packages::kiwi
   include mopensuse::packages::libguestfs
-  include mopensuse::packages::libxml2-tools
+  include mopensuse::packages::libxml2_tools
   include mopensuse::packages::live_fat_stick
   include mopensuse::packages::linkchecker
   include mopensuse::packages::live_grub_stick
@@ -121,12 +121,12 @@ class mopensuse {
   include mopensuse::packages::network
   include mopensuse::packages::nfs
   include mopensuse::packages::newsbeuter
-  include mopensuse::packages::nfs-server
+  include mopensuse::packages::nfs_server
   include mopensuse::packages::ngrep
   include mopensuse::packages::ngrok
   include mopensuse::packages::nmon
   include mopensuse::packages::nodejs
-  include mopensuse::packages::notify-send
+  include mopensuse::packages::notify_send
   include mopensuse::packages::ntfs3g
   include mopensuse::packages::o_saft
   include mopensuse::packages::offlineimap
@@ -148,7 +148,7 @@ class mopensuse {
   include mopensuse::packages::php56v
   include mopensuse::packages::php70v
   include mopensuse::packages::php71v
-  include mopensuse::packages::php-dev-scripts
+  include mopensuse::packages::php_dev_scripts
   include mopensuse::packages::phpldapadmin
   include mopensuse::packages::phpmyadmin
   include mopensuse::packages::phpmyadmin40
@@ -171,7 +171,7 @@ class mopensuse {
   include mopensuse::packages::rpmbuild
   include mopensuse::packages::rpmorphan
   include mopensuse::packages::samba
-  include mopensuse::packages::samba-client
+  include mopensuse::packages::samba_client
   include mopensuse::packages::scapy
   include mopensuse::packages::selenium
   include mopensuse::packages::sensors
@@ -179,7 +179,7 @@ class mopensuse {
   include mopensuse::packages::smbnetfs
   include mopensuse::packages::smtpcli
   include mopensuse::packages::socat
-  include mopensuse::packages::sqlite3-devel
+  include mopensuse::packages::sqlite3_devel
   include mopensuse::packages::squashfs
   include mopensuse::packages::srm
   include mopensuse::packages::sshd
@@ -216,10 +216,10 @@ class mopensuse {
   include mopensuse::packages::xtrabackup
   include mopensuse::packages::xvfb
   include mopensuse::packages::yadm
-  include mopensuse::packages::youtube-dl
+  include mopensuse::packages::youtube_dl
   include mopensuse::packages::yum_scripts
   include mopensuse::packages::zabbix
-  include mopensuse::packages::zabbix-agent
+  include mopensuse::packages::zabbix_agent
   
   include mopensuse::packages::gui::adobe_source_code_pro_fonts
   include mopensuse::packages::gui::byzanz
@@ -242,7 +242,7 @@ class mopensuse {
   include mopensuse::packages::gui::gobby
   include mopensuse::packages::gui::gvim
   include mopensuse::packages::gui::hardinfo
-  include mopensuse::packages::gui::jetbrains-download-scripts
+  include mopensuse::packages::gui::jetbrains_download_scripts
   include mopensuse::packages::gui::jetbrains_toolbox
   include mopensuse::packages::gui::kapptemplate
   include mopensuse::packages::gui::kate
@@ -255,24 +255,24 @@ class mopensuse {
   include mopensuse::packages::gui::krusader
   #include mopensuse::packages::gui::kup
   include mopensuse::packages::gui::labplot
-  include mopensuse::packages::gui::libqt4-x11
+  include mopensuse::packages::gui::libqt4_x11
   include mopensuse::packages::gui::live_usb_gui
-  include mopensuse::packages::gui::lshw-gui
+  include mopensuse::packages::gui::lshw_gui
   include mopensuse::packages::gui::minitube
   include mopensuse::packages::gui::mozillathunderbird
   include mopensuse::packages::gui::mplayer
-  include mopensuse::packages::gui::mysql-workbench
+  include mopensuse::packages::gui::mysql_workbench
   include mopensuse::packages::gui::nemiver
   include mopensuse::packages::gui::okteta
   include mopensuse::packages::gui::owasp_zap
-  include mopensuse::packages::gui::owncloud-client
+  include mopensuse::packages::gui::owncloud_client
   include mopensuse::packages::gui::pdfchain
   include mopensuse::packages::gui::pdfcompare
   include mopensuse::packages::gui::peek
   include mopensuse::packages::gui::pgadmin
   include mopensuse::packages::gui::pidgin
   include mopensuse::packages::gui::plantuml
-  include mopensuse::packages::gui::plasma-nm-openvpn
+  include mopensuse::packages::gui::plasma_nm_openvpn
   include mopensuse::packages::gui::poedit
   include mopensuse::packages::gui::postman
   include mopensuse::packages::gui::python_kde4
@@ -292,13 +292,13 @@ class mopensuse {
   include mopensuse::packages::gui::sqlitebrowser
   include mopensuse::packages::gui::steam
   include mopensuse::packages::gui::step
-  include mopensuse::packages::gui::susepaste-screenshot
+  include mopensuse::packages::gui::susepaste_screenshot
   include mopensuse::packages::gui::susepaste_qt
   include mopensuse::packages::gui::telegram
   include mopensuse::packages::gui::vcs
-  include mopensuse::packages::gui::virtualbox-qt
+  include mopensuse::packages::gui::virtualbox_qt
   include mopensuse::packages::gui::vivaldi
-  include mopensuse::packages::gui::wireshark-qt
+  include mopensuse::packages::gui::wireshark_qt
   include mopensuse::packages::gui::xbindkeys
   include mopensuse::packages::gui::xclip
   include mopensuse::packages::gui::xorg_x11_server_extra

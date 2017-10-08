@@ -4,13 +4,13 @@ class mopensuse::packages::bup(
 ) {
 
   include mopensuse::zypper::repositories::morawskim
-  include mopensuse::zypper::repositories::devel-languages-python
+  include mopensuse::zypper::repositories::devel_languages_python
 
   package {'bup':
     ensure  => $ensure,
     require => [
         Class['mopensuse::zypper::repositories::morawskim'],
-        Class['mopensuse::zypper::repositories::devel-languages-python']
+        Class['mopensuse::zypper::repositories::devel_languages_python']
     ]
   }
 
