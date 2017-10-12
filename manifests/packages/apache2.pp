@@ -7,99 +7,11 @@ class mopensuse::packages::apache2($ensure = 'present') {
     ensure => $ensure,
   }
 
-  exec {'disable_apache_mod_php5':
-    command => 'a2enmod -d php5',
-    onlyif  => 'a2enmod -q php5',
-    path    => ['/usr/sbin/'],
-    require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_proxy':
-    command => 'a2enmod proxy',
-    unless  => 'a2enmod -q proxy',
-    path    => ['/usr/sbin/'],
-    require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_ssl':
-    command => 'a2enmod ssl',
-    unless  => 'a2enmod -q ssl',
-    path    => ['/usr/sbin/'],
-    require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_rewrite':
-    command => 'a2enmod rewrite',
-    unless  => 'a2enmod -q rewrite',
-    path    => ['/usr/sbin/'],
-    require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_proxy_fcgi':
-    command => 'a2enmod proxy_fcgi',
-    unless  => 'a2enmod -q proxy_fcgi',
-    path    => ['/usr/sbin/'],
-    require => [ Package['apache2'], Exec['enable_apache_mod_proxy'] ],
-    notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_userdir':
-      command => 'a2enmod userdir',
-      unless  => 'a2enmod -q userdir',
-      path    => ['/usr/sbin/'],
-      require => [ Package['apache2'], Exec['enable_apache_mod_proxy'] ],
-      notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_version':
-      command => 'a2enmod version',
-      unless  => 'a2enmod -q version',
-      path    => ['/usr/sbin/'],
-      require => [ Package['apache2'] ],
-      notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_proxy_http':
-      command => 'a2enmod proxy_http',
-      unless  => 'a2enmod -q proxy_http',
-      path    => ['/usr/sbin/'],
-      require => [ Package['apache2'], Exec['enable_apache_mod_proxy'] ],
-      notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_headers':
-      command => 'a2enmod headers',
-      unless  => 'a2enmod -q headers',
-      path    => ['/usr/sbin/'],
-      require => [ Package['apache2'] ],
-      notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_filter':
-      command => 'a2enmod filter',
-      unless  => 'a2enmod -q filter',
-      path    => ['/usr/sbin/'],
-      require => [ Package['apache2'] ],
-      notify  => Class['mopensuse::services::apache2']
-  }
-
-  exec {'enable_apache_mod_deflate':
-      command => 'a2enmod deflate',
-      unless  => 'a2enmod -q deflate',
-      path    => ['/usr/sbin/'],
-      require => [ Package['apache2'] ],
-      notify  => Class['mopensuse::services::apache2']
-  }
-
   exec {'define_apache_ssl_flag':
     command => 'a2enflag SSL',
     path    => ['/usr/sbin/', '/usr/bin', '/bin'],
     unless  => "grep -e '^APACHE_SERVER_FLAGS' /etc/sysconfig/apache2 | grep SSL",
-    require => [ Package['apache2'], Exec['enable_apache_mod_ssl'] ],
+    require => [ Package['apache2'] ],
     notify  => Class['mopensuse::services::apache2']
   }
 

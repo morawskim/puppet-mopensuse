@@ -1,5 +1,12 @@
 class mopensuse::config::apache2::modules() {
 
+    include mopensuse::packages::apache2
+
+    A2mod {
+        require => Class['mopensuse::packages::apache2'],
+        notify  => Class['mopensuse::services::apache2'],
+    }
+
     a2mod { 'php5':
         ensure => 'absent'
     }
