@@ -77,6 +77,7 @@ class mopensuse {
   include mopensuse::packages::httpie
   include mopensuse::packages::httpry
   include mopensuse::packages::httrack
+  include mopensuse::packages::hub
   include mopensuse::packages::imagemagick
   include mopensuse::packages::inotify_tools
   include mopensuse::packages::iperf
