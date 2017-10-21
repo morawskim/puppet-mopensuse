@@ -1,31 +1,15 @@
-class mopensuse::zypper::repositories::devel_tools(
-    $enabled = 1
-) {
-  
-  if $::operatingsystemrelease > 13.2 {
-    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
-  } else {
-    $dist_key = "openSUSE_${::operatingsystemrelease}"
-  }
+class mopensuse::zypper::repositories::devel_tools {
+
   include mopensuse::zypper::refresh
-  
-  $gpg_key = "http://download.opensuse.org/repositories/devel:/tools/${dist_key}/repodata/repomd.xml.key"
-  
-  zypprepo {'devel_tools':
-    baseurl      => "http://download.opensuse.org/repositories/devel:/tools/${dist_key}/",
-    enabled      => $enabled,
-    autorefresh  => 1,
-    descr        => "Generic Development Tools (${dist_key})",
-    gpgcheck     => 1,
-    gpgkey       => $gpg_key,
-    type         => 'rpm-md',
-    notify       => Class['mopensuse::zypper::refresh']
+  include mopensuse::rpmkeys::devel_tools
+
+  Zypprepo {
+    notify => Class['mopensuse::zypper::refresh'],
   }
-  
-  rpmkey {'498D5A23':
-    ensure  => present,
-    source  => $gpg_key,
-    before  => Zypprepo['devel_tools']
-  }
-  
+
+  ensure_resource(
+    'zypprepo',
+    'devel_tools',
+    hiera_hash('mopensuse::zypper::repositories::devel_tools')
+  )
 }

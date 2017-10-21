@@ -1,31 +1,15 @@
-class mopensuse::zypper::repositories::x11_utilities(
-    $enabled = 1
-) {
-  
-  if $::operatingsystemrelease > 13.2 {
-    $dist_key = "openSUSE_Leap_${::operatingsystemrelease}"
-  } else {
-    $dist_key = "openSUSE_${::operatingsystemrelease}"
-  }
+class mopensuse::zypper::repositories::x11_utilities {
+
   include mopensuse::zypper::refresh
-  
-  $gpg_key = "http://download.opensuse.org/repositories/X11:/Utilities/${dist_key}/repodata/repomd.xml.key"
-  
-  zypprepo {'X11_Utilities':
-    baseurl      => "http://download.opensuse.org/repositories/X11:/Utilities/${dist_key}/",
-    enabled      => $enabled,
-    autorefresh  => 1,
-    descr        => "X11 Utilities (${dist_key})",
-    gpgcheck     => 1,
-    gpgkey       => $gpg_key,
-    type         => 'rpm-md',
-    notify       => Class['mopensuse::zypper::refresh']
+  include mopensuse::rpmkeys::x11_utilities
+
+  Zypprepo {
+    notify => Class['mopensuse::zypper::refresh'],
   }
-  
-  rpmkey {'0F2672C8':
-    ensure  => present,
-    source  => $gpg_key,
-    before  => Zypprepo['X11_Utilities']
-  }
-  
+
+  ensure_resource(
+    'zypprepo',
+    'x11_utilities',
+    hiera_hash('mopensuse::zypper::repositories::x11_utilities')
+  )
 }
