@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::education {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::education'],
   }
 
   ensure_resource(

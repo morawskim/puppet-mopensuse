@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::x11_utilities {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::x11_utilities'],
   }
 
   ensure_resource(

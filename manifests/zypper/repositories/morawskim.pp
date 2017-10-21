@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::morawskim {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::morawskim'],
   }
 
   ensure_resource(

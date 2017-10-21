@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::jenkins {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::jenkins'],
   }
 
   ensure_resource(

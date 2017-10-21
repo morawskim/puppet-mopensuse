@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::google_chrome {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::google_chrome'],
   }
 
   ensure_resource(

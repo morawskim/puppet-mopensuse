@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::packman {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::packman'],
   }
 
   ensure_resource(

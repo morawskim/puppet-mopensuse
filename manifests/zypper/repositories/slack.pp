@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::slack {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::slack'],
   }
 
   ensure_resource(

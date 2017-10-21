@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::multimedia_apps {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::multimedia_apps'],
   }
 
   ensure_resource(

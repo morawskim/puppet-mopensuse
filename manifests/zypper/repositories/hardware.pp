@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::hardware {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::hardware'],
   }
 
   ensure_resource(

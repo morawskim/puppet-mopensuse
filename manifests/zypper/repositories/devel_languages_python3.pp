@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::devel_languages_python3 {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::devel_languages_python3'],
   }
 
   ensure_resource(

@@ -5,6 +5,7 @@ class mopensuse::zypper::repositories::kde_kup {
 
   Zypprepo {
     notify => Class['mopensuse::zypper::refresh'],
+    require => Class['mopensuse::rpmkeys::kde_kup'],
   }
 
   ensure_resource(
