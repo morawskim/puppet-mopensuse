@@ -200,6 +200,7 @@ class mopensuse {
   include mopensuse::packages::tig
   include mopensuse::packages::tmux
   include mopensuse::packages::tomcat
+  include mopensuse::packages::toxiproxy
   include mopensuse::packages::translateshell
   include mopensuse::packages::tree
   include mopensuse::packages::tsung
