@@ -1,6 +1,6 @@
 class mopensuse::packages::devel_ruby($ensure = 'present') {
   
-    include mopensuse::zypper::repositories::ruby_extensions
+    include mopensuse::zypper::repositories::devel_languages_ruby_extensions
     include mopensuse::zypper::repositories::morawskim
     include mopensuse::packages::valgrind_devel
     include mopensuse::packages::apache2
@@ -15,7 +15,7 @@ class mopensuse::packages::devel_ruby($ensure = 'present') {
     ]:
     ensure  => $ensure,
     require => [
-        Class['mopensuse::zypper::repositories::ruby_extensions'],
+        Class['mopensuse::zypper::repositories::devel_languages_ruby_extensions'],
         Class['mopensuse::zypper::repositories::morawskim']
     ]
   }
