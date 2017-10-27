@@ -140,6 +140,7 @@ class mopensuse {
   include mopensuse::packages::pax_utils
   include mopensuse::packages::phing
   include mopensuse::packages::php_build
+  include mopensuse::packages::php_docs
   include mopensuse::packages::php
   include mopensuse::packages::php53v
   include mopensuse::packages::php54v
