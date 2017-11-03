@@ -105,7 +105,6 @@ class mopensuse {
   include mopensuse::packages::monitoring
   include mopensuse::packages::monoid
   include mopensuse::packages::mozilla_nss_tools
-  include mopensuse::packages::mphp
   include mopensuse::packages::msmtp
   include mopensuse::packages::mssys
   include mopensuse::packages::multitail
