@@ -16,6 +16,7 @@ class mopensuse {
   include mopensuse::packages::alien
   include mopensuse::packages::apache2
   include mopensuse::packages::apachetop
+  include mopensuse::packages::asdf
   include mopensuse::packages::aspell
   include mopensuse::packages::augeas
   include mopensuse::packages::autoconf213
