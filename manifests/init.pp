@@ -245,7 +245,6 @@ class mopensuse {
   include mopensuse::packages::gui::gtranslator
   include mopensuse::packages::gui::gvim
   include mopensuse::packages::gui::hardinfo
-  include mopensuse::packages::gui::jetbrains_download_scripts
   include mopensuse::packages::gui::jetbrains_toolbox
   include mopensuse::packages::gui::kapptemplate
   include mopensuse::packages::gui::kate
