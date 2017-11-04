@@ -30,6 +30,7 @@ class mopensuse {
   include mopensuse::packages::ca_certificates
   include mopensuse::packages::cgit
   include mopensuse::packages::cheat
+  include mopensuse::packages::cloudflare_tools
   include mopensuse::packages::colordiff
   include mopensuse::packages::colout
   include mopensuse::packages::composer
