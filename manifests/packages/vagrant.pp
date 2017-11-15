@@ -1,12 +1,10 @@
 class mopensuse::packages::vagrant(
   $ensure = 'present',
   $vagrant_nfsd_users,
-  $vagrant_home = '/usr/share/vagrant'
 ) {
 
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::bash
-  include mopensuse::packages::augeas
 
   package {'vagrant':
     ensure  => $ensure,
@@ -23,21 +21,6 @@ class mopensuse::packages::vagrant(
 
   group { 'vagrant':
     ensure => 'present',
-  }
-
-  file { $vagrant_home:
-    ensure   => directory,
-    mode     => '2775',
-    owner    => 'root',
-    group    => 'vagrant',
-    require  => Group['vagrant']
-  }
-
-  augeas { "/files/etc/environment/VAGRANT_HOME":
-    changes => [
-      "set /files/etc/environment/VAGRANT_HOME '$vagrant_home'",
-    ],
-    require => [ Class["mopensuse::packages::augeas"], File[$vagrant_home] ]
   }
 
   file { '/etc/sudoers.d/vagrant':
