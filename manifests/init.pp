@@ -164,6 +164,7 @@ class mopensuse {
   include mopensuse::packages::py2pack
   include mopensuse::packages::python3_docopt
   include mopensuse::packages::python3_pipsi
+  include mopensuse::packages::python_devel
   include mopensuse::packages::python_keyring
   include mopensuse::packages::python_pipsi
   include mopensuse::packages::qemu_kvm
