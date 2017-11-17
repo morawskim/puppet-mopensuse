@@ -89,4 +89,10 @@ class mopensuse::packages::nodejs_packages($ensure = 'present') {
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { 'uglify-js':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }
