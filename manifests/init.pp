@@ -70,6 +70,7 @@ class mopensuse {
   include mopensuse::packages::gifsicle
   include mopensuse::packages::git_server
   include mopensuse::packages::glances
+  include mopensuse::packages::git_crypt
   include mopensuse::packages::git_extras
   include mopensuse::packages::graphviz
   include mopensuse::packages::greenmail
