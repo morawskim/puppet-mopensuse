@@ -198,6 +198,7 @@ class mopensuse {
   include mopensuse::packages::systemd
   include mopensuse::packages::taskwarrior
   include mopensuse::packages::tcpdump
+  include mopensuse::packages::tcpproxy
   include mopensuse::packages::testdisk
   include mopensuse::packages::tig
   include mopensuse::packages::tmux
