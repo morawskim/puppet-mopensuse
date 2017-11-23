@@ -119,6 +119,7 @@ class mopensuse {
   include mopensuse::packages::net_snmp
   include mopensuse::packages::netcat_openbsd
   include mopensuse::packages::nethogs
+  include mopensuse::packages::netsed
   include mopensuse::packages::network
   include mopensuse::packages::nfs
   include mopensuse::packages::newsbeuter
