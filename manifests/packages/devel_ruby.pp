@@ -9,8 +9,7 @@ class mopensuse::packages::devel_ruby($ensure = 'present') {
     include mopensuse::packages::ruby_build
     
     package {['patterns-openSUSE-devel_ruby', 'ruby', 'ruby2.1-devel',
-        'ruby2.1-devel-extra', 'ruby-devel', 'rubygem-passenger',
-        'rubygem-passenger-apache2', 'completion-ruby',
+        'ruby2.1-devel-extra', 'ruby-devel', 'completion-ruby',
         'ruby2.1-rubygem-ruby-debug-ide', 'ruby2.1-rubygem-gem2rpm', 'rbenv'
     ]:
     ensure  => $ensure,
@@ -53,22 +52,4 @@ class mopensuse::packages::devel_ruby($ensure = 'present') {
       ensure   => $ensure,
       require  => Package['ruby']
   }
-  
-  file {'/etc/apache2/vhosts.d/vhost-modpassenger.template':
-      ensure  => present,
-      mode    => '0644',
-      owner   => 'root',
-      group   => 'root',
-      source  => "puppet:///modules/${module_name}/devel-ruby/vhost-modpassenger.template",
-      require => Class['mopensuse::packages::apache2']
-  }
-  
-  exec {'enable_apache_mod_passenger':
-      command => 'a2enmod passenger',
-      unless  => 'a2enmod -q passenger',
-      path    => ['/usr/sbin/'],
-      require => [ Class['mopensuse::packages::apache2'], Package['rubygem-passenger-apache2'] ],
-      notify  => Class['mopensuse::services::apache2'] 
-  }
-  
 }
