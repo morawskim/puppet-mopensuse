@@ -74,9 +74,10 @@ class mopensuse::user::marcin (
   }
 
   mopensuse::user::config::symlink{'mysql':
-    path   => '/etc/my.cnf.d/mmo.conf',
+    path   => '/etc/my.cnf.d/mmo.cnf',
     target => '/home/marcin/.config/mysqld_mmo.cnf',
     owner  => $username,
     group  => $username,
+    mode   => '0600',
   }
 }
