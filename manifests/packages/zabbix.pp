@@ -24,7 +24,7 @@ class mopensuse::packages::zabbix(
   }
 
   class { '::zabbix':
-    zabbix_url        => 'zabbix.dev',
+    zabbix_url        => 'zabbix.test',
     database_type     => 'mysql',
     manage_repo       => false,
     manage_firewall   => false,
@@ -38,14 +38,14 @@ class mopensuse::packages::zabbix(
     require           => Class['mopensuse::packages::mysql']
   }
 
-  host {'zabbix.dev':
+  host {'zabbix.test':
     ensure       => present,
     ip           => '127.0.0.1',
-    host_aliases => ['www.zabbix.dev'],
+    host_aliases => ['www.zabbix.test'],
     require => Class['::zabbix'],
   }
 
-  file {'/etc/apache2/vhosts.d/zabbix.dev.conf':
+  file {'/etc/apache2/vhosts.d/zabbix.test.conf':
     ensure  => present,
     mode    => '0744',
     owner   => 'root',
