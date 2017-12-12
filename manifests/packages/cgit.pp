@@ -15,20 +15,20 @@ class mopensuse::packages::cgit($ensure = 'present') {
         require => Class['mopensuse::zypper::repositories::morawskim']
     }
   
-    file {'/etc/apache2/vhosts.d/cgit.dev.conf':
+    file {'/etc/apache2/vhosts.d/cgit.test.conf':
         ensure  => present,
         mode    => '0744',
         owner   => 'root',
         group   => 'root',
-        source  => "puppet:///modules/${module_name}/cgit/cgit.dev.vhost",
+        source  => "puppet:///modules/${module_name}/cgit/cgit.test.vhost",
         require => [ Package['cgit'], Class['mopensuse::packages::apache2'] ],
         notify  => Class['mopensuse::services::apache2']
     }
   
-    host {'cgit.dev':
+    host {'cgit.test':
         ensure       => present,
         ip           => '127.0.0.1',
-        host_aliases => 'www.cgit.dev'
+        host_aliases => 'www.cgit.test'
     }
     
     file {'/etc/cgitrc':
