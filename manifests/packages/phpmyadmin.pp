@@ -5,13 +5,13 @@ class mopensuse::packages::phpmyadmin($ensure = 'present') {
   #  ensure => $ensure,
   #}
 
-  host {'phpmyadmin.dev':
+  host {'phpmyadmin.test':
     ensure       => present,
     ip           => '127.0.0.1',
-    host_aliases => ['www.phpmyadmin.dev']
+    host_aliases => ['www.phpmyadmin.test']
   }
 
-  file {'/etc/apache2/vhosts.d/phpmyadmin.dev.conf':
+  file {'/etc/apache2/vhosts.d/phpmyadmin.test.conf':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',

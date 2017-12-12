@@ -8,13 +8,13 @@ class mopensuse::packages::phpmyadmin40($ensure = 'present') {
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 
-  host {'phpmyadmin40.dev':
+  host {'phpmyadmin40.test':
     ensure       => present,
     ip           => '127.0.0.1',
-    host_aliases => ['www.phpmyadmin40.dev']
+    host_aliases => ['www.phpmyadmin40.test']
   }
 
-  file {'/etc/apache2/vhosts.d/phpmyadmin40.dev.conf':
+  file {'/etc/apache2/vhosts.d/phpmyadmin40.test.conf':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
