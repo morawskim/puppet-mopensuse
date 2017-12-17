@@ -13,4 +13,8 @@ class mopensuse::user::rpm (
         realname      => $realname,
         sshkeys       => $ssh_keys
     }
+
+    file {"$user_home_path/.rpmmacros":
+        content => hiera('rpmmacros')
+    }
 }
