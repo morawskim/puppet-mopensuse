@@ -172,6 +172,7 @@ class mopensuse {
   include mopensuse::packages::python_pipsi
   include mopensuse::packages::qemu_arm
   include mopensuse::packages::qemu_kvm
+  include mopensuse::packages::qemu_linux_user
   include mopensuse::packages::quilt
   include mopensuse::packages::rar
   include mopensuse::packages::redis
