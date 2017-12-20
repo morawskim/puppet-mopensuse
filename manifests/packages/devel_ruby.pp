@@ -28,8 +28,8 @@ class mopensuse::packages::devel_ruby($ensure = 'present') {
         ]
     #/usr/include/ruby-2.1.0
   }
-  
-  package{['fpm', 'faker', 'faker-cli']:
+
+  package{['fpm']:
       provider => 'gem',
       ensure   => 'installed',
       require  => Package['ruby']
