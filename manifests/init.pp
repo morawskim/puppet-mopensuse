@@ -170,6 +170,7 @@ class mopensuse {
   include mopensuse::packages::python_devel
   include mopensuse::packages::python_keyring
   include mopensuse::packages::python_pipsi
+  include mopensuse::packages::qemu_arm
   include mopensuse::packages::qemu_kvm
   include mopensuse::packages::quilt
   include mopensuse::packages::rar
