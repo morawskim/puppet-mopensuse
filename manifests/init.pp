@@ -226,6 +226,7 @@ class mopensuse {
   include mopensuse::packages::xtrabackup
   include mopensuse::packages::xvfb
   include mopensuse::packages::yadm
+  include mopensuse::packages::yarn
   include mopensuse::packages::youtube_dl
   include mopensuse::packages::yum_scripts
   include mopensuse::packages::zabbix
