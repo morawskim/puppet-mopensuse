@@ -193,6 +193,7 @@ class mopensuse {
   include mopensuse::packages::srm
   include mopensuse::packages::sshd
   include mopensuse::packages::sshfs
+  include mopensuse::packages::ssldump
   include mopensuse::packages::sslscan
   include mopensuse::packages::strace
   include mopensuse::packages::stunnel
