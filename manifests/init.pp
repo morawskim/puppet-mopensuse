@@ -69,6 +69,7 @@ class mopensuse {
   include mopensuse::packages::gearmand
   include mopensuse::packages::gettext
   include mopensuse::packages::gifsicle
+  include mopensuse::packages::gifski
   include mopensuse::packages::git_server
   include mopensuse::packages::glances
   include mopensuse::packages::git_crypt
