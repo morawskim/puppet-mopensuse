@@ -1,6 +1,6 @@
 class mopensuse::packages::libssh2_devel($ensure = 'present') {
 
-  include mopensuse::zypper::repositories::devel_languages_c_cpp
+  include mopensuse::zypper::repositories::devel_libraries_c_cpp
 
   case $::operatingsystemrelease {
     '42.3':           { $version = '1.8.0' }
@@ -17,7 +17,7 @@ class mopensuse::packages::libssh2_devel($ensure = 'present') {
   package {['libssh2-1']:
     ensure  => $version,
     install_options => [ {'--from' => 'devel_libraries_c_cpp'}, '--force' ],
-    require => Class['mopensuse::zypper::repositories::devel_languages_c_cpp'],
+    require => Class['mopensuse::zypper::repositories::devel_libraries_c_cpp'],
     before  => Package['libssh2-devel'],
   }
 }
