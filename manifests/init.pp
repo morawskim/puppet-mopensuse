@@ -92,6 +92,7 @@ class mopensuse {
   include mopensuse::packages::jq
   include mopensuse::packages::json_tools
   include mopensuse::packages::kiwi
+  include mopensuse::packages::lame
   include mopensuse::packages::libguestfs
   include mopensuse::packages::libxml2_tools
   include mopensuse::packages::live_fat_stick
