@@ -134,6 +134,7 @@ class mopensuse {
   include mopensuse::packages::ngrok
   include mopensuse::packages::nmon
   include mopensuse::packages::nodejs
+  include mopensuse::packages::nodejs6
   include mopensuse::packages::notify_send
   include mopensuse::packages::ntfs3g
   include mopensuse::packages::o_saft
