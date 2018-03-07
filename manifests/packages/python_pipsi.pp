@@ -1,6 +1,7 @@
 class mopensuse::packages::python_pipsi($ensure = 'present') {
 
   include mopensuse::zypper::repositories::morawskim
+  include mopensuse::packages::python_devel
 
   package {'python-pipsi':
     ensure  => $ensure,
