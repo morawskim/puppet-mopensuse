@@ -211,6 +211,7 @@ class mopensuse {
   include mopensuse::packages::tcpproxy
   include mopensuse::packages::termshare
   include mopensuse::packages::testdisk
+  include mopensuse::packages::texlive_latex_bin_bin
   include mopensuse::packages::tig
   include mopensuse::packages::tmux
   include mopensuse::packages::tomcat
