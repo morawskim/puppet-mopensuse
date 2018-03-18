@@ -66,6 +66,11 @@ class mopensuse::user::marcin (
     require => Mopensuse::User::Account[$username]
   }
 
+  mopensuse::user::config::osc_group{$username:
+    user    => $username,
+    require => Mopensuse::User::Account[$username]
+  }
+
   mopensuse::user::config::symlink{'pam_limits':
     path   => '/etc/security/limits.d/mmo.conf',
     target => '/home/marcin/.config/pam_limits.conf',

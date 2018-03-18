@@ -59,6 +59,7 @@ class mopensuse {
   include mopensuse::packages::fakeprovide
   include mopensuse::packages::fastcgi
   include mopensuse::packages::fbcat
+  include mopensuse::packages::ffmpeg
   include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
   include mopensuse::packages::fontawesome
@@ -91,6 +92,7 @@ class mopensuse {
   include mopensuse::packages::jq
   include mopensuse::packages::json_tools
   include mopensuse::packages::kiwi
+  include mopensuse::packages::lame
   include mopensuse::packages::libguestfs
   include mopensuse::packages::libxml2_tools
   include mopensuse::packages::live_fat_stick
@@ -132,6 +134,7 @@ class mopensuse {
   include mopensuse::packages::ngrok
   include mopensuse::packages::nmon
   include mopensuse::packages::nodejs
+  include mopensuse::packages::nodejs6
   include mopensuse::packages::notify_send
   include mopensuse::packages::ntfs3g
   include mopensuse::packages::o_saft
@@ -208,6 +211,7 @@ class mopensuse {
   include mopensuse::packages::tcpproxy
   include mopensuse::packages::termshare
   include mopensuse::packages::testdisk
+  include mopensuse::packages::texlive_latex_bin_bin
   include mopensuse::packages::tig
   include mopensuse::packages::tmux
   include mopensuse::packages::tomcat
@@ -255,6 +259,7 @@ class mopensuse {
   include mopensuse::packages::gui::glxgears
   include mopensuse::packages::gui::gnome_disk_utility
   include mopensuse::packages::gui::gobby
+  include mopensuse::packages::gui::gstreamer_plugins
   include mopensuse::packages::gui::gtranslator
   include mopensuse::packages::gui::gvim
   include mopensuse::packages::gui::hardinfo

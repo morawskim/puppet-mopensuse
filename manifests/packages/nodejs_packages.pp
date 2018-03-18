@@ -95,4 +95,10 @@ class mopensuse::packages::nodejs_packages($ensure = 'present') {
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { '@angular/cli':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }

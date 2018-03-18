@@ -2,6 +2,7 @@ class mopensuse::packages::gui::vivaldi($ensure = 'present') {
 
   include mopensuse::zypper::repositories::vivaldi
   include mopensuse::packages::augeas
+  include mopensuse::packages::gui::chromium_ffmpeg_extra
 
   package{'vivaldi-stable':
     ensure  => present,
