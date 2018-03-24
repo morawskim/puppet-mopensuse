@@ -107,4 +107,10 @@ class mopensuse::packages::nodejs_packages($ensure = 'present') {
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { 'caniuse-cmd':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }
