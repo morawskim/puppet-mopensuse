@@ -53,6 +53,7 @@ class mopensuse {
   include mopensuse::packages::docker
   include mopensuse::packages::dockerize
   include mopensuse::packages::dpkg
+  include mopensuse::packages::dtrx
   include mopensuse::packages::easy_rsa2
   include mopensuse::packages::enhancd
   include mopensuse::packages::exa
