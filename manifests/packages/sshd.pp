@@ -1,13 +1,6 @@
 class mopensuse::packages::sshd($ensure = 'present') {
-  
-  service {'sshd':
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => Package['openssh']
-  }
-  
+  include mopensuse::services::sshd
+
   #firewall ssh
   exec{'firewall_open_sshd_port':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT sshd',
@@ -17,7 +10,7 @@ class mopensuse::packages::sshd($ensure = 'present') {
   }
 
   package {'openssh':
-    ensure     => $ensure,
+    ensure  => $ensure,
+    notify  => Class['mopensuse::services::sshd']
   }
-  
 }
