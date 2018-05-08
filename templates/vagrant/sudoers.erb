@@ -1,8 +1,0 @@
-User_Alias VAGRANT_NFSD_USERS = <%= @vagrant_nfsd_users %>
-Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
-Cmnd_Alias VAGRANT_NFSD_CHECK = /usr/bin/systemctl status nfsserver.service
-Cmnd_Alias VAGRANT_NFSD_START = /usr/bin/systemctl start nfsserver.service
-Cmnd_Alias VAGRANT_NFSD_APPLY = /usr/sbin/exportfs -ar
-Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
-Cmnd_Alias VAGRANT_EXPORTS_COPY = /usr/bin/cp /tmp/exports /etc/exports
-VAGRANT_NFSD_USERS ALL=(root) NOPASSWD: VAGRANT_EXPORTS_COPY, VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE 
