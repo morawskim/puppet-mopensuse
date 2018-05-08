@@ -1,2 +1,0 @@
-Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
-%osc  ALL = (ALL) NOPASSWD:OSC_CMD
