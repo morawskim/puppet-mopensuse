@@ -23,7 +23,7 @@ class mopensuse {
   include mopensuse::packages::bash
   include mopensuse::packages::bcal
   include mopensuse::packages::biabam
-  include mopensuse::packages::bind
+  include mopensuse::packages::bind_utils
   include mopensuse::packages::bsdtar
   include mopensuse::packages::bup
   include mopensuse::packages::byobu
