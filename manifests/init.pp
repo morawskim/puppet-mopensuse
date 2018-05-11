@@ -89,7 +89,6 @@ class mopensuse {
   include mopensuse::packages::inotify_tools
   include mopensuse::packages::iperf
   include mopensuse::packages::isync
-  include mopensuse::packages::jenkins
   include mopensuse::packages::jq
   include mopensuse::packages::json_tools
   include mopensuse::packages::kiwi
