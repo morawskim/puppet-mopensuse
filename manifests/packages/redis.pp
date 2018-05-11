@@ -20,14 +20,6 @@ class mopensuse::packages::redis($ensure = 'present') {
     require => Package['redis']
   }
 
-  file {'/etc/bash_completion.d/redis.sh':
-    ensure  => present,
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => "puppet:///modules/${module_name}/redis/bash_completion.sh"
-  }
-
   service {$servicename:
     ensure     => running,
     enable     => true,
