@@ -33,25 +33,6 @@ class mopensuse::packages::apache2 (
     require => [ Package['apache2'], Class['mopensuse::packages::firewall'] ]
   }
 
-  #vhost templates for php-fpm & ssl-php-fpm
-  file { '/etc/apache2/vhosts.d/vhost-fpm.template':
-    ensure  => present,
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => "puppet:///modules/${module_name}/apache2/vhost-fpm.template",
-    require => Package['apache2']
-  }
-
-  file { '/etc/apache2/vhosts.d/vhost-fpm-ssl.template':
-    ensure  => present,
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => "puppet:///modules/${module_name}/apache2/vhost-fpm-ssl.template",
-    require => Package['apache2']
-  }
-
   #vhost dir
   file { '/srv/www/vhosts':
     ensure  => directory,
@@ -59,17 +40,6 @@ class mopensuse::packages::apache2 (
     owner   => 'root',
     group   => 'root',
     require => Package['apache2']
-  }
-
-  #default vhost
-  file { '/etc/apache2/vhosts.d/000-default.conf':
-    ensure  => present,
-    mode    => '0744',
-    owner   => 'root',
-    group   => 'root',
-    source  => 'puppet:///modules/mopensuse/apache2/000-default.vhost',
-    require => Package['apache2'],
-    notify  => Class['mopensuse::services::apache2']
   }
 
   file { '/var/log/apache2':
