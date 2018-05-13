@@ -1,7 +1,7 @@
 class mopensuse::printers::hp {
 
   include mopensuse::packages::cups
-  
+
   package {'hplip-hpijs':
     ensure => present
   }
