@@ -8,9 +8,9 @@ class mopensuse::packages::devel_ruby($ensure = 'present') {
     include mopensuse::packages::bundler
     include mopensuse::packages::ruby_build
     
-    package {['patterns-openSUSE-devel_ruby', 'ruby', 'ruby2.1-devel',
-        'ruby2.1-devel-extra', 'ruby-devel', 'completion-ruby',
-        'ruby2.1-rubygem-ruby-debug-ide', 'ruby2.1-rubygem-gem2rpm', 'rbenv'
+    package {['patterns-openSUSE-devel_ruby', 'ruby', "ruby${::rubydefverion['majversion']}-devel",
+        "ruby${::rubydefverion['majversion']}-devel-extra", 'ruby-devel', 'completion-ruby',
+        "ruby${::rubydefverion['majversion']}-rubygem-ruby-debug-ide", "ruby${::rubydefverion['majversion']}-rubygem-gem2rpm", 'rbenv'
     ]:
     ensure  => $ensure,
     require => [
