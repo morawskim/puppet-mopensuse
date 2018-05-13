@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::server_monitoring {
   include mopensuse::rpmkeys::server_monitoring
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::server_monitoring'],
   }
 

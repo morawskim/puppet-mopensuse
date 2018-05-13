@@ -1,16 +1,18 @@
-class mopensuse::packages::sshfs($ensure = 'present') {
-  
-  package {['sshfs']:
+class mopensuse::packages::sshfs (
+  $ensure = 'present'
+) {
+
+  package { ['sshfs']:
     ensure => $ensure,
   }
-  
-  group {'sshfs':
+
+  group { 'sshfs':
     ensure => present,
-    system     => true
+    system => true
   }
-  
+
   #place to mount remote fs
-  file {'/srv/sshfs':
+  file { '/srv/sshfs':
     ensure  => directory,
     mode    => '1770',
     owner   => 'root',

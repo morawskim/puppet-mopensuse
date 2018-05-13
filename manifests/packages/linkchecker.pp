@@ -1,6 +1,8 @@
-class mopensuse::packages::linkchecker($ensure = 'present') {
+class mopensuse::packages::linkchecker (
+  $ensure = 'present'
+) {
 
-  package {'linkchecker':
+  package { 'linkchecker':
     ensure => $ensure,
   }
 }

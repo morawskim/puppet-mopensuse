@@ -1,6 +1,8 @@
-class mopensuse::packages::kiwi_config_opensuse($ensure = 'present') {
+class mopensuse::packages::kiwi_config_opensuse (
+  $ensure = 'present'
+) {
 
-  package {'kiwi-config-openSUSE':
-    ensure  => $ensure,
+  package { 'kiwi-config-openSUSE':
+    ensure => $ensure,
   }
 }

@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::packman {
   include mopensuse::rpmkeys::packman
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::packman'],
   }
 

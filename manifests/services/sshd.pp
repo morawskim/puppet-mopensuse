@@ -1,7 +1,7 @@
 class mopensuse::services::sshd {
   include mopensuse::packages::sshd
 
-  service {'sshd':
+  service { 'sshd':
     ensure     => running,
     enable     => true,
     hasrestart => true,

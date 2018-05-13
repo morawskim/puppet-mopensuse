@@ -1,10 +1,11 @@
-class mopensuse::packages::nmon($ensure = 'present') {
-
+class mopensuse::packages::nmon (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::server_monitoring
 
-  package {'nmon':
+  package { 'nmon':
     ensure          => $ensure,
-    install_options => [ {'--from' => 'server_monitoring'}, '--force' ],
+    install_options => [ { '--from' => 'server_monitoring' }, '--force' ],
     require         => Class['mopensuse::zypper::repositories::server_monitoring']
   }
 }

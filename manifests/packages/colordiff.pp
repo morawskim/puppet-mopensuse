@@ -1,7 +1,8 @@
-class mopensuse::packages::colordiff($ensure = 'present') {
-  
-  package {['colordiff']:
+class mopensuse::packages::colordiff (
+  $ensure = 'present'
+) {
+
+  package { ['colordiff']:
     ensure => $ensure,
   }
-  
 }

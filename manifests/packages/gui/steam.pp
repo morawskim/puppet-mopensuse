@@ -1,15 +1,16 @@
-class mopensuse::packages::gui::steam($ensure = 'present') {
-    
+class mopensuse::packages::gui::steam (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::games_tools
   include mopensuse::packages::firewall
   include mopensuse::config::steam
-  
-  package {'steam':
+
+  package { 'steam':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::games_tools']
   }
 
-  exec {'firewall_open_steam_streaming':
+  exec { 'firewall_open_steam_streaming':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT steam-streaming',
     unless  => 'grep "steam-streaming" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
     path    => ['/usr/sbin', '/usr/bin'],
@@ -17,4 +18,3 @@ class mopensuse::packages::gui::steam($ensure = 'present') {
     notify  => Class['mopensuse::services::firewall']
   }
 }
-

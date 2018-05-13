@@ -1,6 +1,8 @@
-class mopensuse::packages::newsbeuter($ensure = 'present') {
+class mopensuse::packages::newsbeuter (
+  $ensure = 'present'
+) {
 
-  package {['newsbeuter']:
+  package { ['newsbeuter']:
     ensure => $ensure,
   }
 }

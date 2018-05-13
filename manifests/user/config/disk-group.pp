@@ -1,8 +1,7 @@
 define mopensuse::user::config::disk-group (
-    $user
+  $user
 ) {
-  
+
   #add user to disk group
-  User <| title == "${user}" |> { groups +> "disk" }
-  
+  User <| title == $user |> { groups +> 'disk' }
 }

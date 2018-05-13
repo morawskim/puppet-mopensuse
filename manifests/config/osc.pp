@@ -1,4 +1,6 @@
-class mopensuse::config::osc($files) {
+class mopensuse::config::osc (
+  $files
+) {
   include mopensuse::packages::osc
 
   create_resources(

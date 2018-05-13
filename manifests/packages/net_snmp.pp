@@ -1,6 +1,8 @@
-class mopensuse::packages::net_snmp($ensure = 'present') {
+class mopensuse::packages::net_snmp (
+  $ensure = 'present'
+) {
 
-  package {'net-snmp':
+  package { 'net-snmp':
     ensure => $ensure,
   }
 }

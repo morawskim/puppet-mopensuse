@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::gobby($ensure = 'present') {
+class mopensuse::packages::gui::gobby (
+  $ensure = 'present'
+) {
 
-  package {'gobby':
+  package { 'gobby':
     ensure => $ensure,
   }
 }

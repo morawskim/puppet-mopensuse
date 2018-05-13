@@ -1,7 +1,8 @@
-class mopensuse::packages::xwud($ensure = 'present') {
+class mopensuse::packages::xwud (
+  $ensure = 'present'
+) {
 
-    package {'xwud':
-        ensure => $ensure,
-    }
-
+  package { 'xwud':
+    ensure => $ensure,
+  }
 }

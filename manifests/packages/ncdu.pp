@@ -1,6 +1,8 @@
-class mopensuse::packages::ncdu($ensure = 'present') {
+class mopensuse::packages::ncdu (
+  $ensure = 'present'
+) {
 
-    package {'ncdu':
-        ensure  => $ensure,
-    }
+  package { 'ncdu':
+    ensure => $ensure,
+  }
 }

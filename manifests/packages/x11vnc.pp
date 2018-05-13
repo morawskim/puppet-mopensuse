@@ -1,20 +1,19 @@
-class mopensuse::packages::x11vnc(
+class mopensuse::packages::x11vnc (
   $ensure = 'present',
   $vnc_password
 ) {
-
   include ::systemd
 
-  package{'xorg-x11-Xvnc':
+  package { 'xorg-x11-Xvnc':
     ensure => present
   }
 
-  package{'x11vnc':
+  package { 'x11vnc':
     ensure => present
   }
 
   #firewall vnc server
-  exec{'firewall_open_vnc_server_port':
+  exec { 'firewall_open_vnc_server_port':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT vnc-server',
     unless  => 'grep "vnc-server" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
     path    => ['/usr/sbin', '/usr/bin'],
@@ -22,16 +21,16 @@ class mopensuse::packages::x11vnc(
   }
 
   file { '/etc/x11vnc.pass':
-      ensure  => present,
-      content => vncpassword("${vnc_password}"),
-      mode    => '0600',
-      owner   => 'root',
-      group   => 'root',
-      require => [ File['/usr/local/bin/x11vnc-wrapper'] ],
-      notify  => Service['x11vnc']
+    ensure  => present,
+    content => vncpassword($vnc_password),
+    mode    => '0600',
+    owner   => 'root',
+    group   => 'root',
+    require => [ File['/usr/local/bin/x11vnc-wrapper'] ],
+    notify  => Service['x11vnc']
   }
 
-  file {'/etc/systemd/system/x11vnc.service':
+  file { '/etc/systemd/system/x11vnc.service':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
@@ -41,7 +40,7 @@ class mopensuse::packages::x11vnc(
     require => [ Package['x11vnc'], File['/usr/local/bin/x11vnc-wrapper'] ]
   }
 
-  file {'/usr/local/bin/x11vnc-wrapper':
+  file { '/usr/local/bin/x11vnc-wrapper':
     ensure  => present,
     mode    => '0750',
     owner   => 'root',
@@ -53,7 +52,7 @@ class mopensuse::packages::x11vnc(
     require => Package['x11vnc']
   }
 
-  service {'x11vnc':
+  service { 'x11vnc':
     ensure     => running,
     enable     => true,
     hasrestart => true,

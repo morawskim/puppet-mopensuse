@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::kde_extra {
   include mopensuse::rpmkeys::kde_extra
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::kde_extra'],
   }
 

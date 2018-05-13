@@ -1,8 +1,9 @@
-class mopensuse::packages::squashfs($ensure = 'present') {
-
+class mopensuse::packages::squashfs (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::filesystems
 
-  package {'squashfs':
+  package { 'squashfs':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::filesystems']
   }

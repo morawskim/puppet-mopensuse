@@ -1,6 +1,8 @@
-class mopensuse::packages::bsdtar($ensure = 'present') {
+class mopensuse::packages::bsdtar (
+  $ensure = 'present'
+) {
 
-  package {'bsdtar':
+  package { 'bsdtar':
     ensure => $ensure,
   }
 }

@@ -1,6 +1,8 @@
-class mopensuse::packages::pax_utils($ensure = 'present') {
+class mopensuse::packages::pax_utils (
+  $ensure = 'present'
+) {
 
-  package {'pax-utils':
-    ensure  => $ensure,
+  package { 'pax-utils':
+    ensure => $ensure,
   }
 }

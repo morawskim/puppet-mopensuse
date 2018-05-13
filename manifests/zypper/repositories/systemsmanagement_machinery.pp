@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::systemsmanagement_machinery {
   include mopensuse::rpmkeys::systemsmanagement_machinery
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::systemsmanagement_machinery'],
   }
 

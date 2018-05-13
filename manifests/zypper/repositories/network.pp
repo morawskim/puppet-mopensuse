@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::network {
   include mopensuse::rpmkeys::network
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::network'],
   }
 

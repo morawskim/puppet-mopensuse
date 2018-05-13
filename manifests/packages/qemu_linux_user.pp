@@ -1,6 +1,8 @@
-class mopensuse::packages::qemu_linux_user($ensure = 'present') {
+class mopensuse::packages::qemu_linux_user (
+  $ensure = 'present'
+) {
 
-  package {'qemu-linux-user':
+  package { 'qemu-linux-user':
     ensure => $ensure,
   }
 }

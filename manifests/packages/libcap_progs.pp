@@ -1,6 +1,8 @@
-class mopensuse::packages::libcap_progs($ensure = 'present') {
+class mopensuse::packages::libcap_progs (
+  $ensure = 'present'
+) {
 
-  package {['libcap-progs']:
+  package { ['libcap-progs']:
     ensure => $ensure,
   }
 }

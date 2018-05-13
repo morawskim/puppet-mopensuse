@@ -1,8 +1,8 @@
-class mopensuse::packages::mysql(
+class mopensuse::packages::mysql (
   $ensure = 'present',
   $mysql_root_password
 ) {
-  
+
   #must be commented
   #service {'mysql':
   #  ensure     => running,
@@ -11,11 +11,11 @@ class mopensuse::packages::mysql(
   #  hasstatus  => true,
   #  require    => Package['mariadb']
   #}
-  
-  package {['mariadb', 'mariadb-errormessages', 'mariadb-client']:
+
+  package { ['mariadb', 'mariadb-errormessages', 'mariadb-client']:
     ensure => $ensure,
   }
-  
+
   class { '::mysql::server':
     create_root_user        => true,
     package_manage          => false,
@@ -28,13 +28,13 @@ class mopensuse::packages::mysql(
     root_group              => 'mysql',
     require                 => Package['mariadb']
   }
-  
+
   class { '::mysql::client':
     package_ensure => present,
     package_name   => 'mariadb-tools',
   }
 
-  file {'/etc/my.cnf.d/log_query.cnf':
+  file { '/etc/my.cnf.d/log_query.cnf':
     ensure  => present,
     mode    => '0640',
     owner   => 'root',

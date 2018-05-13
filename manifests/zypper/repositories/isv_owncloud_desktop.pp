@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::isv_owncloud_desktop {
   include mopensuse::rpmkeys::isv_owncloud_desktop
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::isv_owncloud_desktop'],
   }
 

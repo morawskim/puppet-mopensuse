@@ -1,6 +1,8 @@
-class mopensuse::packages::nodejs6($ensure = 'present') {
+class mopensuse::packages::nodejs6 (
+  $ensure = 'present'
+) {
 
-  package {'nodejs6':
+  package { 'nodejs6':
     ensure => $ensure,
   }
 }

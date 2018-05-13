@@ -1,8 +1,9 @@
-class mopensuse::packages::termshare($ensure = 'present') {
-
+class mopensuse::packages::termshare (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {['termshare']:
+  package { ['termshare']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

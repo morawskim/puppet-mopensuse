@@ -1,6 +1,6 @@
-class mopensuse::user::gem::showterm() {
+class mopensuse::user::gem::showterm () {
 
-  package{'showterm':
+  package { 'showterm':
     ensure          => 'installed',
     provider        => 'gem',
     install_options => ['--user', '--user-install'],

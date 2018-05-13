@@ -1,11 +1,9 @@
 define mopensuse::user::config::tomcat-group (
-    $user
+  $user
 ) {
+  include mopensuse::packages::tomcat
 
-    include mopensuse::packages::tomcat
-    
-    
-    #add user to tomcat group
-    User <| title == "${user}" |> { groups +> "tomcat", require +> Class['mopensuse::packages::tomcat'] }
-  
+
+  #add user to tomcat group
+  User <| title == $user |> { groups +> 'tomcat', require +> Class['mopensuse::packages::tomcat'] }
 }

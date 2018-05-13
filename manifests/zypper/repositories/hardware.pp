@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::hardware {
   include mopensuse::rpmkeys::hardware
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::hardware'],
   }
 

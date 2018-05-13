@@ -1,9 +1,10 @@
-class mopensuse::packages::fzf_tmux($ensure = 'present') {
-
+class mopensuse::packages::fzf_tmux (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::fzf
 
-  package {['fzf-tmux']:
+  package { ['fzf-tmux']:
     ensure  => $ensure,
     require => [
       Class['mopensuse::packages::fzf'],

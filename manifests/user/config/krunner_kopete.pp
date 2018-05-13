@@ -3,19 +3,19 @@ define mopensuse::user::config::krunner_kopete (
   $user_home_path
 ) {
 
-  ini_setting { "krunner kopete":
+  ini_setting { 'krunner kopete':
     ensure  => present,
     path    => "${user_home_path}/.kde4/share/config/krunnerrc",
     section => 'Plugins',
     setting => 'kopete_runnerEnabled',
-    value   => 'false',
+    value   => false,
   }
 
-  ini_setting { "krunner kopetecontacts":
+  ini_setting { 'krunner kopetecontacts':
     ensure  => present,
     path    => "${user_home_path}/.kde4/share/config/krunnerrc",
     section => 'Plugins',
     setting => 'kopetecontacts_runnerEnabled',
-    value   => 'true',
+    value   => true,
   }
 }

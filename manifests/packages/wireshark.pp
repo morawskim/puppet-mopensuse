@@ -1,7 +1,8 @@
-class mopensuse::packages::wireshark($ensure = 'present') {
-  
-  package {'wireshark':
+class mopensuse::packages::wireshark (
+  $ensure = 'present'
+) {
+
+  package { 'wireshark':
     ensure => $ensure,
   }
-  
 }

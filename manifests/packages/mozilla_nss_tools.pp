@@ -1,6 +1,8 @@
-class mopensuse::packages::mozilla_nss_tools($ensure = 'present') {
+class mopensuse::packages::mozilla_nss_tools (
+  $ensure = 'present'
+) {
 
-  package {'mozilla-nss-tools':
-    ensure  => $ensure,
+  package { 'mozilla-nss-tools':
+    ensure => $ensure,
   }
 }

@@ -1,10 +1,12 @@
-class mopensuse::config::sysctl($files) {
+class mopensuse::config::sysctl (
+  $files
+) {
 
   create_resources(
     'file',
     $files,
     {
-      'ensure'  => 'present',
+      'ensure' => 'present',
     }
   )
 }

@@ -1,10 +1,11 @@
-class mopensuse::packages::jq($ensure = 'present') {
+class mopensuse::packages::jq (
+  $ensure = 'present'
+) {
+  include mopensuse::zypper::repositories::utilities
+  include mopensuse::packages::pygments
 
-    include mopensuse::zypper::repositories::utilities
-    include mopensuse::packages::pygments
-
-    package {'jq':
-        ensure  => $ensure,
-        require => Class['mopensuse::zypper::repositories::utilities']
-    }
+  package { 'jq':
+    ensure  => $ensure,
+    require => Class['mopensuse::zypper::repositories::utilities']
+  }
 }

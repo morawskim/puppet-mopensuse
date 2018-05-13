@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::benchmark {
   include mopensuse::rpmkeys::benchmark
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::benchmark'],
   }
 

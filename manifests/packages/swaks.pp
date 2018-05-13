@@ -1,8 +1,9 @@
-class mopensuse::packages::swaks($ensure = 'present') {
-
+class mopensuse::packages::swaks (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {'swaks':
+  package { 'swaks':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

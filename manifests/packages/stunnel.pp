@@ -1,6 +1,8 @@
-class mopensuse::packages::stunnel($ensure = 'present') {
+class mopensuse::packages::stunnel (
+  $ensure = 'present'
+) {
 
-  package {'stunnel':
+  package { 'stunnel':
     ensure => $ensure,
   }
 }

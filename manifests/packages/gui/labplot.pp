@@ -1,10 +1,10 @@
-class mopensuse::packages::gui::labplot($ensure = 'present') {
-
+class mopensuse::packages::gui::labplot (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::kde_extra
 
-  package {'labplot':
+  package { 'labplot':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::kde_extra']
   }
 }
-

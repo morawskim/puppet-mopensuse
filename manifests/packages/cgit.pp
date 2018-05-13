@@ -1,21 +1,22 @@
-class mopensuse::packages::cgit($ensure = 'present') {
-
+class mopensuse::packages::cgit (
+  $ensure = 'present'
+) {
   include mopensuse::packages::apache2
   include mopensuse::packages::augeas
   include mopensuse::packages::git_server
   include mopensuse::packages::highlight
   include mopensuse::zypper::repositories::morawskim
 
-  package {'cgit':
+  package { 'cgit':
     ensure => $ensure,
   }
 
-  package {'cgit-filter-syntaxhiglight':
+  package { 'cgit-filter-syntaxhiglight':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 
-  file {'/var/cache/cgit':
+  file { '/var/cache/cgit':
     ensure  => directory,
     mode    => '0750',
     owner   => 'wwwrun',

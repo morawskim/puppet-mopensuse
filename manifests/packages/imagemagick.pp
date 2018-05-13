@@ -1,7 +1,8 @@
-class mopensuse::packages::imagemagick($ensure = 'present') {
-  
-  package {'ImageMagick':
+class mopensuse::packages::imagemagick (
+  $ensure = 'present'
+) {
+
+  package { 'ImageMagick':
     ensure => $ensure,
   }
-  
 }

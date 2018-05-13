@@ -5,7 +5,7 @@ class mopensuse::zypper::repositories::vivaldi {
   include mopensuse::rpmkeys::vivaldi_future
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => [ Class['mopensuse::rpmkeys::vivaldi'], Class['mopensuse::rpmkeys::vivaldi_future'] ],
   }
 

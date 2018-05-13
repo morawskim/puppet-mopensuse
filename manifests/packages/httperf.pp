@@ -1,8 +1,9 @@
-class mopensuse::packages::httperf($ensure = 'present') {
-
+class mopensuse::packages::httperf (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::benchmark
 
-  package {'httperf':
+  package { 'httperf':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::benchmark']
   }

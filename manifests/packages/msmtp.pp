@@ -1,6 +1,8 @@
-class mopensuse::packages::msmtp($ensure = 'present') {
+class mopensuse::packages::msmtp (
+  $ensure = 'present'
+) {
 
-  package {['msmtp']:
+  package { ['msmtp']:
     ensure => $ensure,
   }
 }

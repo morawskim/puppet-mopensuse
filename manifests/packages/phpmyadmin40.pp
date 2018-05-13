@@ -1,20 +1,21 @@
-class mopensuse::packages::phpmyadmin40($ensure = 'present') {
-
+class mopensuse::packages::phpmyadmin40 (
+  $ensure = 'present'
+) {
   include mopensuse::packages::phpmyadminbase
   include mopensuse::zypper::repositories::morawskim
 
-  package {'phpMyAdmin40':
-    ensure => $ensure,
+  package { 'phpMyAdmin40':
+    ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
 
-  host {'phpmyadmin40.test':
+  host { 'phpmyadmin40.test':
     ensure       => present,
     ip           => '127.0.0.1',
     host_aliases => ['www.phpmyadmin40.test']
   }
 
-  file {'/etc/apache2/vhosts.d/phpmyadmin40.test.conf':
+  file { '/etc/apache2/vhosts.d/phpmyadmin40.test.conf':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
@@ -31,10 +32,10 @@ class mopensuse::packages::phpmyadmin40($ensure = 'present') {
     resource_collect => false,
     apache_group     => 'www',
     package_name     => 'phpMyAdmin40',
-    require => Class['::phpmyadmin']
+    require          => Class['::phpmyadmin']
   }
 
-  phpmyadmin::servernode { "localhost40:3306":
+  phpmyadmin::servernode { 'localhost40:3306':
     myserver_name => '127.0.0.1',
     verbose_name  => 'localhost 3306',
     server_group  => 'default',
@@ -43,7 +44,7 @@ class mopensuse::packages::phpmyadmin40($ensure = 'present') {
     target        => '/etc/phpMyAdmin40/config.inc.php'
   }
 
-  phpmyadmin::servernode { "localhost40:3307":
+  phpmyadmin::servernode { 'localhost40:3307':
     myserver_name => '127.0.0.1',
     verbose_name  => 'localhost 3307',
     server_group  => 'default',
@@ -52,7 +53,7 @@ class mopensuse::packages::phpmyadmin40($ensure = 'present') {
     target        => '/etc/phpMyAdmin40/config.inc.php'
   }
 
-  phpmyadmin::servernode { "localhost40:3308":
+  phpmyadmin::servernode { 'localhost40:3308':
     myserver_name => '127.0.0.1',
     verbose_name  => 'localhost 3308',
     server_group  => 'default',

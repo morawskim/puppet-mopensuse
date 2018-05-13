@@ -1,4 +1,6 @@
-class mopensuse::packages::nodejs_packages($ensure = 'present') {
+class mopensuse::packages::nodejs_packages (
+  $ensure = 'present'
+) {
 
   package { 'jshint':
     ensure   => $ensure,

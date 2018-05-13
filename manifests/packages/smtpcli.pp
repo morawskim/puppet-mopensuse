@@ -1,10 +1,10 @@
-class mopensuse::packages::smtpcli($ensure = 'present') {
-
+class mopensuse::packages::smtpcli (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {'smtp-cli':
+  package { 'smtp-cli':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }
-
 }

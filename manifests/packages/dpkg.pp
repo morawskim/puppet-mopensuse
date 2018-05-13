@@ -1,6 +1,8 @@
-class mopensuse::packages::dpkg($ensure = 'present') {
+class mopensuse::packages::dpkg (
+  $ensure = 'present'
+) {
 
-  package {'dpkg':
+  package { 'dpkg':
     ensure => $ensure,
   }
 }

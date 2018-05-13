@@ -1,6 +1,8 @@
-class mopensuse::packages::ssldump($ensure = 'present') {
+class mopensuse::packages::ssldump (
+  $ensure = 'present'
+) {
 
-  package {'ssldump':
-    ensure          => $ensure,
+  package { 'ssldump':
+    ensure => $ensure,
   }
 }

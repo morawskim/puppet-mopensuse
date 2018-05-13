@@ -1,5 +1,6 @@
-class mopensuse::packages::ngrok($ensure = 'present') {
-
+class mopensuse::packages::ngrok (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
   package { 'ngrok-client':

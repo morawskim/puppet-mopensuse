@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::puppet {
   include mopensuse::rpmkeys::puppet
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::puppet'],
   }
 

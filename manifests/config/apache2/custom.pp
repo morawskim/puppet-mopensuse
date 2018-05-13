@@ -1,4 +1,6 @@
-class mopensuse::config::apache2::custom($files) {
+class mopensuse::config::apache2::custom (
+  $files
+) {
   include mopensuse::packages::apache2
   include mopensuse::services::apache2
 

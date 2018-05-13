@@ -1,6 +1,8 @@
-class mopensuse::packages::qemu_arm($ensure = 'present') {
+class mopensuse::packages::qemu_arm (
+  $ensure = 'present'
+) {
 
-  package {'qemu-arm':
+  package { 'qemu-arm':
     ensure => $ensure,
   }
 }

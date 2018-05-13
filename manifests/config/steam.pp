@@ -1,4 +1,6 @@
-class mopensuse::config::steam($files) {
+class mopensuse::config::steam (
+  $files
+) {
   include mopensuse::packages::gui::steam
 
   create_resources(

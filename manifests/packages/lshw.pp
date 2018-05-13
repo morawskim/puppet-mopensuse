@@ -1,10 +1,10 @@
-class mopensuse::packages::lshw($ensure = 'present') {
-  
+class mopensuse::packages::lshw (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::hardware
-  
-  package {['lshw']:
+
+  package { ['lshw']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::hardware']
   }
-  
 }

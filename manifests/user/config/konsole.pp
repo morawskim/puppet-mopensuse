@@ -3,35 +3,35 @@ define mopensuse::user::config::konsole (
   $source_colorscheme,
   $font,
   $profile_name = 'Shell',
-  $wallpaper = ''
+  $wallpaper    = ''
 ) {
 
-  file { "$user_home_path/.local/share/konsole/__CURRENT.colorscheme":
+  file { "${user_home_path}/.local/share/konsole/__CURRENT.colorscheme":
     ensure => present,
     source => $source_colorscheme
   }
 
-  ini_setting { "[$user_home_path] konsole set colorschema name":
+  ini_setting { "[${user_home_path}] konsole set colorschema name":
     ensure            => present,
     path              => "${user_home_path}/.local/share/konsole/__CURRENT.colorscheme",
     section           => 'General',
     setting           => 'Description',
     value             => '__CURRENT',
     key_val_separator => '=',
-    require           => File["$user_home_path/.local/share/konsole/__CURRENT.colorscheme"]
+    require           => File["${user_home_path}/.local/share/konsole/__CURRENT.colorscheme"]
   }
 
-  ini_setting { "[$user_home_path] konsole set wallpaper":
+  ini_setting { "[${user_home_path}] konsole set wallpaper":
     ensure            => present,
     path              => "${user_home_path}/.local/share/konsole/__CURRENT.colorscheme",
     section           => 'General',
     setting           => 'Wallpaper',
     value             => $wallpaper,
     key_val_separator => '=',
-    require           => File["$user_home_path/.local/share/konsole/__CURRENT.colorscheme"]
+    require           => File["${user_home_path}/.local/share/konsole/__CURRENT.colorscheme"]
   }
 
-  ini_setting { "[$user_home_path] konsole set colorScheme":
+  ini_setting { "[${user_home_path}] konsole set colorScheme":
     ensure            => present,
     path              => "${user_home_path}/.local/share/konsole/${profile_name}.profile",
     section           => 'Appearance',
@@ -40,7 +40,7 @@ define mopensuse::user::config::konsole (
     key_val_separator => '=',
   }
 
-  ini_setting { "[$user_home_path] konsole set font":
+  ini_setting { "[${user_home_path}] konsole set font":
     ensure            => present,
     path              => "${user_home_path}/.local/share/konsole/${profile_name}.profile",
     section           => 'Appearance',
@@ -49,7 +49,7 @@ define mopensuse::user::config::konsole (
     key_val_separator => '=',
   }
 
-  ini_setting { "[$user_home_path] konsole set general name":
+  ini_setting { "[${user_home_path}] konsole set general name":
     ensure            => present,
     path              => "${user_home_path}/.local/share/konsole/${profile_name}.profile",
     section           => 'General',
@@ -58,7 +58,7 @@ define mopensuse::user::config::konsole (
     key_val_separator => '=',
   }
 
-  ini_setting { "[$user_home_path] konsole set general parent":
+  ini_setting { "[${user_home_path}] konsole set general parent":
     ensure            => present,
     path              => "${user_home_path}/.local/share/konsole/${profile_name}.profile",
     section           => 'General',
@@ -67,7 +67,7 @@ define mopensuse::user::config::konsole (
     key_val_separator => '=',
   }
 
-  ini_setting { "[$user_home_path] konsole set profile name":
+  ini_setting { "[${user_home_path}] konsole set profile name":
     ensure            => present,
     path              => "${user_home_path}/.config/konsolerc",
     section           => 'Desktop Entry',

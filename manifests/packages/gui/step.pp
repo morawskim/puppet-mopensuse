@@ -1,7 +1,8 @@
-class mopensuse::packages::gui::step($ensure = 'present') {
+class mopensuse::packages::gui::step (
+  $ensure = 'present'
+) {
 
-    package {'step':
-    ensure  => $ensure,
+  package { 'step':
+    ensure => $ensure,
   }
 }
-

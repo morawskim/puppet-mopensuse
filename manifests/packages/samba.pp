@@ -1,5 +1,6 @@
-class mopensuse::packages::samba($ensure = 'present') {
-  
+class mopensuse::packages::samba (
+  $ensure = 'present'
+) {
   include mopensuse::packages::firewall
   include samba::server
 
@@ -7,7 +8,7 @@ class mopensuse::packages::samba($ensure = 'present') {
   #package {'samba':
   #  ensure => $ensure,
   #}
-  
+
   #service { 'smb':
   #  ensure      => 'running',
   #  hasstatus   => true,
@@ -16,13 +17,13 @@ class mopensuse::packages::samba($ensure = 'present') {
   #  require     => Package['samba']
   #}
 
-  package {'samba-doc':
+  package { 'samba-doc':
     ensure  => $ensure,
     require => Package['samba']
   }
 
   #firewall samba server
-  exec {'firewall_open_samba_server_port':
+  exec { 'firewall_open_samba_server_port':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT samba-server',
     unless  => 'grep "samba-server" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
     path    => ['/usr/sbin', '/usr/bin'],
@@ -30,15 +31,15 @@ class mopensuse::packages::samba($ensure = 'present') {
     notify  => Class['mopensuse::services::firewall']
   }
 
-  file {'/srv/samba':
-    ensure  => directory,
-    mode    => '1755',
-    owner   => 'root',
-    group   => 'root',
-    before  => Package['samba']
+  file { '/srv/samba':
+    ensure => directory,
+    mode   => '1755',
+    owner  => 'root',
+    group  => 'root',
+    before => Package['samba']
   }
 
-  file {'/srv/samba/public':
+  file { '/srv/samba/public':
     ensure  => directory,
     mode    => '1777',
     owner   => 'root',
@@ -46,12 +47,12 @@ class mopensuse::packages::samba($ensure = 'present') {
     require => File['/srv/samba']
   }
 
-  file {'/etc/samba/dhcp.conf':
-      ensure   => present,
-      mode     => '644',
-      owner    => 'root',
-      group    => 'root',
-      require  => Package['samba'],
-      notify   => Class['samba::server']
+  file { '/etc/samba/dhcp.conf':
+    ensure  => present,
+    mode    => '0644',
+    owner   => 'root',
+    group   => 'root',
+    require => Package['samba'],
+    notify  => Class['samba::server']
   }
-} 
+}

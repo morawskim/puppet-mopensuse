@@ -1,8 +1,9 @@
-class mopensuse::packages::toxiproxy($ensure = 'present') {
-
+class mopensuse::packages::toxiproxy (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {'toxiproxy':
+  package { 'toxiproxy':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

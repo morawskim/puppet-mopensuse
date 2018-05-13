@@ -3,10 +3,10 @@ define mopensuse::user::config::rbenv_gemset (
   $user_home_path
 ) {
 
-  $rbenv_plugins_dir="$user_home_path/.rbenv/plugins"
+  $rbenv_plugins_dir = "${user_home_path}/.rbenv/plugins"
 
   if !defined($rbenv_plugins_dir) {
-    file {$rbenv_plugins_dir:
+    file { $rbenv_plugins_dir:
       ensure => directory,
       mode   => '0750',
       owner  => $user,

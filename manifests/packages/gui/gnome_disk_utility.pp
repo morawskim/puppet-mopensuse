@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::gnome_disk_utility($ensure = 'present') {
+class mopensuse::packages::gui::gnome_disk_utility (
+  $ensure = 'present'
+) {
 
-  package {'gnome-disk-utility':
+  package { 'gnome-disk-utility':
     ensure => $ensure,
   }
 }

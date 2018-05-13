@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::dfeet($ensure = 'present') {
+class mopensuse::packages::gui::dfeet (
+  $ensure = 'present'
+) {
 
-  package {'d-feet':
+  package { 'd-feet':
     ensure => $ensure,
   }
 }

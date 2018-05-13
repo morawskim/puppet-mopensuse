@@ -1,10 +1,10 @@
-class mopensuse::packages::zabbix(
+class mopensuse::packages::zabbix (
   $ensure = 'present',
   $zabbix_server_db_name,
   $zabbix_server_db_user,
   $zabbix_server_db_pass
 ) {
-  
+
   #zabbix group and user also create zabbix-agent package
   user { 'zabbix':
     ensure  => 'present',
@@ -18,9 +18,9 @@ class mopensuse::packages::zabbix(
   }
 
   group { 'zabbix':
-    ensure  => 'present',
-    system     => true,
-    before  => [ Class['::zabbix'], User['zabbix'] ]
+    ensure => 'present',
+    system => true,
+    before => [ Class['::zabbix'], User['zabbix'] ]
   }
 
   class { '::zabbix':
@@ -38,14 +38,14 @@ class mopensuse::packages::zabbix(
     require           => Class['mopensuse::packages::mysql']
   }
 
-  host {'zabbix.test':
+  host { 'zabbix.test':
     ensure       => present,
     ip           => '127.0.0.1',
     host_aliases => ['www.zabbix.test'],
-    require => Class['::zabbix'],
+    require      => Class['::zabbix'],
   }
 
-  file {'/etc/apache2/vhosts.d/zabbix.test.conf':
+  file { '/etc/apache2/vhosts.d/zabbix.test.conf':
     ensure  => present,
     mode    => '0744',
     owner   => 'root',
@@ -54,8 +54,8 @@ class mopensuse::packages::zabbix(
     require => Class['::zabbix'],
     notify  => Service['apache2']
   }
-  
-  file {'/usr/share/zabbix/conf/zabbix.conf.php':
+
+  file { '/usr/share/zabbix/conf/zabbix.conf.php':
     ensure  => present,
     mode    => '0640',
     owner   => 'root',

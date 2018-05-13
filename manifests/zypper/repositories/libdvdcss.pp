@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::libdvdcss {
   include mopensuse::rpmkeys::libdvdcss
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::libdvdcss'],
   }
 

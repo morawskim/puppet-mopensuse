@@ -1,8 +1,9 @@
-class mopensuse::packages::greenmail($ensure = 'present') {
-
+class mopensuse::packages::greenmail (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {['greenmail']:
+  package { ['greenmail']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::filesystems {
   include mopensuse::rpmkeys::filesystems
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::filesystems'],
   }
 

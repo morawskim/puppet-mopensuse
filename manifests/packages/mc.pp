@@ -1,6 +1,8 @@
-class mopensuse::packages::mc($ensure = 'present') {
+class mopensuse::packages::mc (
+  $ensure = 'present'
+) {
 
-    package {'mc':
-        ensure  => $ensure,
-    }
+  package { 'mc':
+    ensure => $ensure,
+  }
 }

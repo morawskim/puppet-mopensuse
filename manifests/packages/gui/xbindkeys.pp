@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::xbindkeys($ensure = 'present') {
+class mopensuse::packages::gui::xbindkeys (
+  $ensure = 'present'
+) {
 
-  package {'xbindkeys':
-    ensure  => $ensure,
+  package { 'xbindkeys':
+    ensure => $ensure,
   }
 }

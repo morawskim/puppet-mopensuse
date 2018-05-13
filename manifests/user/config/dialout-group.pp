@@ -1,8 +1,7 @@
 define mopensuse::user::config::dialout-group (
-    $user
+  $user
 ) {
-  
+
   #add user to dialout group
-    User <| title == "${user}" |> { groups +> "dialout" }
-  
+  User <| title == $user |> { groups +> 'dialout' }
 }

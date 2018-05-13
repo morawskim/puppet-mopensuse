@@ -1,4 +1,6 @@
-class mopensuse::config::vagrant($files) {
+class mopensuse::config::vagrant (
+  $files
+) {
   include mopensuse::packages::vagrant
 
   create_resources(

@@ -1,6 +1,8 @@
-class mopensuse::packages::debhelper($ensure = 'present') {
+class mopensuse::packages::debhelper (
+  $ensure = 'present'
+) {
 
-  package {'debhelper':
+  package { 'debhelper':
     ensure => $ensure,
   }
 }

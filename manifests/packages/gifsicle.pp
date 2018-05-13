@@ -1,6 +1,8 @@
-class mopensuse::packages::gifsicle($ensure = 'present') {
+class mopensuse::packages::gifsicle (
+  $ensure = 'present'
+) {
 
-  package {'gifsicle':
+  package { 'gifsicle':
     ensure => $ensure,
   }
 }

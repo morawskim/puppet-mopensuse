@@ -1,5 +1,6 @@
-class mopensuse::packages::gui::kdeconnect($ensure = 'present') {
-
+class mopensuse::packages::gui::kdeconnect (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::kde_extra
 
   if $::operatingsystemrelease > 13.2 {
@@ -8,12 +9,12 @@ class mopensuse::packages::gui::kdeconnect($ensure = 'present') {
     $packagename = 'kdeconnect-kde4'
   }
 
-  package {$packagename:
+  package { $packagename:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::kde_extra']
   }
 
-  exec {'firewall_open_kdeconnect':
+  exec { 'firewall_open_kdeconnect':
     command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT kdeconnect-kde',
     unless  => 'grep "kdeconnect-kde" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
     path    => ['/usr/sbin', '/usr/bin'],

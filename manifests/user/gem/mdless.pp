@@ -1,6 +1,6 @@
-class mopensuse::user::gem::mdless() {
+class mopensuse::user::gem::mdless () {
 
-  package{'mdless':
+  package { 'mdless':
     ensure          => 'installed',
     provider        => 'gem',
     install_options => ['--user', '--user-install'],

@@ -7,7 +7,8 @@ define mopensuse::user::config::my_cnf (
     path    => $my_cnf_path,
     section => 'client',
     setting => 'password',
-    value   => hiera('mopensuse::packages::mysql::mysql_root_password', 'no_set_value_for_mopensuse::packages::mysql::mysql_root_password_in_hieradata'),
+    value   => hiera('mopensuse::packages::mysql::mysql_root_password',
+      'no_set_value_for_mopensuse::packages::mysql::mysql_root_password_in_hieradata'),
   }
 
   ini_setting { "${my_cnf_path} - set root username":
@@ -19,7 +20,7 @@ define mopensuse::user::config::my_cnf (
     before  => Ini_setting["${my_cnf_path} - set root password"]
   }
 
-  file {$my_cnf_path:
+  file { $my_cnf_path:
     ensure => present,
     mode   => '0600',
   }

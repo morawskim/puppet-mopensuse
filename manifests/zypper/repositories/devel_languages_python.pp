@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::devel_languages_python {
   include mopensuse::rpmkeys::devel_languages_python
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::devel_languages_python'],
   }
 

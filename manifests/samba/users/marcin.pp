@@ -1,9 +1,8 @@
-class mopensuse::samba::users::marcin(
+class mopensuse::samba::users::marcin (
   $password
 ) {
-  
-  samba::server::user{ 'marcin':
+
+  samba::server::user { 'marcin':
     password => $password
   }
-  
 }

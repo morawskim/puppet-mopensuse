@@ -1,7 +1,8 @@
-class mopensuse::packages::gui::gtranslator($ensure = 'present') {
+class mopensuse::packages::gui::gtranslator (
+  $ensure = 'present'
+) {
 
-  package {'gtranslator':
-    ensure  => $ensure,
+  package { 'gtranslator':
+    ensure => $ensure,
   }
 }
-

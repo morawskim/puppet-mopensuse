@@ -1,7 +1,8 @@
-class mopensuse::packages::gui::ghex($ensure = 'present') {
+class mopensuse::packages::gui::ghex (
+  $ensure = 'present'
+) {
 
-    package {'ghex':
-    ensure  => $ensure,
+  package { 'ghex':
+    ensure => $ensure,
   }
 }
-

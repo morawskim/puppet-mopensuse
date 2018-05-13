@@ -1,7 +1,8 @@
-class mopensuse::packages::tcpdump($ensure = 'present') {
-  
-  package {'tcpdump':
+class mopensuse::packages::tcpdump (
+  $ensure = 'present'
+) {
+
+  package { 'tcpdump':
     ensure => $ensure,
   }
-  
 }

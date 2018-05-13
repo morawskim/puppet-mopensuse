@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::nemiver($ensure = 'present') {
+class mopensuse::packages::gui::nemiver (
+  $ensure = 'present'
+) {
 
-  package {'nemiver':
+  package { 'nemiver':
     ensure => $ensure,
   }
 }

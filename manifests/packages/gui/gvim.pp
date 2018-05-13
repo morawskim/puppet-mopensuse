@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::gvim($ensure = 'present') {
+class mopensuse::packages::gui::gvim (
+  $ensure = 'present'
+) {
 
-  package {'gvim':
+  package { 'gvim':
     ensure => $ensure,
   }
 }

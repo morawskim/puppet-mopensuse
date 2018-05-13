@@ -1,8 +1,7 @@
 define mopensuse::user::config::vagrant-group (
-    $user
+  $user
 ) {
-  
+
   #add user to vagrant group
-  User <| title == "${user}" |> { groups +> "vagrant" }
-  
+  User <| title == $user |> { groups +> 'vagrant' }
 }

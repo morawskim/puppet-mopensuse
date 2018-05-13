@@ -1,5 +1,6 @@
-class mopensuse::packages::gui::slack($ensure = 'present') {
-
+class mopensuse::packages::gui::slack (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::slack
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::augeas
@@ -8,7 +9,7 @@ class mopensuse::packages::gui::slack($ensure = 'present') {
   # libXScrnSaver and libappindicator.
   # morawskim repo provide fake package, because on suse these packages are named
   # respectively libXss1 and libappindicator3-1
-  package{'slack':
+  package { 'slack':
     ensure  => present,
     require => [ Class['mopensuse::zypper::repositories::morawskim'], Class['mopensuse::zypper::repositories::slack'] ],
   }
@@ -16,15 +17,15 @@ class mopensuse::packages::gui::slack($ensure = 'present') {
   file { '/etc/default/slack':
     ensure  => 'present',
     group   => 'root',
-    mode    => '644',
+    mode    => '0644',
     owner   => 'root',
     require => Package['slack']
   }
 
-  augeas { "/files/etc/default/slack/repo_add_once":
+  augeas { '/files/etc/default/slack/repo_add_once':
     changes => [
-    'set /files/etc/default/slack/repo_add_once \'"false"\'',
+      'set /files/etc/default/slack/repo_add_once \'"false"\'',
     ],
-    require => [ Package["augeas"], File['/etc/default/slack'] ]
+    require => [ Package['augeas'], File['/etc/default/slack'] ]
   }
 }

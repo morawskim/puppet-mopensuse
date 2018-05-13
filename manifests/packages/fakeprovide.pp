@@ -1,8 +1,9 @@
-class mopensuse::packages::fakeprovide($ensure = 'present') {
-
+class mopensuse::packages::fakeprovide (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {'fakeprovide':
+  package { 'fakeprovide':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

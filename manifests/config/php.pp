@@ -1,4 +1,6 @@
-class mopensuse::config::php($files) {
+class mopensuse::config::php (
+  $files
+) {
   include mopensuse::packages::php
 
   create_resources(

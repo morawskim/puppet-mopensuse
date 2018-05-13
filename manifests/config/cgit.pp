@@ -1,7 +1,7 @@
-class mopensuse::config::cgit(
-    $files,
-    $cgit_host,
-    $cgit_host_aliases = []
+class mopensuse::config::cgit (
+  $files,
+  $cgit_host,
+  $cgit_host_aliases = []
 ) {
   include mopensuse::packages::cgit
   include mopensuse::services::apache2
@@ -16,9 +16,9 @@ class mopensuse::config::cgit(
     }
   )
 
-  host {$cgit_host:
-    ensure     => present,
-    ip       => '127.0.0.1',
+  host { $cgit_host:
+    ensure       => present,
+    ip           => '127.0.0.1',
     host_aliases => $cgit_host_aliases
   }
 }

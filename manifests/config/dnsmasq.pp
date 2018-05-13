@@ -1,4 +1,6 @@
-class mopensuse::config::dnsmasq($files) {
+class mopensuse::config::dnsmasq (
+  $files
+) {
   include mopensuse::packages::dnsmasq
 
   create_resources(

@@ -1,11 +1,13 @@
-class mopensuse::packages::osc($ensure = 'present') {
+class mopensuse::packages::osc (
+  $ensure = 'present'
+) {
 
-  package {'osc':
+  package { 'osc':
     ensure => $ensure,
   }
 
   group { 'osc':
-    ensure  => 'present',
-    system     => true,
+    ensure => 'present',
+    system => true,
   }
 }

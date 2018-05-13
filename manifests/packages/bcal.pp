@@ -1,8 +1,9 @@
-class mopensuse::packages::bcal($ensure = 'present') {
-
+class mopensuse::packages::bcal (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {'bcal':
+  package { 'bcal':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

@@ -1,8 +1,9 @@
-class mopensuse::packages::dnsmasq($ensure = 'present') {
-
+class mopensuse::packages::dnsmasq (
+  $ensure = 'present'
+) {
   include mopensuse::packages::libcap_progs
 
-  package {['dnsmasq']:
+  package { ['dnsmasq']:
     ensure => $ensure,
   }
 

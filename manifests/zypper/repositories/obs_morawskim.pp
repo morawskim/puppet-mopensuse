@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::obs_morawskim {
   include mopensuse::rpmkeys::obs_morawskim
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::obs_morawskim'],
   }
 

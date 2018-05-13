@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::security_tools {
   include mopensuse::rpmkeys::security
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::security'],
   }
 

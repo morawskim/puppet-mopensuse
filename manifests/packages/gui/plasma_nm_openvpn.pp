@@ -1,4 +1,6 @@
-class mopensuse::packages::gui::plasma_nm_openvpn($ensure = 'present') {
+class mopensuse::packages::gui::plasma_nm_openvpn (
+  $ensure = 'present'
+) {
 
   if $::operatingsystemrelease > 13.2 {
     $packagename = 'plasma-nm5-openvpn'
@@ -6,7 +8,7 @@ class mopensuse::packages::gui::plasma_nm_openvpn($ensure = 'present') {
     $packagename = 'plasma-nm-openvpn'
   }
 
-  package {$packagename:
-    ensure  => $ensure,
+  package { $packagename:
+    ensure => $ensure,
   }
 }

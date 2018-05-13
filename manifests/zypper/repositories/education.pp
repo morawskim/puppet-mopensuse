@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::education {
   include mopensuse::rpmkeys::education
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::education'],
   }
 

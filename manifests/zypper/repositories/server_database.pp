@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::server_database {
   include mopensuse::rpmkeys::server_database
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::server_database'],
   }
 

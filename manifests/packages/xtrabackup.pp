@@ -1,6 +1,8 @@
-class mopensuse::packages::xtrabackup($ensure = 'present') {
+class mopensuse::packages::xtrabackup (
+  $ensure = 'present'
+) {
 
-  package {'xtrabackup':
-    ensure          => $ensure,
+  package { 'xtrabackup':
+    ensure => $ensure,
   }
 }

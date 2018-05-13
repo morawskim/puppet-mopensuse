@@ -1,8 +1,9 @@
-class mopensuse::packages::smbnetfs($ensure = 'present') {
-
+class mopensuse::packages::smbnetfs (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::filesystems
 
-  package {'smbnetfs':
+  package { 'smbnetfs':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::filesystems']
   }

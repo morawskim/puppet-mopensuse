@@ -1,7 +1,8 @@
-class mopensuse::packages::pwgen($ensure = 'present') {
-  
-  package {['pwgen']:
+class mopensuse::packages::pwgen (
+  $ensure = 'present'
+) {
+
+  package { ['pwgen']:
     ensure => $ensure,
   }
-  
 }

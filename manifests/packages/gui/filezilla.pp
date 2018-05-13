@@ -1,8 +1,8 @@
-class mopensuse::packages::gui::filezilla($ensure = 'present') {
-  
-  package {'filezilla':
-    ensure  => $ensure,
-  }
-  
-}
+class mopensuse::packages::gui::filezilla (
+  $ensure = 'present'
+) {
 
+  package { 'filezilla':
+    ensure => $ensure,
+  }
+}

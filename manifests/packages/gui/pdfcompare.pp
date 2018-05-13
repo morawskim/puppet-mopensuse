@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::pdfcompare($ensure = 'present') {
+class mopensuse::packages::gui::pdfcompare (
+  $ensure = 'present'
+) {
 
-  package {'pdfcompare':
+  package { 'pdfcompare':
     ensure => $ensure,
   }
 }

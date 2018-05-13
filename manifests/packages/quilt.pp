@@ -1,6 +1,8 @@
-class mopensuse::packages::quilt($ensure = 'present') {
+class mopensuse::packages::quilt (
+  $ensure = 'present'
+) {
 
-  package {'quilt':
-    ensure  => $ensure,
+  package { 'quilt':
+    ensure => $ensure,
   }
 }

@@ -240,7 +240,7 @@ class mopensuse {
   include mopensuse::packages::yum_scripts
   include mopensuse::packages::zabbix
   include mopensuse::packages::zabbix_agent
-  
+
   include mopensuse::packages::gui::adobe_source_code_pro_fonts
   include mopensuse::packages::gui::byzanz
   include mopensuse::packages::gui::calibre
@@ -328,14 +328,14 @@ class mopensuse {
   include mopensuse::packages::gui::yakuake
   include mopensuse::packages::gui::zeal
   include mopensuse::packages::gui::zenity
-  
+
   include mopensuse::user::marcin
   include mopensuse::printers::hp
   include mopensuse::printers::samsung
-  
+
   include mopensuse::samba::shares::public
   include mopensuse::samba::users::guest
   include mopensuse::samba::users::marcin
-  
+
   include mopensuse::pki::hosting-ftp
 }

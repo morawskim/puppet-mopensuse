@@ -1,14 +1,15 @@
 define mopensuse::user::config::symlink (
-    $path,
-    $target,
+  $path,
+  $target,
 
-    $owner,
-    $group,
-    $mode = '0600',
+  $owner,
+  $group,
+  $mode = '0600',
 ) {
   file { $path:
     ensure => 'link',
-    group  => '0',                                                                                      owner  => '0',
+    group  => '0',
+    owner  => '0',
     target => $target,
   }
 

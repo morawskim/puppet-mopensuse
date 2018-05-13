@@ -1,6 +1,8 @@
-class mopensuse::packages::patchutils($ensure = 'present') {
+class mopensuse::packages::patchutils (
+  $ensure = 'present'
+) {
 
-  package {'patchutils':
+  package { 'patchutils':
     ensure => $ensure,
   }
 }

@@ -2,9 +2,9 @@ define mopensuse::user::config::vim (
   $user,
   $user_home_path
 ) {
-  
+
   include mopensuse::packages::vim
-    
+
   vcsrepo { "${user_home_path}/.vim":
     ensure     => present,
     provider   => git,
@@ -14,14 +14,14 @@ define mopensuse::user::config::vim (
     group      => $user,
     submodules => true,
   }
-  
-  file {"${user_home_path}/.vimrc":
+
+  file { "${user_home_path}/.vimrc":
     ensure  => link,
     target  => "${user_home_path}/.vim/vimrc",
     require => Vcsrepo["${user_home_path}/.vim"]
   }
-  
-  file {"${user_home_path}/.gvimrc":
+
+  file { "${user_home_path}/.gvimrc":
     ensure  => link,
     target  => "${user_home_path}/.vim/vimrc",
     require => Vcsrepo["${user_home_path}/.vim"]

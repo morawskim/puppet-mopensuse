@@ -1,6 +1,8 @@
-class mopensuse::packages::python3_docopt($ensure = 'present') {
+class mopensuse::packages::python3_docopt (
+  $ensure = 'present'
+) {
 
-  package {'python3-docopt':
+  package { 'python3-docopt':
     ensure => $ensure,
   }
 }

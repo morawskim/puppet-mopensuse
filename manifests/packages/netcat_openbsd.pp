@@ -1,6 +1,8 @@
-class mopensuse::packages::netcat_openbsd($ensure = 'present') {
+class mopensuse::packages::netcat_openbsd (
+  $ensure = 'present'
+) {
 
-  package {'netcat-openbsd':
+  package { 'netcat-openbsd':
     ensure => $ensure,
   }
 }

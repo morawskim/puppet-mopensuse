@@ -1,7 +1,8 @@
-class mopensuse::packages::valgrind_devel($ensure = 'present') {
+class mopensuse::packages::valgrind_devel (
+  $ensure = 'present'
+) {
 
-  package{'valgrind-devel': 
+  package { 'valgrind-devel':
     ensure => present
   }
-
 }

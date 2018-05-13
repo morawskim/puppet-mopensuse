@@ -1,6 +1,8 @@
-class mopensuse::packages::createrepo($ensure = 'present') {
+class mopensuse::packages::createrepo (
+  $ensure = 'present'
+) {
 
-  package {'createrepo':
-    ensure          => $ensure,
+  package { 'createrepo':
+    ensure => $ensure,
   }
 }

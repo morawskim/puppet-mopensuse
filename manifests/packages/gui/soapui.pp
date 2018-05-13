@@ -1,5 +1,6 @@
-class mopensuse::packages::gui::soapui($ensure = 'present') {
-
+class mopensuse::packages::gui::soapui (
+  $ensure = 'present'
+) {
   include mopensuse::zypper::repositories::morawskim
 
   package { 'SoapUI':

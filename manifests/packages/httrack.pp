@@ -1,6 +1,8 @@
-class mopensuse::packages::httrack($ensure = 'present') {
+class mopensuse::packages::httrack (
+  $ensure = 'present'
+) {
 
-  package {'httrack':
-      ensure => $ensure,
+  package { 'httrack':
+    ensure => $ensure,
   }
 }

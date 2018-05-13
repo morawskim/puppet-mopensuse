@@ -1,5 +1,5 @@
 class mopensuse::user::nobody {
-  
+
   user { 'nobody':
     ensure  => 'present',
     comment => 'nobody',

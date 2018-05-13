@@ -1,6 +1,8 @@
-class mopensuse::packages::python3_devel($ensure = 'present') {
+class mopensuse::packages::python3_devel (
+  $ensure = 'present'
+) {
 
-  package {['python3-devel']:
+  package { ['python3-devel']:
     ensure => $ensure,
   }
 }

@@ -1,9 +1,9 @@
-class mopensuse::packages::vagrant(
+class mopensuse::packages::vagrant (
   $ensure = 'present',
 ) {
   include mopensuse::zypper::repositories::morawskim
 
-  package {'vagrant':
+  package { 'vagrant':
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim']
   }

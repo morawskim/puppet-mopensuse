@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::devel_tools_building {
   include mopensuse::rpmkeys::devel_tools
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::devel_tools'],
   }
 

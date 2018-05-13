@@ -1,6 +1,8 @@
-class mopensuse::packages::gui::kdialog($ensure = 'present') {
+class mopensuse::packages::gui::kdialog (
+  $ensure = 'present'
+) {
 
-  package {'kdialog':
-    ensure  => $ensure,
+  package { 'kdialog':
+    ensure => $ensure,
   }
 }

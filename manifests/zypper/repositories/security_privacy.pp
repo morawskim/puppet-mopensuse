@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::security_privacy {
   include mopensuse::rpmkeys::security_privacy
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::security_privacy'],
   }
 

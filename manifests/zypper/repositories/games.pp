@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::games {
   include mopensuse::rpmkeys::games
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::games'],
   }
 

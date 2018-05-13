@@ -1,7 +1,8 @@
-class mopensuse::packages::wget($ensure = 'present') {
-  
-  package {['wget']:
+class mopensuse::packages::wget (
+  $ensure = 'present'
+) {
+
+  package { ['wget']:
     ensure => $ensure,
   }
-  
 }

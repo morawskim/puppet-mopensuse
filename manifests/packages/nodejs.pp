@@ -1,5 +1,6 @@
-class mopensuse::packages::nodejs($ensure = 'present') {
-
+class mopensuse::packages::nodejs (
+  $ensure = 'present'
+) {
   include mopensuse::packages::nodejs_packages
 
   if $::operatingsystemrelease > 13.2 {
@@ -8,11 +9,11 @@ class mopensuse::packages::nodejs($ensure = 'present') {
     $packagename = 'nodejs'
   }
 
-  package {$packagename:
+  package { $packagename:
     ensure => $ensure,
   }
 
-  package {"${packagename}-devel":
+  package { "${packagename}-devel":
     ensure  => $ensure,
     require => Package[$packagename]
   }

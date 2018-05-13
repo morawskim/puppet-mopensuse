@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::yarn {
   include mopensuse::rpmkeys::yarn
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::yarn'],
   }
 

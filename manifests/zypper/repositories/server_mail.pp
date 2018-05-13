@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::server_mail {
   include mopensuse::rpmkeys::server_mail
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::server_mail'],
   }
 

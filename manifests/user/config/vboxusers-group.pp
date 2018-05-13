@@ -1,10 +1,8 @@
 define mopensuse::user::config::vboxusers-group (
-    $user
+  $user
 ) {
-  
   include mopensuse::packages::virtualbox
 
   #add user to group vboxusers
-  User <| title == "${user}" |> { groups +> "vboxusers" }
-  
+  User <| title == $user |> { groups +> 'vboxusers' }
 }

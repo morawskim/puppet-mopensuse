@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::virtualization_containers {
   include mopensuse::rpmkeys::virtualization_containers
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::virtualization_containers'],
   }
 

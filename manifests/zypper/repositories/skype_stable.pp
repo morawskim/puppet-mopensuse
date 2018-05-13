@@ -4,7 +4,7 @@ class mopensuse::zypper::repositories::skype_stable {
   include mopensuse::rpmkeys::skype
 
   Zypprepo {
-    notify => Class['mopensuse::zypper::refresh'],
+    notify  => Class['mopensuse::zypper::refresh'],
     require => Class['mopensuse::rpmkeys::skype'],
   }
 
