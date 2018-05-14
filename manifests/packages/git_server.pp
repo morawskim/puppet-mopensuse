@@ -3,6 +3,8 @@ class mopensuse::packages::git_server (
 ) {
   include mopensuse::packages::vcs
   include mopensuse::packages::firewall
+  include mopensuse::services::git_daemon
+  include mopensuse::config::git_server
 
   package { 'git-daemon':
     ensure => $ensure,
@@ -13,20 +15,6 @@ class mopensuse::packages::git_server (
     mode   => '0755',
     owner  => 'root',
     group  => 'root',
-  }
-
-  create_resources(
-    'file',
-    hiera_hash('git_daemon_paths'),
-    { 'ensure' => 'directory', 'require' => File['/srv/git'] }
-  )
-
-  service { 'git-daemon':
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => Package['git-daemon']
   }
 
   exec { 'firewall_open_git_daemn_server_port':
