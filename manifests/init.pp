@@ -61,7 +61,6 @@ class mopensuse {
   include mopensuse::packages::fastcgi
   include mopensuse::packages::fbcat
   include mopensuse::packages::ffmpeg
-  include mopensuse::packages::filesystem
   include mopensuse::packages::firewall
   include mopensuse::packages::fontawesome
   include mopensuse::packages::foreman
