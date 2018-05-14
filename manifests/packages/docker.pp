@@ -2,6 +2,7 @@ class mopensuse::packages::docker (
   $ensure = 'present'
 ) {
   include mopensuse::packages::docker_compose
+  include mopensuse::services::docker
 
   package { 'docker':
     ensure => $ensure,
@@ -11,13 +12,5 @@ class mopensuse::packages::docker (
   package { 'docker-bash-completion':
     ensure  => $ensure,
     require => Package['docker']
-  }
-
-  service { 'docker':
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => Package['docker']
   }
 }
