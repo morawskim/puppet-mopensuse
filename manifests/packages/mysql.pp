@@ -33,14 +33,4 @@ class mopensuse::packages::mysql (
     package_ensure => present,
     package_name   => 'mariadb-tools',
   }
-
-  file { '/etc/my.cnf.d/log_query.cnf':
-    ensure  => present,
-    mode    => '0640',
-    owner   => 'root',
-    group   => 'mysql',
-    content => template("${module_name}/mysql/log_query.cnf.erb"),
-    notify  => Service['mysql'],
-    require => Package['mariadb']
-  }
 }
