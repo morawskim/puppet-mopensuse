@@ -3,6 +3,8 @@ class mopensuse::packages::php54v (
 ) {
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
+  include mopensuse::config::php54v
+  include mopensuse::services::php54v
 
   $phpname = 'php54v'
   $service_name = "${phpname}-fpm"
@@ -23,17 +25,6 @@ class mopensuse::packages::php54v (
   ]:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service[$service_name]
-  }
-
-  file { '/opt/php/php54v/etc/php5/conf.d/custom.ini':
-    ensure  => present,
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => "puppet:///modules/${module_name}/php/php-custom.ini",
-    notify  => [ Service[$service_name] ],
-    require => Package['php54v']
   }
 
   mopensuse::define::php_fpm { $phpname:
@@ -45,7 +36,8 @@ class mopensuse::packages::php54v (
     pid_file             => "/run/${phpname}-fpm.pid",
     error_log            => "/var/log/${phpname}-fpm.log",
     syslog_ident         => "${phpname}-fpm",
-    require              => Package['php54v-fpm']
+    require              => Package['php54v-fpm'],
+    notify               => Class['mopensuse::services::php54v'],
   }
 
   mopensuse::define::php_fpm_pool { $pool_name:
@@ -55,14 +47,6 @@ class mopensuse::packages::php54v (
     pool_listen_group => $pool_listen_group,
     pool_listen_mode  => $pool_listen_mode,
     require           => Mopensuse::Define::Php_fpm[$phpname],
-    notify            => Service[$service_name]
-  }
-
-  service { $service_name:
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => [ Mopensuse::Define::Php_fpm_pool[$pool_name] ]
+    notify            => Class['mopensuse::services::php54v'],
   }
 }
