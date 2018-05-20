@@ -23,7 +23,6 @@ define mopensuse::define::php_fpm (
   file { "${config_dir}/${config_name}":
     ensure  => 'present',
     content => template($config_template_file),
-    notify  => Service[$service_name],
   }
 
   file { $pool_dir:
