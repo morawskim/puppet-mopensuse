@@ -3,6 +3,8 @@ class mopensuse::packages::php56v (
 ) {
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::packages::php
+  include mopensuse::config::php56v
+  include mopensuse::services::php56v
 
   $phpname = 'php56v'
   $service_name = "${phpname}-fpm"
@@ -21,17 +23,6 @@ class mopensuse::packages::php56v (
     'php56v-iconv', 'php56v-fileinfo', 'php56v-exif', 'php56v-mcrypt']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service[$service_name]
-  }
-
-  file { '/opt/php/php56v/etc/php5/conf.d/custom.ini':
-    ensure  => present,
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => "puppet:///modules/${module_name}/php/php-custom.ini",
-    notify  => [ Service[$service_name] ],
-    require => Package['php56v']
   }
 
   mopensuse::define::php_fpm { $phpname:
@@ -43,7 +34,8 @@ class mopensuse::packages::php56v (
     pid_file             => "/run/${phpname}-fpm.pid",
     error_log            => "/var/log/${phpname}-fpm.log",
     syslog_ident         => "${phpname}-fpm",
-    require              => Package['php56v-fpm']
+    require              => Package['php56v-fpm'],
+    notify               => Class['mopensuse::services::php56v'],
   }
 
   mopensuse::define::php_fpm_pool { $pool_name:
@@ -53,14 +45,6 @@ class mopensuse::packages::php56v (
     pool_listen_group => $pool_listen_group,
     pool_listen_mode  => $pool_listen_mode,
     require           => Mopensuse::Define::Php_fpm[$phpname],
-    notify            => Service[$service_name]
-  }
-
-  service { $service_name:
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => [ Mopensuse::Define::Php_fpm_pool[$pool_name] ]
+    notify            => Class['mopensuse::services::php56v'],
   }
 }
