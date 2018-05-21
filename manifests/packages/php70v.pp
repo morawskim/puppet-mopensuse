@@ -4,6 +4,8 @@ class mopensuse::packages::php70v (
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::zypper::repositories::server_monitoring
   include mopensuse::packages::php
+  include mopensuse::config::php70v
+  include mopensuse::services::php70v
 
   $phpname = 'php70v'
   $service_name = "${phpname}-fpm"
@@ -23,29 +25,16 @@ class mopensuse::packages::php70v (
   ]:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service[$service_name]
   }
 
   package { ['php70v-xdebug', 'php70v-redis', 'php70v-imagick', 'php70v-mailparse']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::morawskim'],
-    notify  => Service[$service_name]
   }
 
   package { ['php70v-gearman']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_monitoring'],
-    notify  => Service[$service_name]
-  }
-
-  file { '/opt/php/php70v/etc/php7/conf.d/custom.ini':
-    ensure  => present,
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => "puppet:///modules/${module_name}/php/php-custom.ini",
-    notify  => Service[$service_name],
-    require => Package['php70v']
   }
 
   mopensuse::define::php_fpm { $phpname:
@@ -57,7 +46,8 @@ class mopensuse::packages::php70v (
     pid_file             => "/run/${phpname}-fpm.pid",
     error_log            => "/var/log/${phpname}-fpm.log",
     syslog_ident         => "${phpname}-fpm",
-    require              => Package['php70v-fpm']
+    require              => Package['php70v-fpm'],
+    notify               => Class['mopensuse::services::php70v'],
   }
 
   mopensuse::define::php_fpm_pool { $pool_name:
@@ -67,14 +57,6 @@ class mopensuse::packages::php70v (
     pool_listen_group => $pool_listen_group,
     pool_listen_mode  => $pool_listen_mode,
     require           => Mopensuse::Define::Php_fpm[$phpname],
-    notify            => Service[$service_name]
-  }
-
-  service { $service_name:
-    ensure     => running,
-    enable     => true,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => [ Mopensuse::Define::Php_fpm_pool[$pool_name] ]
+    notify            => Class['mopensuse::services::php70v'],
   }
 }
