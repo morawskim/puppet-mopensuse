@@ -13,10 +13,4 @@ class mopensuse::packages::phpldapadmin (
       Class['mopensuse::packages::php']
     ]
   }
-
-  file { '/srv/www/htdocs/phpldapadmin/config/config.php':
-    ensure  => link,
-    target  => '/srv/www/htdocs/phpldapadmin/config/config.php.example',
-    require => Package['phpldapadmin']
-  }
 }
