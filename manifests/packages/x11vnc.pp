@@ -12,14 +12,6 @@ class mopensuse::packages::x11vnc (
     ensure => present
   }
 
-  #firewall vnc server
-  exec { 'firewall_open_vnc_server_port':
-    command => 'sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_CONFIGURATIONS_EXT vnc-server',
-    unless  => 'grep "vnc-server" /etc/sysconfig/SuSEfirewall2 | grep "FW_CONFIGURATIONS_EXT"',
-    path    => ['/usr/sbin', '/usr/bin'],
-    require => Package['xorg-x11-Xvnc']
-  }
-
   file { '/etc/x11vnc.pass':
     ensure  => present,
     content => vncpassword($vnc_password),
