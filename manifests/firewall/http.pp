@@ -3,7 +3,7 @@ class mopensuse::firewall::http (
 ) {
   include mopensuse::packages::firewall
 
-  sysconf_addword {'/etc/sysconfig/SuSEfirewall2#FW_CONFIGURATIONS_EXT':
+  sysconf_addword {'/etc/sysconfig/SuSEfirewall2#FW_CONFIGURATIONS_EXT:apache2':
     ensure  => $ensure,
     value   => 'apache2',
     require => Class['mopensuse::packages::firewall']
