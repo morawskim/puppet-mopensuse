@@ -11,8 +11,8 @@ prevent word boundary matching.
     [
       [/(^([^\#]*)$)/m,
        [[:file]]],
-      [/^([^\#]+)\#([^\#]+)$/,
-       [[:file], [:var]]]
+      [/^([^\#]+)\#([^:]+):([\w\-]+)$/,
+       [[:file], [:var], [:val]]],
     ]
   end
 
@@ -30,6 +30,11 @@ prevent word boundary matching.
 
   newparam(:var) do
     desc 'Description of var param'
+    isnamevar
+    end
+
+  newparam(:val) do
+    desc 'Description of val param'
     isnamevar
   end
 
