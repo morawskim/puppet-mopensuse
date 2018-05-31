@@ -46,11 +46,6 @@ class mopensuse::user::marcin (
     require => Mopensuse::User::Account[$username]
   }
 
-  mopensuse::user::config::tomcat-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
   mopensuse::user::config::www-group { $username:
     user    => $username,
     require => Mopensuse::User::Account[$username]

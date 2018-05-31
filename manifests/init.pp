@@ -213,7 +213,6 @@ class mopensuse {
   include mopensuse::packages::texlive_latex_bin_bin
   include mopensuse::packages::tig
   include mopensuse::packages::tmux
-  include mopensuse::packages::tomcat
   include mopensuse::packages::toxiproxy
   include mopensuse::packages::translateshell
   include mopensuse::packages::tree
