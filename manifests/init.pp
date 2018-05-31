@@ -161,7 +161,6 @@ class mopensuse {
   include mopensuse::packages::phpmyadmin
   include mopensuse::packages::phpmyadmin40
   include mopensuse::packages::pktstat
-  include mopensuse::packages::postfix
   include mopensuse::packages::powerline
   include mopensuse::packages::procps
   include mopensuse::packages::proxychains_ng
