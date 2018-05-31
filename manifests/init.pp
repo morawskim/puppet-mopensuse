@@ -227,7 +227,6 @@ class mopensuse {
   include mopensuse::packages::wget
   include mopensuse::packages::whois
   include mopensuse::packages::wireshark
-  include mopensuse::packages::wpcli
   include mopensuse::packages::wrk
   include mopensuse::packages::x11vnc
   include mopensuse::packages::xdebug_tmpfiles
