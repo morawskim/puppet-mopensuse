@@ -2,12 +2,12 @@ class mopensuse::printers::samsung {
 
   include mopensuse::packages::cups
 
-  wget::fetch { '/etc/cups/ppd/samsung-ml2010-gdi.ppd':
-    source      => 'http://openprinting.org/ppd-o-matic.php?driver=gdi&printer=samsung-ml-2010&show=0',
-    destination => '/etc/cups/ppd/samsung-ml2010-gdi.ppd',
-    timeout     => 0,
-    verbose     => false,
-    before      => Printer['samsung']
+  file {'/etc/cups/ppd/samsung-ml2010-gdi.ppd':
+    source => 'puppet:///configuration/ppd/samsung-ml-2010-gdi.ppd',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    before => Printer['samsung']
   }
 
   printer { 'samsung':
