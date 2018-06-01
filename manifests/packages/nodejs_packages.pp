@@ -121,4 +121,16 @@ class mopensuse::packages::nodejs_packages (
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { 'pageres-cli':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
+
+  package { 'whistle':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }
