@@ -7,4 +7,3 @@ class mopensuse::packages::patterns_devel_rpm_build(
     ensure  => $ensure,
   }
 }
-

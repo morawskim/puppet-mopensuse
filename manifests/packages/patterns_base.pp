@@ -7,4 +7,3 @@ class mopensuse::packages::patterns_base(
     ensure  => $ensure,
   }
 }
-
