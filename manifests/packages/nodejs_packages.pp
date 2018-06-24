@@ -133,4 +133,10 @@ class mopensuse::packages::nodejs_packages (
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { 'gitbook-cli':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }
