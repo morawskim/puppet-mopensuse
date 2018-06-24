@@ -139,4 +139,10 @@ class mopensuse::packages::nodejs_packages (
     provider => 'npm',
     require  => Class['mopensuse::packages::nodejs']
   }
+
+  package { 'observatory-cli':
+    ensure   => $ensure,
+    provider => 'npm',
+    require  => Class['mopensuse::packages::nodejs']
+  }
 }
