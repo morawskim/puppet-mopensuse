@@ -16,56 +16,6 @@ class mopensuse::user::marcin (
     sshkeys       => $ssh_keys
   }
 
-  mopensuse::user::config::vboxusers-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::disk-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::vagrant-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::users-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::sshfs-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::dialout-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::www-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::docker-group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::systemd_journal_group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
-  mopensuse::user::config::osc_group { $username:
-    user    => $username,
-    require => Mopensuse::User::Account[$username]
-  }
-
   mopensuse::user::config::symlink { 'pam_limits':
     path   => '/etc/security/limits.d/mmo.conf',
     target => '/home/marcin/.config/pam_limits.conf',
