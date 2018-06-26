@@ -1,29 +1,16 @@
-define mopensuse::user::config::vim (
-  $user,
-  $user_home_path
+class mopensuse::user::config::vim (
+  $vcsrepo,
+  $files
 ) {
 
-  include mopensuse::packages::vim
+  create_resources(
+    'vcsrepo',
+    $vcsrepo,
+    {}
+  )
 
-  vcsrepo { "${user_home_path}/.vim":
-    ensure     => present,
-    provider   => git,
-    source     => 'git@github.com:morawskim/vimdot.git',
-    user       => $user,
-    owner      => $user,
-    group      => $user,
-    submodules => true,
-  }
-
-  file { "${user_home_path}/.vimrc":
-    ensure  => link,
-    target  => "${user_home_path}/.vim/vimrc",
-    require => Vcsrepo["${user_home_path}/.vim"]
-  }
-
-  file { "${user_home_path}/.gvimrc":
-    ensure  => link,
-    target  => "${user_home_path}/.vim/vimrc",
-    require => Vcsrepo["${user_home_path}/.vim"]
-  }
+  create_resources(
+    'file',
+    $files,
+  )
 }
