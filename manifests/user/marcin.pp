@@ -15,11 +15,4 @@ class mopensuse::user::marcin (
     realname      => $realname,
     sshkeys       => $ssh_keys
   }
-
-  mopensuse::user::config::symlink { 'pam_limits':
-    path   => '/etc/security/limits.d/mmo.conf',
-    target => '/home/marcin/.config/pam_limits.conf',
-    owner  => $username,
-    group  => $username,
-  }
 }
