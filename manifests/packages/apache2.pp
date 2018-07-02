@@ -25,6 +25,14 @@ class mopensuse::packages::apache2 (
     require => Package['apache2']
   }
 
+  file { '/var/lib/wwwrun/sockets':
+    ensure  => directory,
+    mode    => '0775',
+    owner   => 'wwwrun',
+    group   => 'www',
+    require => Package['apache2']
+  }
+
   file { '/var/log/apache2':
     ensure  => directory,
     mode    => '0750',
