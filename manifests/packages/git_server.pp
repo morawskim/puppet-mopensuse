@@ -2,7 +2,6 @@ class mopensuse::packages::git_server (
   $ensure = 'present'
 ) {
   include mopensuse::packages::vcs
-  include mopensuse::packages::firewall
   include mopensuse::services::git_daemon
   include mopensuse::config::git_server
 
