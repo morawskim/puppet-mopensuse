@@ -3,6 +3,7 @@ class mopensuse::user::marcin (
   $user_home_path,
   $password,
   $realname,
+  $groups,
   $ssh_keys = {},
 ) {
 

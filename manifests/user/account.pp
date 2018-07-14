@@ -5,7 +5,8 @@ define mopensuse::user::account (
   $sshkeys  = {},
   $shell    = '/bin/bash',
   $realname = '',
-  $password = ''
+  $password = '',
+  $groups   = [],
 ) {
 
   user { $username:
@@ -16,6 +17,7 @@ define mopensuse::user::account (
     comment    => $realname,
     password   => $password,
     managehome => true,
+    groups     => $groups,
     require    => Group[$username],
   }
 
