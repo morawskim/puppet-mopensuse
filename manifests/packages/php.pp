@@ -9,11 +9,11 @@ class mopensuse::packages::php (
   include mopensuse::zypper::repositories::morawskim
   include mopensuse::config::php
 
-  package { ['php5', 'php5-fpm', 'php5-mysql', 'php5-ldap', 'php5-soap', 'php5-pgsql',
-    'php5-phar', 'php5-devel', 'php5-readline', 'php5-curl', 'php5-intl', 'php5-gettext',
-    'php5-xsl', 'php5-zlib', 'php5-xmlwriter', 'php5-bcmath', 'php5-sockets', 'php5-pcntl',
-    'php5-ctype', 'php5-gd', 'php5-xmlreader', 'php5-ssh2', 'php5-zip', 'php5-ftp',
-    'php5-iconv', 'php5-fileinfo', 'php5-tokenizer', 'php5-exif']:
+  package { ['php7', 'php7-fpm', 'php7-mysql', 'php7-ldap', 'php7-soap', 'php7-pgsql',
+    'php7-phar', 'php7-devel', 'php7-readline', 'php7-curl', 'php7-intl', 'php7-gettext',
+    'php7-xsl', 'php7-zlib', 'php7-xmlwriter', 'php7-bcmath', 'php7-sockets', 'php7-pcntl',
+    'php7-ctype', 'php7-gd', 'php7-xmlreader', 'php7-ssh2', 'php7-zip', 'php7-ftp',
+    'php7-iconv', 'php7-fileinfo', 'php7-tokenizer', 'php7-exif']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_php_extensions'],
     notify  => Service['php-fpm']
@@ -24,10 +24,10 @@ class mopensuse::packages::php (
     enable     => true,
     hasrestart => true,
     hasstatus  => true,
-    require    => [ Package['php5-fpm'], File['/etc/php5/fpm/php-fpm.conf'] ]
+    require    => [ Package['php7-fpm'], File['/etc/php7/fpm/php-fpm.conf'] ]
   }
 
-  file { '/etc/php5/fpm/php-fpm.conf':
+  file { '/etc/php7/fpm/php-fpm.conf':
     ensure  => present,
     mode    => '0644',
     owner   => 'root',
@@ -36,15 +36,15 @@ class mopensuse::packages::php (
     notify  => [ Service['php-fpm'] ]
   }
 
-  package { 'php5-redis':
+  package { 'php7-redis':
     ensure  => $ensure,
-    require => [ Package['php5'], Class['mopensuse::zypper::repositories::morawskim'] ],
+    require => [ Package['php7'], Class['mopensuse::zypper::repositories::morawskim'] ],
     notify  => Service['php-fpm']
   }
 
-  package { 'php5-xdebug':
+  package { 'php7-xdebug':
     ensure  => $ensure,
-    require => [ Package['php5'], Class['mopensuse::zypper::repositories::server_php_extensions'] ],
+    require => [ Package['php7'], Class['mopensuse::zypper::repositories::server_php_extensions'] ],
     notify  => Service['php-fpm']
   }
 }
