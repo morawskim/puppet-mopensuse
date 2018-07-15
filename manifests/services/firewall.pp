@@ -1,7 +1,7 @@
 class mopensuse::services::firewall {
   include mopensuse::packages::firewall
 
-  service { 'SuSEfirewall2':
+  service { 'firewalld':
     ensure     => running,
     enable     => true,
     hasrestart => true,
