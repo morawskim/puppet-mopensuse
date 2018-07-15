@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::devel_tools_building {
   ensure_resource(
     'zypprepo',
     'devel_tools_building',
-    hiera_hash('mopensuse::zypper::repositories::devel_tools_building')
+    lookup('mopensuse::zypprepos')['devel_tools_building']
   )
 }

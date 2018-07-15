@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::libdvdcss {
   ensure_resource(
     'zypprepo',
     'libdvdcss',
-    hiera_hash('mopensuse::zypper::repositories::libdvdcss')
+    lookup('mopensuse::zypprepos')['libdvdcss']
   )
 }

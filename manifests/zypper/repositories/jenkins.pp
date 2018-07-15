@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::jenkins {
   ensure_resource(
     'zypprepo',
     'jenkins',
-    hiera_hash('mopensuse::zypper::repositories::jenkins')
+    lookup('mopensuse::zypprepos')['jenkins']
   )
 }

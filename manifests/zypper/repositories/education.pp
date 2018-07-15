@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::education {
   ensure_resource(
     'zypprepo',
     'education',
-    hiera_hash('mopensuse::zypper::repositories::education')
+    lookup('mopensuse::zypprepos')['education']
   )
 }

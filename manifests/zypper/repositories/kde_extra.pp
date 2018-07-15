@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::kde_extra {
   ensure_resource(
     'zypprepo',
     'kde_extra',
-    hiera_hash('mopensuse::zypper::repositories::kde_extra')
+    lookup('mopensuse::zypprepos')['kde_extra']
   )
 }

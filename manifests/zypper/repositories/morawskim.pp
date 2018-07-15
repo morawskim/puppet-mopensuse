@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::morawskim {
   ensure_resource(
     'zypprepo',
     'morawskim',
-    hiera_hash('mopensuse::zypper::repositories::morawskim')
+    lookup('mopensuse::zypprepos')['morawskim']
   )
 }

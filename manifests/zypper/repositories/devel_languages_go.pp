@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::devel_languages_go {
   ensure_resource(
     'zypprepo',
     'devel_languages_go',
-    hiera_hash('mopensuse::zypper::repositories::devel_languages_go')
+    lookup('mopensuse::zypprepos')['devel_languages_go']
   )
 }

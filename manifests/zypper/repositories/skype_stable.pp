@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::skype_stable {
   ensure_resource(
     'zypprepo',
     'skype',
-    hiera_hash('mopensuse::zypper::repositories::skype_stable')
+    lookup('mopensuse::zypprepos')['skype_stable']
   )
 }

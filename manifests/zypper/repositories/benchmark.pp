@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::benchmark {
   ensure_resource(
     'zypprepo',
     'benchmark',
-    hiera_hash('mopensuse::zypper::repositories::benchmark')
+    lookup('mopensuse::zypprepos')['benchmark']
   )
 }

@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::network {
   ensure_resource(
     'zypprepo',
     'network',
-    hiera_hash('mopensuse::zypper::repositories::network')
+    lookup('mopensuse::zypprepos')['network']
   )
 }

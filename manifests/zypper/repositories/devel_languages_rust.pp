@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::devel_languages_rust {
   ensure_resource(
     'zypprepo',
     'devel_languages_rust',
-    hiera_hash('mopensuse::zypper::repositories::devel_languages_rust')
+    lookup('mopensuse::zypprepos')['devel_languages_rust']
   )
 }

@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::server_mail {
   ensure_resource(
     'zypprepo',
     'server_mail',
-    hiera_hash('mopensuse::zypper::repositories::server_mail')
+    lookup('mopensuse::zypprepos')['server_mail']
   )
 }

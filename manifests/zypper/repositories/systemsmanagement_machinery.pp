@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::systemsmanagement_machinery {
   ensure_resource(
     'zypprepo',
     'systemsmanagement_machinery',
-    hiera_hash('mopensuse::zypper::repositories::systemsmanagement_machinery')
+    lookup('mopensuse::zypprepos')['systemsmanagement_machinery']
   )
 }

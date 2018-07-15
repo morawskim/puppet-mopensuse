@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::server_monitoring {
   ensure_resource(
     'zypprepo',
     'server_monitoring',
-    hiera_hash('mopensuse::zypper::repositories::server_monitoring')
+    lookup('mopensuse::zypprepos')['server_monitoring']
   )
 }

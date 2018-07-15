@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::security_tools {
   ensure_resource(
     'zypprepo',
     'security_tools',
-    hiera_hash('mopensuse::zypper::repositories::security_tools')
+    lookup('mopensuse::zypprepos')['security_tools']
   )
 }

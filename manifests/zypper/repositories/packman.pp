@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::packman {
   ensure_resource(
     'zypprepo',
     'packman',
-    hiera_hash('mopensuse::zypper::repositories::packman')
+    lookup('mopensuse::zypprepos')['packman']
   )
 }

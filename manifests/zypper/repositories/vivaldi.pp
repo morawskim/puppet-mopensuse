@@ -12,6 +12,6 @@ class mopensuse::zypper::repositories::vivaldi {
   ensure_resource(
     'zypprepo',
     'vivaldi',
-    hiera_hash('mopensuse::zypper::repositories::vivaldi')
+    lookup('mopensuse::zypprepos')['vivaldi']
   )
 }

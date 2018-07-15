@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::devel_languages_python {
   ensure_resource(
     'zypprepo',
     'devel_languages_python',
-    hiera_hash('mopensuse::zypper::repositories::devel_languages_python')
+    lookup('mopensuse::zypprepos')['devel_languages_python']
   )
 }

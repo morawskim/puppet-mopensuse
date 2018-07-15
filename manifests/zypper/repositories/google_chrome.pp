@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::google_chrome {
   ensure_resource(
     'zypprepo',
     'google-chrome',
-    hiera_hash('mopensuse::zypper::repositories::google_chrome')
+    lookup('mopensuse::zypprepos')['google_chrome']
   )
 }

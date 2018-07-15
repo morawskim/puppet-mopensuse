@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::server_database {
   ensure_resource(
     'zypprepo',
     'server_database',
-    hiera_hash('mopensuse::zypper::repositories::server_database')
+    lookup('mopensuse::zypprepos')['server_database']
   )
 }

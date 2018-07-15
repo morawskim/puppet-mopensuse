@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::hardware {
   ensure_resource(
     'zypprepo',
     'hardware',
-    hiera_hash('mopensuse::zypper::repositories::hardware')
+    lookup('mopensuse::zypprepos')['hardware']
   )
 }

@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::repo_debug {
   ensure_resource(
     'zypprepo',
     'repo_debug',
-    hiera_hash('mopensuse::zypper::repositories::repo_debug')
+    lookup('mopensuse::zypprepos')['repo_debug']
   )
 }

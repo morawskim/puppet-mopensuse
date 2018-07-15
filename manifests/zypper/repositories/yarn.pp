@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::yarn {
   ensure_resource(
     'zypprepo',
     'yarn',
-    hiera_hash('mopensuse::zypper::repositories::yarn')
+    lookup('mopensuse::zypprepos')['yarn']
   )
 }

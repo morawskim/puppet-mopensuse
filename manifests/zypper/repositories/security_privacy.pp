@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::security_privacy {
   ensure_resource(
     'zypprepo',
     'security_privacy',
-    hiera_hash('mopensuse::zypper::repositories::security_privacy')
+    lookup('mopensuse::zypprepos')['security_privacy']
   )
 }

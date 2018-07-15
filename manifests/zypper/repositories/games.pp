@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::games {
   ensure_resource(
     'zypprepo',
     'games',
-    hiera_hash('mopensuse::zypper::repositories::games')
+    lookup('mopensuse::zypprepos')['games']
   )
 }

@@ -3,6 +3,6 @@ class mopensuse::rpmkeys::network {
   ensure_resource(
     'rpmkey',
     'network',
-    hiera_hash('mopensuse::rpmkeys::network')
+    lookup('mopensuse::rpmkeys')['network']
   )
 }

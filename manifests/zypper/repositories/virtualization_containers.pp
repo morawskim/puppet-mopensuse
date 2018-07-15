@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::virtualization_containers {
   ensure_resource(
     'zypprepo',
     'virtualization_containers',
-    hiera_hash('mopensuse::zypper::repositories::virtualization_containers')
+    lookup('mopensuse::zypprepos')['virtualization_containers']
   )
 }

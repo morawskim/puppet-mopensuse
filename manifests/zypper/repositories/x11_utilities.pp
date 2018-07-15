@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::x11_utilities {
   ensure_resource(
     'zypprepo',
     'x11_utilities',
-    hiera_hash('mopensuse::zypper::repositories::x11_utilities')
+    lookup('mopensuse::zypprepos')['x11_utilities']
   )
 }

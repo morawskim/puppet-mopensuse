@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::devel_libraries_c_cpp {
   ensure_resource(
     'zypprepo',
     'devel_libraries_c_cpp',
-    hiera_hash('mopensuse::zypper::repositories::devel_libraries_c_cpp')
+    lookup('mopensuse::zypprepos')['devel_libraries_c_cpp']
   )
 }

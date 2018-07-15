@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::isv_owncloud_desktop {
   ensure_resource(
     'zypprepo',
     'isv_owncloud_desktop',
-    hiera_hash('mopensuse::zypper::repositories::isv_owncloud_desktop')
+    lookup('mopensuse::zypprepos')['isv_owncloud_desktop']
   )
 }

@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::puppet {
   ensure_resource(
     'zypprepo',
     'puppet',
-    hiera_hash('mopensuse::zypper::repositories::puppet')
+    lookup('mopensuse::zypprepos')['puppet']
   )
 }

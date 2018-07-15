@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::server_php_extensions {
   ensure_resource(
     'zypprepo',
     'server_php_extensions',
-    hiera_hash('mopensuse::zypper::repositories::server_php_extensions')
+    lookup('mopensuse::zypprepos')['server_php_extensions']
   )
 }

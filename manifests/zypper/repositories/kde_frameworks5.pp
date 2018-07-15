@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::kde_frameworks5 {
   ensure_resource(
     'zypprepo',
     'kde_frameworks5',
-    hiera_hash('mopensuse::zypper::repositories::kde_frameworks5')
+    lookup('mopensuse::zypprepos')['kde_frameworks5']
   )
 }

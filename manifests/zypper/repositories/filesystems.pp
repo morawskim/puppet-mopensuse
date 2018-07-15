@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::filesystems {
   ensure_resource(
     'zypprepo',
     'filesystems',
-    hiera_hash('mopensuse::zypper::repositories::filesystems')
+    lookup('mopensuse::zypprepos')['filesystems']
   )
 }

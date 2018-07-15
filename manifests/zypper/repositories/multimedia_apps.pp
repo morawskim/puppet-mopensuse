@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::multimedia_apps {
   ensure_resource(
     'zypprepo',
     'multimedia_apps',
-    hiera_hash('mopensuse::zypper::repositories::multimedia_apps')
+    lookup('mopensuse::zypprepos')['multimedia_apps']
   )
 }

@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::repo_debug_non_oss {
   ensure_resource(
     'zypprepo',
     'repo_debug_non_oss',
-    hiera_hash('mopensuse::zypper::repositories::repo_debug_non_oss')
+    lookup('mopensuse::zypprepos')['repo_debug_non_oss']
   )
 }

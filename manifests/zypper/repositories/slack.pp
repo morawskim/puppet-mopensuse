@@ -11,6 +11,6 @@ class mopensuse::zypper::repositories::slack {
   ensure_resource(
     'zypprepo',
     'slack',
-    hiera_hash('mopensuse::zypper::repositories::slack')
+    lookup('mopensuse::zypprepos')['slack']
   )
 }
