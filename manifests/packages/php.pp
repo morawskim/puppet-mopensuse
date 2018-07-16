@@ -12,7 +12,7 @@ class mopensuse::packages::php (
   package { ['php7', 'php7-fpm', 'php7-mysql', 'php7-ldap', 'php7-soap', 'php7-pgsql',
     'php7-phar', 'php7-devel', 'php7-readline', 'php7-curl', 'php7-intl', 'php7-gettext',
     'php7-xsl', 'php7-zlib', 'php7-xmlwriter', 'php7-bcmath', 'php7-sockets', 'php7-pcntl',
-    'php7-ctype', 'php7-gd', 'php7-xmlreader', 'php7-ssh2', 'php7-zip', 'php7-ftp',
+    'php7-ctype', 'php7-gd', 'php7-xmlreader', 'php7-zip', 'php7-ftp',
     'php7-iconv', 'php7-fileinfo', 'php7-tokenizer', 'php7-exif']:
     ensure  => $ensure,
     require => Class['mopensuse::zypper::repositories::server_php_extensions'],
